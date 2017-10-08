@@ -14,8 +14,11 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.1",
+    "material-ui": "next",
+    "material-ui-icons": "^1.0.0-beta.15",
     "next": "^4.0.0-beta.2",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "typeface-raleway": "0.0.35"
   }
 }
