@@ -2,64 +2,37 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
-import Dialog, {
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
-} from 'material-ui/Dialog';
+import ProfileImage from '../components/ProfileImage';
+import ButtonAppBar from '../components/ButtonAppBar';
 import Typography from 'material-ui/Typography';
 import withStyles from 'material-ui/styles/withStyles';
 import withRoot from '../components/withRoot';
 
 const styles = {
-  root: {
-    textAlign: 'center',
-    paddingTop: 200,
-  },
+
 };
 
 class Index extends Component {
-  state = {
-    open: false,
-  };
+  handleScroll() {
+    var winHeight = window.innerHeight;
 
-  handleRequestClose = () => {
-    this.setState({
-      open: false,
-    });
-  };
+    // Annoying to compute doc height due to browser inconsistency
+    var body = document.body;
+    var html = document.documentElement;
+    var docHeight = Math.max( body.scrollHeight, body.offsetHeight,
+      html.clientHeight, html.scrollHeight, html.offsetHeight );
 
-  handleClick = () => {
-    this.setState({
-      open: true,
-    });
-  };
+    var value = document.body.scrollTop;
+    console.log(value);
+  }
 
   render() {
     return (
-      <div className={this.props.classes.root}>
-        <Dialog open={this.state.open} onRequestClose={this.handleRequestClose}>
-          <DialogTitle>Super Secret Password</DialogTitle>
-          <DialogContent>
-            <DialogContentText>1-2-3-4-5</DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button color="primary" onClick={this.handleRequestClose}>
-              OK
-            </Button>
-          </DialogActions>
-        </Dialog>
-        <Typography type="display1" gutterBottom>
-          Material-UI
-        </Typography>
-        <Typography type="subheading" gutterBottom>
-          example project
-        </Typography>
-        <Button raised color="accent" onClick={this.handleClick}>
-          Super Secret Password
-        </Button>
+      <div>
+        {/*<ButtonAppBar classes=""/>*/
+          /* Hiding until the top image is hidden */
+        }
+        <ProfileImage/>
       </div>
     );
   }
