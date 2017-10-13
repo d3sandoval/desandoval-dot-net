@@ -1,7 +1,7 @@
 {
-  "name": "hello-next",
+  "name": "desandoval-dot-net",
   "version": "1.0.0",
-  "description": "",
+  "description": "Source code for desandoval.net",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,14 +10,17 @@
     "start": "NODE_ENV=production node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "d3sandoval",
+  "repository": "git@github.com:d3sandoval/desandoval-dot-net.git",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.1",
+    "isomorphic-unfetch": "^2.0.0",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-beta.15",
     "next": "^4.0.0-beta.2",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "rss-parser": "^2.10.6"
   }
 }

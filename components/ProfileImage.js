@@ -4,6 +4,9 @@ import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 
 const styles = theme => ({
+  root: {
+    height: '780px',
+  },
   topImage: {
     "background": `url("img/looking-bg.jpg")`,
     "height": "600px",
@@ -27,11 +30,6 @@ const styles = theme => ({
       width: "150px",
       top: "-75px",
     },
-    [theme.breakpoints.down('sm')]: {
-      position: "absolute",
-      width: "150px",
-      top: "75px",
-    },
   },
   name: {
     "font-weight": 900,
@@ -47,11 +45,6 @@ const styles = theme => ({
       left: "75px",
       top: "-170px",
     },
-    [theme.breakpoints.down('sm')]: {
-      left: "50px",
-      top: "250px",
-      position: "absolute"
-    },
   },
   subName: {
     position: "relative",
@@ -64,19 +57,43 @@ const styles = theme => ({
       left: "228px",
       top: "-150px",
     },
-    [theme.breakpoints.down('sm')]: {
+  },
+  '@media (max-width: 780px)': {
+    root: {
+      height: '640px',
+    },
+    name: {
       left: "50px",
-      top: "355px",
+      top: "250px",
+      position: "absolute"
+    },
+    subName: {
+      left: "50px",
+      top: "310px",
+      'max-width': '300px',
       filter: "drop-shadow(5px 5px 5px #222)",
       position: "absolute",
     },
+    logo: {
+      position: "absolute",
+      width: "150px",
+      top: "75px",
+    },
+    '@media (max-width: 532px)': {
+      name: {
+        'max-width': '300px',
+      },
+      subName: {
+        top: "360px",
+      }
+    }
   },
 });
 
 function ProfileImage(props) {
   const { classes } = props;
   return (
-    <div>
+    <div className={classes.root}>
       <div className={classes.topImage}>
         <div className={classes.overlay} />
       </div>

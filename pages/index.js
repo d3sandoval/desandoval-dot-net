@@ -2,17 +2,26 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ProfileImage from '../components/ProfileImage';
-import ButtonAppBar from '../components/ButtonAppBar';
-import Typography from 'material-ui/Typography';
+
+/* material-ui */
 import withStyles from 'material-ui/styles/withStyles';
 import withRoot from '../components/withRoot';
+import ButtonAppBar from '../components/ButtonAppBar';
+import Typography from 'material-ui/Typography';
+
+/* my components */
+import ProfileImage from '../components/ProfileImage';
+import BlogSummary from '../components/BlogSummary';
+
+/* data sources */
+import fetch from 'isomorphic-unfetch'
 
 const styles = {
-
+  root: {},
 };
 
 class Index extends Component {
+
   handleScroll() {
     var winHeight = window.innerHeight;
 
@@ -33,6 +42,7 @@ class Index extends Component {
           /* Hiding until the top image is hidden */
         }
         <ProfileImage/>
+        <BlogSummary classes="" entries={this.props.entries} />
       </div>
     );
   }
@@ -41,5 +51,17 @@ class Index extends Component {
 Index.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
+
+
+
+Index.getInitialProps = async function(context) {
+  const res = await fetch('http://localhost:3000' + '/blog/posts'); // todo replace with env variable
+  const data = await res.json();
+
+  return {
+    entries: data
+  }
+}
 
 export default withRoot(withStyles(styles)(Index));

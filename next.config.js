@@ -6,6 +6,10 @@ module.exports = {
       delete config.resolve.alias['react-dom']
     }
 
+    // hack to get rss-parser working
+    // see: https://github.com/bobby-brennan/rss-parser/issues/20
+    config.node = {fs: "empty"};
+
     return config
   }
 }
