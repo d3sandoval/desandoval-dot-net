@@ -23,7 +23,7 @@ function PaperSheet(props) {
           {post.title}
         </Typography>
         <Typography type="body1" component="p">
-          {post.pubDate}
+          {post.date}
         </Typography>
       </Paper>
     </div>

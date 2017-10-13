@@ -7,6 +7,8 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 function getBlogPosts(callback) {
+  const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   let myEntries = [];
   RSSParser.parseURL('https://blog.desandoval.net/feed', function(err, parsed) {
 
@@ -16,10 +18,18 @@ function getBlogPosts(callback) {
 
     const entries = parsed.feed.entries;
     for(let i=0; i<entries.length; i++){
+      // clean up date
+      const isoDate = new Date(entries[i].isoDate);
+      let date = days[isoDate.getDay()] + ', '
+        + isoDate.getDate() + ' '
+        + months[isoDate.getMonth()] + ' '
+        + isoDate.getFullYear();
+
+      // assign to object
       myEntries[i] = {
         title: entries[i].title,
         link: entries[i].link,
-        pubDate: entries[i].pubDate,
+        date: date,
       }
     }
 
