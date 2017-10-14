@@ -11,6 +11,7 @@ import withRoot from '../components/withRoot';
 import ButtonAppBar from '../components/ButtonAppBar';
 import ProfileImage from '../components/ProfileImage';
 import BlogSummary from '../components/BlogSummary';
+import EmploymentSummary from '../components/EmploymentSummary';
 
 /* data sources */
 import fetch from 'isomorphic-unfetch'
@@ -44,6 +45,7 @@ class Index extends Component {
         }
         <ProfileImage/>
         <BlogSummary entries={this.props.entries} />
+        <EmploymentSummary />
       </div>
     );
   }
