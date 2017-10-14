@@ -6,10 +6,9 @@ import PropTypes from 'prop-types';
 /* material-ui */
 import withStyles from 'material-ui/styles/withStyles';
 import withRoot from '../components/withRoot';
-import ButtonAppBar from '../components/ButtonAppBar';
-import Typography from 'material-ui/Typography';
 
 /* my components */
+import ButtonAppBar from '../components/ButtonAppBar';
 import ProfileImage from '../components/ProfileImage';
 import BlogSummary from '../components/BlogSummary';
 
@@ -17,7 +16,9 @@ import BlogSummary from '../components/BlogSummary';
 import fetch from 'isomorphic-unfetch'
 
 const styles = {
-  root: {},
+  root: {
+    'overflow-x': 'hidden'
+  },
 };
 
 class Index extends Component {
@@ -37,12 +38,12 @@ class Index extends Component {
 
   render() {
     return (
-      <div>
+      <div className={this.props.classes.root}>
         {/*<ButtonAppBar classes=""/>*/
           /* Hiding until the top image is hidden */
         }
         <ProfileImage/>
-        <BlogSummary classes="" entries={this.props.entries} />
+        <BlogSummary entries={this.props.entries} />
       </div>
     );
   }
@@ -53,10 +54,8 @@ Index.propTypes = {
 };
 
 
-
-
 Index.getInitialProps = async function(context) {
-  const res = await fetch('http://localhost:3000' + '/blog/posts'); // todo replace with env variable
+  const res = await fetch('http://localhost:3000' + '/blog/posts?limit=4'); // todo replace with env variable
   const data = await res.json();
 
   return {

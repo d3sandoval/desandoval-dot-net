@@ -49,7 +49,7 @@ const theme = createMuiTheme({
     secondary: daniPurple
   },
   typography: {
-    fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif'
+    fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
   }
 });
 
