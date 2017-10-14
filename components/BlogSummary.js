@@ -37,7 +37,7 @@ function BlogSummary(props) {
         {entries.map(function(post) {
             return (
               <Grid key={post.link} item xs={12} sm={6}>
-                <a href={post.link} target="_blank" >
+                <a href={post.link} target="_blank" rel="noopener noreferrer">
                   <BlogBox post={post} />
                 </a>
               </Grid>
@@ -46,7 +46,7 @@ function BlogSummary(props) {
         }
       </Grid>
       <Typography className={classes.fullLink} type="subheading" align="right" gutterBottom>
-        <a href="https://blog.desandoval.net/latest" target="_blank">View all...</a>
+        <a href="https://blog.desandoval.net/latest" target="_blank" rel="noopener noreferrer">View all from my blog...</a>
       </Typography>
     </div>
   );

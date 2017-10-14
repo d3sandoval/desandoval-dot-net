@@ -13,6 +13,9 @@ const styles = theme => ({
     marginTop: theme.spacing.unit,
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
+    '&:hover': {
+      boxShadow: `0 3px 5px 2px ${theme.palette.primary[900]}`
+    },
   }),
 });
 

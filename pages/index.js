@@ -12,6 +12,7 @@ import ButtonAppBar from '../components/ButtonAppBar';
 import ProfileImage from '../components/ProfileImage';
 import BlogSummary from '../components/BlogSummary';
 import EmploymentSummary from '../components/EmploymentSummary';
+import PortfolioSummary from '../components/PortfolioSummary';
 
 /* data sources */
 import fetch from 'isomorphic-unfetch'
@@ -24,19 +25,6 @@ const styles = {
 
 class Index extends Component {
 
-  handleScroll() {
-    var winHeight = window.innerHeight;
-
-    // Annoying to compute doc height due to browser inconsistency
-    var body = document.body;
-    var html = document.documentElement;
-    var docHeight = Math.max( body.scrollHeight, body.offsetHeight,
-      html.clientHeight, html.scrollHeight, html.offsetHeight );
-
-    var value = document.body.scrollTop;
-    console.log(value);
-  }
-
   render() {
     return (
       <div className={this.props.classes.root}>
@@ -46,6 +34,7 @@ class Index extends Component {
         <ProfileImage/>
         <BlogSummary entries={this.props.entries} />
         <EmploymentSummary />
+        <PortfolioSummary />
       </div>
     );
   }

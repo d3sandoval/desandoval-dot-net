@@ -7,13 +7,17 @@ import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import JobBox from './JobBox';
 
-const styles = theme => ({});
+const styles = theme => ({
+  root: {
+    marginBottom: theme.spacing.unit * 4,
+  }
+});
 
 function EmploymentSummary(props) {
   const {classes} = props;
 
   return (
-    <div>
+    <div className={classes.root}>
       <Typography type="display1" align="center" gutterBottom>
         Employment
       </Typography>

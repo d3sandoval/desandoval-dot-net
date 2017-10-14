@@ -59,12 +59,10 @@ function printDescription(description) {
 function JobBox(props) {
   const {classes, job} = props;
 
-  console.log(job.color);
-
   return (
     <div>
       <Paper style={{boxShadow: `0 3px 5px 2px ${job.color}`}} className={classes.root} elevation={4}>
-        <a href={job.website} target="_blank">
+        <a href={job.website} target="_blank" rel="noopener noreferrer">
           <img className={classes.jobLogo} src={job.logo} />
         </a>
         <Typography type="headline" component="h3">
