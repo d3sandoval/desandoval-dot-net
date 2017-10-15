@@ -9,7 +9,12 @@ import PhoneIcon from 'material-ui-icons/Phone';
 import CalendarIcon from 'material-ui-icons/Event';
 
 const styles = theme => ({
-  root: {}, // Todo make this relative to the parent (instead of absolute)
+  root: {
+    webkitTransition: 'all .5s ease-in-out',
+    mozTransition: 'all .5s ease-in-out',
+    oTransition: 'all .5s ease-in-out',
+    transition: 'all .5s ease-in-out',
+  }, // Todo make this relative to the parent (instead of absolute)
   emailIcon: {
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shorter,

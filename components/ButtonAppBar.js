@@ -7,8 +7,8 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
+import Link from 'next/link';
+import Headroom from 'react-headroom';
 
 const styles = theme => ({
   root: {
@@ -24,24 +24,28 @@ const styles = theme => ({
   },
 });
 
-function ButtonAppBar(props) {
-  const { classes } = props;
+class ButtonAppBar extends React.Component {
 
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton className={classes.menuButton} color="contrast" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography type="title" color="inherit" className={classes.flex}>
-            Title
-          </Typography>
-          <Button color="contrast">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <div className={classes.root}>
+        <Headroom>
+          <AppBar position="static">
+            <Toolbar>
+              <Typography type="title" color="inherit" className={classes.flex}>
+                Human Experience Designer
+              </Typography>
+              <Button href="https://blog.desandoval.net/latest" target="_blank" rel="noopener noreferrer" color="contrast">Blog</Button>
+              <Link href="/portfolio"><Button color="contrast">Portfolio</Button></Link>
+              <Link href="/iam"><Button color="contrast">I am...</Button></Link>
+            </Toolbar>
+          </AppBar>
+        </Headroom>
+      </div>
+    );
+  }
 }
 
 ButtonAppBar.propTypes = {

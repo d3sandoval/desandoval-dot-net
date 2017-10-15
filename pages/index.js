@@ -30,11 +30,9 @@ class Index extends Component {
   render() {
     return (
       <div className={this.props.classes.root}>
-        {/*<ButtonAppBar classes=""/>*/
-          /* Hiding until the top image is hidden */
-        }
+        <ButtonAppBar />
         <ContactButton />
-        <ProfileImage/>
+        <ProfileImage />
         <BlogSummary entries={this.props.entries} />
         <EmploymentSummary />
         <PortfolioSummary />

@@ -55,16 +55,16 @@ function PortfolioSummary(props) {
         {/* Portfolio Pieces */}
         <Grid className={classes.portfolio} container sm={6} xs={12}>
           <Grid xs={6}>
-            <Paper className={classes.paper}>test</Paper>
+            <Paper className={classes.paper}>Coming Soon</Paper>
           </Grid>
           <Grid xs={6}>
-            <Paper className={classes.paper}>test</Paper>
+            <Paper className={classes.paper}>Coming Soon</Paper>
           </Grid>
           <Grid xs={6}>
-            <Paper className={classes.paper}>test</Paper>
+            <Paper className={classes.paper}>Coming Soon</Paper>
           </Grid>
           <Grid xs={6}>
-            <Paper className={classes.paper}>test</Paper>
+            <Paper className={classes.paper}>Coming Soon</Paper>
           </Grid>
         </Grid>
         {/* Portfolio Description */}
