@@ -65,27 +65,27 @@ const styles = theme => ({
     },
     name: {
       left: "50px",
-      top: "250px",
+      top: "290px",
       position: "absolute"
     },
     subName: {
       left: "50px",
-      top: "310px",
+      top: "355px",
       'max-width': '300px',
       filter: "drop-shadow(5px 5px 5px #222)",
       position: "absolute",
     },
     logo: {
       position: "absolute",
-      width: "150px",
-      top: "75px",
+      width: "180px",
+      top: "95px",
     },
     '@media (max-width: 532px)': {
       name: {
         'max-width': '300px',
       },
       subName: {
-        top: "360px",
+        top: "400px",
       }
     }
   },
