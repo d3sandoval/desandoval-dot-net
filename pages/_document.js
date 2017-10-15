@@ -43,6 +43,7 @@ class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+          <link rel="stylesheet" href="animate.min.css" />
         </Head>
         <body>
           <Main />

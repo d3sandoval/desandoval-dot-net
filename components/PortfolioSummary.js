@@ -9,7 +9,9 @@ import Paper from 'material-ui/Paper';
 import Link from 'next/link';
 
 const styles = theme => ({
-  root: {},
+  root: {
+    marginBottom: theme.spacing.unit * 4,
+  },
   paper: theme.mixins.gutters({
     paddingTop: 16,
     paddingBottom: 16,
@@ -77,7 +79,7 @@ function PortfolioSummary(props) {
             <Typography type="title" gutterBottom paragraph>As a Human Experience Designer, <Link href="/portfolio/">
               <a title="Portfolio">I generate such solutions</a></Link>.
             </Typography>
-            <Typography type="body2" gutterBottom paragraph> paragraphIn the fall of 2014, I studied computer science, software development, and design
+            <Typography type="body2" gutterBottom paragraph> In the fall of 2014, I studied computer science, software development, and design
               at <a title="Computer Science Institute" href="http://www.ait-budapest.com/" target="_blank" rel="noopener noreferrer"> AIT-Budapest.</a>
               I was mentored by the great Ernö Rubik (<a href="http://www.rubiks.com/" target="_blank" rel="noopener noreferrer">Rubik’s Cube</a>,
               creator), Ernö Duda (<a href="http://www.solvobiotech.com/" target="_blank" rel="noopener noreferrer">SOLVO BioTech</a>, founder),
@@ -85,7 +87,7 @@ function PortfolioSummary(props) {
               to expand my international view of the user experience.
             </Typography>
             <Typography type="body2" gutterBottom paragraph>Since returning from Hungary and graduating from the University of Washington,
-              I have exited the realm of Enterprise IT – focusing on design and development in the Seattle startup community.
+              I have become deeply involved in the Seattle startup community as a designer, developer and small-business consultant.
             </Typography>
           </Paper>
         </Grid>

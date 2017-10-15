@@ -11,7 +11,8 @@ const styles = theme => ({
   root: {
     '& a': {
       'text-decoration': 'none',
-    }
+    },
+    marginBottom: theme.spacing.unit * 4,
   },
   fullLink: {
     marginTop: theme.spacing.unit,

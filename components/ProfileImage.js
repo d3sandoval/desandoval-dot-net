@@ -52,6 +52,7 @@ const styles = theme => ({
     [theme.breakpoints.up('md')]: {
       left: "378px",
       top: "-300px",
+      fontSize: 18,
     },
     [theme.breakpoints.down('md')]: {
       left: "228px",

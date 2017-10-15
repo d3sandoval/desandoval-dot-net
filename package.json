@@ -14,13 +14,16 @@
   "repository": "git@github.com:d3sandoval/desandoval-dot-net.git",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.1",
+    "animate.css": "^3.5.2",
+    "express": "^4.16.2",
     "isomorphic-unfetch": "^2.0.0",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-beta.15",
-    "next": "^4.0.0-beta.2",
+    "next": "^4.0.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-mui-speeddial": "0.0.6",
+    "react-transition-group": "^1.2.1",
     "rss-parser": "^2.10.6"
   }
 }

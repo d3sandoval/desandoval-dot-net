@@ -9,10 +9,12 @@ import withRoot from '../components/withRoot';
 
 /* my components */
 import ButtonAppBar from '../components/ButtonAppBar';
+import ContactButton from '../components/ContactButton';
 import ProfileImage from '../components/ProfileImage';
 import BlogSummary from '../components/BlogSummary';
 import EmploymentSummary from '../components/EmploymentSummary';
 import PortfolioSummary from '../components/PortfolioSummary';
+import HonorsSummary from '../components/HonorsSummary';
 
 /* data sources */
 import fetch from 'isomorphic-unfetch'
@@ -31,10 +33,12 @@ class Index extends Component {
         {/*<ButtonAppBar classes=""/>*/
           /* Hiding until the top image is hidden */
         }
+        <ContactButton />
         <ProfileImage/>
         <BlogSummary entries={this.props.entries} />
         <EmploymentSummary />
         <PortfolioSummary />
+        <HonorsSummary />
       </div>
     );
   }
