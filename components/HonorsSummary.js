@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
-import Typography from 'material-ui/Typography';
+import SectionTitle from './SectionTitle';
 
 const styles = theme => ({
   root: {}
@@ -14,9 +14,7 @@ function HonorsSummary(props) {
 
   return (
     <div className={classes.root}>
-      <Typography type="display1" align="center" gutterBottom>
-        Honors
-      </Typography>
+      <SectionTitle title="Honors" divider={true} />
     </div>
   );
 }

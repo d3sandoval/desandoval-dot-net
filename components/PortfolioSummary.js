@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
+import SectionTitle from './SectionTitle';
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import Paper from 'material-ui/Paper';
@@ -83,9 +84,7 @@ class PortfolioSummary extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Typography type="display1" align="center" gutterBottom>
-          Portfolio
-        </Typography>
+        <SectionTitle title="Portfolio" divider={true} />
         <Grid container spacing={24}>
           {/* Portfolio Pieces */}
           <Grid className={classes.portfolio} container lg={6} xs={12}>

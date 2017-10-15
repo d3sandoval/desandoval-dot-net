@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
-import Typography from 'material-ui/Typography';
+import SectionTitle from './SectionTitle';
 import Grid from 'material-ui/Grid';
 import JobBox from './JobBox';
 
@@ -18,9 +18,7 @@ function EmploymentSummary(props) {
 
   return (
     <div className={classes.root}>
-      <Typography type="display1" align="center" gutterBottom>
-        Employment
-      </Typography>
+      <SectionTitle title="Employment" divider={true} />
       <Grid container justify="center" spacing={8}>
         <Grid item xs={12} sm={10} md={5}>
           <JobBox  job={{

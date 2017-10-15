@@ -6,6 +6,7 @@ import {withStyles} from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import BlogBox from './BlogBox';
+import SectionTitle from './SectionTitle';
 
 const styles = theme => ({
   root: {
@@ -31,9 +32,7 @@ function BlogSummary(props) {
 
   return (
     <div className={classes.root}>
-      <Typography type="display1" align="center" gutterBottom>
-        Blog
-      </Typography>
+      <SectionTitle title="Blog" />
       <Grid container spacing={8}>
         {entries.map(function(post) {
             return (
