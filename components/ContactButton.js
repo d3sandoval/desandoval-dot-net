@@ -1,16 +1,14 @@
 // @flow weak
 
 import React from 'react';
-import { CSSTransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
-import Grow from 'material-ui/transitions/Grow';
 import ContactRow from './ContactRow';
 import QuestionAnswerIcon from 'material-ui-icons/QuestionAnswer';
 import CloseIcon from 'material-ui-icons/Close';
+import Tooltip from 'material-ui/Tooltip';
 
-const duration = 500
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
@@ -43,11 +41,13 @@ class ContactButton extends React.Component {
     const { classes } = this.props;
     return (
       <div>
+        <Tooltip title="Contact Me" placement="top">
           <Button onClick={this.toggleMenu()} fab color="primary" aria-label="contact" className={classes.button}>
             {(this.state.open)
             ? (<CloseIcon color="white" />)
-            : <QuestionAnswerIcon color="white" />}
+            : (<QuestionAnswerIcon color="white" />)}
           </Button>
+        </Tooltip>
         {(this.state.open)
         ? (<span><ContactRow /></span>)
         : <span></span>}

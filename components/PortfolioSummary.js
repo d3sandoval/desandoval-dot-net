@@ -12,7 +12,7 @@ import AdvancedGridList from './AdvancedGridList';
 
 const styles = theme => ({
   root: {
-    marginBottom: theme.spacing.unit * 4,
+    marginBottom: theme.spacing.unit * 6,
   },
   paper: theme.mixins.gutters({
     paddingTop: 16,
@@ -34,7 +34,7 @@ const styles = theme => ({
     paddingBottom: 16,
     paddingLeft: 24,
     paddingRight: 24,
-    marginLeft: 24,
+    marginLeft: 16,
     [theme.breakpoints.down('lg')]: {
       marginLeft: 0,
     },

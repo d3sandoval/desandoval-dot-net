@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "startForever": "NODE_ENV=production forever start server.js"
   },
   "keywords": [],
   "author": "d3sandoval",
@@ -16,6 +17,7 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "express": "^4.16.2",
+    "forever": "^0.15.3",
     "isomorphic-unfetch": "^2.0.0",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-beta.15",
@@ -23,7 +25,6 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-headroom": "^2.2.1",
-    "react-mui-speeddial": "0.0.6",
     "react-transition-group": "^1.2.1",
     "rss-parser": "^2.10.6"
   }
