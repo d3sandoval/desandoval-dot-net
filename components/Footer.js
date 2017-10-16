@@ -37,7 +37,7 @@ function Footer(props) {
     <div className={classes.root}>
       <Grid container justify='space-between' className={classes.footerContent}>
         <Typography xs={12} md={4} className={classes.footerLeft}>
-          © 2017 Daniel E. Sandoval ( <a href="git@github.com:d3sandoval/desandoval-dot-net.git"
+          © 2017 Daniel E. Sandoval ( <a href="https://github.com/d3sandoval/desandoval-dot-net"
                                          target="_blank" rel="noopener noreferrer">Source Code</a> | <a
                                           href="https://spdx.org/licenses/CC-BY-ND-4.0.html"
                                           target="_blank" rel="noopener noreferrer">CC-BY-ND-4.0</a> )

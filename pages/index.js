@@ -16,21 +16,35 @@ import EmploymentSummary from '../components/EmploymentSummary';
 import PortfolioSummary from '../components/PortfolioSummary';
 import HonorsSummary from '../components/HonorsSummary';
 import Footer from '../components/Footer';
+import debounce from 'lodash/debounce';
+import EventListener, {withOptions} from 'react-event-listener'
 
 /* data sources */
 import fetch from 'isomorphic-unfetch'
 
 const styles = {
   root: {
-    'overflow-x': 'hidden'
+    overflowX: 'hidden',
   },
 };
 
 class Index extends Component {
+  state = {
+    bodyWidth: {overflowX: 'hidden'}
+  }
+
+  handleResize = debounce(() => {
+    this.setState({bodyWidth: {overflowX: 'hidden'}})
+  }, 166)
+
+  componentWillUnmount() {
+    this.handleResize.cancel();
+  }
 
   render() {
     return (
-      <div className={this.props.classes.root}>
+      <div className={this.props.classes.root} style={this.state.bodyWidth}>
+        <EventListener target="window" onResize={withOptions(this.handleResize, {passive: true, capture: false})} />
         <ButtonAppBar />
         <ContactButton />
         <ProfileImage />
