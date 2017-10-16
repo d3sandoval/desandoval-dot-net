@@ -18,7 +18,7 @@ const styles = theme => ({
     width: 'calc(100% - 88px)'
   },
   footerLeft: {
-    paddingTop: 16,
+    paddingTop: 12,
     marginBottom: 8,
     '& a': {
       textDecoration: 'none',

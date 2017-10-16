@@ -11,7 +11,7 @@ import LinkedinIcon from 'mdi-react/LinkedinIcon'
 
 const styles = theme => ({
   root: {
-    paddingTop: 12,
+    paddingTop: 10,
   },
   icon: {
     fill: 'inherit',
