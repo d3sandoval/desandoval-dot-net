@@ -25,6 +25,7 @@
     "isomorphic-unfetch": "^2.0.0",
     "material-ui": "^1.0.0-beta.17",
     "material-ui-icons": "^1.0.0-beta.17",
+    "mdi-react": "^2.0.46",
     "next": "^4.0.5",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
