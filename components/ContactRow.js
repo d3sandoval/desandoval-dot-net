@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
+import Tooltip from 'material-ui/Tooltip';
 import Button from 'material-ui/Button';
 import EmailIcon from 'material-ui-icons/Email';
 import PhoneIcon from 'material-ui-icons/Phone';
@@ -61,15 +62,22 @@ function ContactRow(props) {
 
   return (
     <div className={classes.root}>
-      <a href="mailto:daniel@desandoval.net"><Button className={classes.emailIcon} fab color="white">
-        <EmailIcon dense={true} />
-      </Button></a>
-      <a href="tel:+15417198286"><Button className={classes.phoneIcon} fab color="white">
-        <PhoneIcon dense={true} />
-      </Button></a>
-      <a href="https://calendly.com/d3sandoval/30min" target="_blank" rel="noopener noreferrer"><Button className={classes.calendarIcon} fab color="white">
-        <CalendarIcon dense={true} />
-      </Button></a>
+      <a href="mailto:daniel@desandoval.net">
+        <Tooltip title="Email me" placement="left">
+          <Button className={classes.emailIcon} fab color="white">
+            <EmailIcon dense={true} />
+      </Button></Tooltip></a>
+      <a href="tel:+15417198286">
+        <Tooltip title="Call me" placement="left">
+          <Button className={classes.phoneIcon} fab color="white">
+           <PhoneIcon dense={true} />
+      </Button></Tooltip></a>
+    <a href="https://calendly.com/d3sandoval/30min" target="_blank" rel="noopener noreferrer">
+        <Tooltip title="Schedule a call" placement="left">
+          <Button className={classes.calendarIcon} fab color="white">
+            <CalendarIcon dense={true} />
+      </Button></Tooltip></a>
+
     </div>
   );
 }

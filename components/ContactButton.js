@@ -27,22 +27,36 @@ const styles = theme => ({
 
 class ContactButton extends React.Component {
   state = {
-    open: false
+    open: false,
+    rootTooltip: false,
+    rootTooltipText: "Contact me",
   };
 
   toggleMenu = () => () => {
     (this.state.open)
-    ?  this.setState({open: false})
-    :  this.setState({open: true})
+    ?  this.setState({open: false, rootTooltipText: "Contact me"})
+    :  this.setState({open: true, rootTooltip: false, rootTooltipText: "Close"})
 
+  }
+
+  mouseOver = () => () => {
+    this.setState({rootTooltip: true});
+  }
+
+  mouseOut = () => () => {
+    this.setState({rootTooltip: false});
   }
 
   render() {
     const { classes } = this.props;
     return (
       <div>
-        <Tooltip title="Contact Me" placement="top">
-          <Button onClick={this.toggleMenu()} fab color="primary" aria-label="contact" className={classes.button}>
+        <Tooltip title={this.state.rootTooltipText} placement="left" open={this.state.rootTooltip}>
+          <Button fab color="primary" aria-label="contact" className={classes.button}
+                  onClick={this.toggleMenu()}
+                  onMouseOver={this.mouseOver()}
+                  onMouseOut={this.mouseOut()}
+          >
             {(this.state.open)
             ? (<CloseIcon color="white" />)
             : (<QuestionAnswerIcon color="white" />)}
