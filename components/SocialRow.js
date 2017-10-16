@@ -15,6 +15,8 @@ const styles = theme => ({
   },
   icon: {
     fill: 'inherit',
+    paddingLeft: 8,
+    paddingRight: 8,
   },
   button: {
     fill: theme.palette.common.darkWhite,
@@ -29,22 +31,22 @@ function SocialRow(props) {
 
   return (
     <div className={classes.root}>
-      <ButtonBase centerRipple
+      <ButtonBase href="https://github.com/d3sandoval" target="_blank" rel="noopener noreferrer" centerRipple
                   keyboardFocusedClassName={classes.keyboardFocused}
                   className={classes.button} aria-label="github">
         <GithubIcon className={classes.icon} />
       </ButtonBase>
-      <ButtonBase centerRipple
+      <ButtonBase href="https://twitter.com/d3sandoval" target="_blank" rel="noopener noreferrer" centerRipple
                   keyboardFocusedClassName={classes.keyboardFocused}
                   className={classes.button} aria-label="twitter">
         <TwitterIcon className={classes.icon} />
       </ButtonBase>
-      <ButtonBase centerRipple
+      <ButtonBase href="https://facebook.com/d3sandoval" target="_blank" rel="noopener noreferrer" centerRipple
                   keyboardFocusedClassName={classes.keyboardFocused}
                   className={classes.button} aria-label="facebook">
         <FacebookIcon className={classes.icon} />
       </ButtonBase>
-      <ButtonBase centerRipple
+      <ButtonBase href="https://linkedin.com/in/d3sandoval" target="_blank" rel="noopener noreferrer" centerRipple
                   keyboardFocusedClassName={classes.keyboardFocused}
                   className={classes.button} aria-label="linkedin">
         <LinkedinIcon className={classes.icon} />

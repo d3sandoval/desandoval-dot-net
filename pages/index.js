@@ -37,7 +37,7 @@ class Index extends Component {
         <BlogSummary entries={this.props.entries} />
         <EmploymentSummary />
         <PortfolioSummary />
-        <HonorsSummary />
+        {/*<HonorsSummary />*/}
         <Footer />
       </div>
     );
