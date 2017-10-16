@@ -8,7 +8,11 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "startForever": "NODE_ENV=production forever start server.js"
+    "startForever": "NODE_ENV=production forever start server.js",
+    "status": "forever list",
+    "logs": "forever logs",
+    "stopAll": "forever stopall",
+    "restartAll": "forever restartall"
   },
   "keywords": [],
   "author": "d3sandoval",
