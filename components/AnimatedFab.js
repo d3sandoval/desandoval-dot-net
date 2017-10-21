@@ -29,10 +29,16 @@ class AnimatedFab extends React.Component {
 
   getKeyFrames() {
     return [
-      { transform: 'scale(1)',    opacity: 1,     offset: 0 },
-      { transform: 'scale(.5)',   opacity: 0.5,   offset: 0.3 },
-      { transform: 'scale(.667)', opacity: 0.667, offset: 0.7875 },
-      { transform: 'scale(.6)',   opacity: 0.6,   offset: 1 }
+      {
+        transform: 'none',
+        opacity: '1',
+        transformOrigin: 'center',
+        offset: 0,
+      },
+      { transform: (this.state.open) ? 'rotate3d(0, 0, 1, -90deg)' : 'rotate3d(0, 0, 1, 90deg)',
+        opacity: '0',
+        transformOrigin: 'center',
+        offset: 1 },
     ];
   }
 
@@ -41,14 +47,14 @@ class AnimatedFab extends React.Component {
       duration,
       easing: 'ease-in-out',
       delay: 0,
-      iterations: 2,
+      iterations: 1,
       direction: 'alternate',
       fill: 'forwards'
     };
   }
 
   animateOut = () => {
-    this.setState({playState: 'paused'});
+    this.setState({playState: 'idle'});
     if (this.state.open) {
       this.setState({open: false})
     } else {
@@ -72,7 +78,7 @@ class AnimatedFab extends React.Component {
               onMouseOut={onMouseOut}
       >
         <Animated.div playState={this.state.playState} keyframes={this.getKeyFrames()}
-                      timing={this.getTiming(2500)} onFinish={this.animateOut}>
+                      timing={this.getTiming(250)} onFinish={this.animateOut}>
           {buttonIcon}
         </Animated.div>
       </Button>
