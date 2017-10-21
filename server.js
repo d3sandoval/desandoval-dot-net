@@ -44,6 +44,7 @@ app.prepare()
     const server = express();
 
     server.use(express.static(__dirname + '/static'));
+    server.use(express.static(__dirname + '/node_modules/animate.css/animate.css'));
 
     server.get('/p/:id', (req, res) => {
       const actualPage = '/post';

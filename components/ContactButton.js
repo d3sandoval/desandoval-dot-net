@@ -3,27 +3,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import Button from 'material-ui/Button';
 import ContactRow from './ContactRow';
-import QuestionAnswerIcon from 'material-ui-icons/QuestionAnswer';
-import CloseIcon from 'material-ui-icons/Close';
 import Tooltip from 'material-ui/Tooltip';
+import AnimatedFab from './AnimatedFab';
 
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-    position: 'fixed',
-    bottom: 16,
-    right: 16,
-    zIndex: 100,
-  },
-  animated: {
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shorter,
-      easing: theme.transitions.easing.easeOut,
-    }),
-  }
-});
+const styles = theme => ({});
 
 class ContactButton extends React.Component {
   state = {
@@ -32,12 +16,19 @@ class ContactButton extends React.Component {
     rootTooltipText: "Contact me",
   };
 
-  toggleMenu = () => () => {
-    (this.state.open)
-    ?  this.setState({open: false, rootTooltipText: "Contact me"})
-    :  this.setState({open: true, rootTooltip: false, rootTooltipText: "Close"})
-
+  onAnimateOut(newState) {
+    this.setState({
+      open: newState,
+      rootTooltipText: (newState) ?  "Close" : "Contact me"
+    });
   }
+
+  // toggleMenu = () => () => {
+  //   (this.state.open)
+  //     ?  this.setState({open: false, rootTooltipText: "Contact me"})
+  //     :  this.setState({open: true, rootTooltip: false, rootTooltipText: "Close"})
+  //
+  // }
 
   mouseOver = () => () => {
     this.setState({rootTooltip: true});
@@ -49,22 +40,19 @@ class ContactButton extends React.Component {
 
   render() {
     const { classes } = this.props;
+
     return (
       <div>
         <Tooltip title={this.state.rootTooltipText} placement="left" open={this.state.rootTooltip}>
-          <Button fab color="primary" aria-label="contact" className={classes.button}
-                  onClick={this.toggleMenu()}
-                  onMouseOver={this.mouseOver()}
-                  onMouseOut={this.mouseOut()}
-          >
-            {(this.state.open)
-            ? (<CloseIcon color="white" />)
-            : (<QuestionAnswerIcon color="white" />)}
-          </Button>
+          <AnimatedFab
+            onMouseOver={this.mouseOver()}
+            onMouseOut={this.mouseOut()}
+            animationCallback={(newState) => this.onAnimateOut(newState)}
+            initialOpen={this.state.open} />
         </Tooltip>
         {(this.state.open)
-        ? (<span><ContactRow /></span>)
-        : <span></span>}
+          ? (<span><ContactRow /></span>)
+          : <span></span>}
       </div>
     );
   }

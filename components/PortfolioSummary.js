@@ -34,10 +34,6 @@ const styles = theme => ({
     paddingBottom: 16,
     paddingLeft: 24,
     paddingRight: 24,
-    marginLeft: 16,
-    [theme.breakpoints.down('lg')]: {
-      marginLeft: 0,
-    },
     '& a': {
       textDecoration: 'none',
       color: theme.palette.primary[500],
@@ -87,11 +83,11 @@ class PortfolioSummary extends React.Component {
         <SectionTitle title="Portfolio" divider={true} />
         <Grid container spacing={24}>
           {/* Portfolio Pieces */}
-          <Grid className={classes.portfolio} container lg={6} xs={12}>
+          <Grid className={classes.portfolio} item lg={6} xs={12}>
             <AdvancedGridList tileData={this.tileData} />
           </Grid>
           {/* Portfolio Description */}
-          <Grid className={classes.portfolioDescription} lg={6} xs={12}>
+          <Grid className={classes.portfolioDescription} item lg={6} xs={12}>
             <Paper className={classes.paperDescription}>
               <Typography type="body2" gutterBottom paragraph>During my undergraduate education, I became enveloped in the study
                 of <strong>human-computer interaction</strong>. Through my studies in mathematics, software development,

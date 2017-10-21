@@ -49,7 +49,7 @@ function printDescription(description) {
     return (<ul>
       {description.map(function(listItem) {
         return (
-          <li>{listItem}</li>
+          <li key={listItem}>{listItem}</li>
         );
       })}
     </ul>);
@@ -68,7 +68,7 @@ function JobBox(props) {
         <Typography type="headline" component="h3">
           {job.title}
         </Typography>
-        <Typography className={classes.description} type="body1" component="p">
+        <Typography className={classes.description} type="body1" component="span">
           {printDescription(job.description)}
         </Typography>
       </Paper>
