@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
+import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
@@ -17,23 +18,24 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
   },
+  leftGrid: {
+    margin: "auto",
+  },
   jobLogo: {
-    width: '50%',
+    [theme.breakpoints.up('xs')]: {
+      width: 160
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: 250,
+    },
+  },
+  jobAbout: {
+    color: 'inherit',
+    textDecoration: 'none',
+    paddingTop: 20,
   },
   description: {
     textAlign: 'left',
-    [theme.breakpoints.up('lg')]: {
-      paddingRight: theme.spacing.unit *4,
-      paddingLeft: theme.spacing.unit *4,
-    },
-    [theme.breakpoints.down('lg')]: {
-      paddingRight: theme.spacing.unit *2,
-      paddingLeft: theme.spacing.unit *2,
-    },
-    [theme.breakpoints.down('xs')]: {
-      paddingRight: 0,
-      paddingLeft: 0,
-    },
     '& li': {
       marginBottom:theme.spacing.unit,
     }
@@ -56,28 +58,64 @@ function printDescription(description) {
   }
 }
 
-function JobBox(props) {
-  const {classes, job} = props;
+class JobBox extends React.Component {
+  state = {
+    hover: false
+  };
 
-  return (
-    <div>
-      <Paper style={{boxShadow: `0 3px 5px 2px ${job.color}`}} className={classes.root} elevation={4}>
-        <a href={job.website} target="_blank" rel="noopener noreferrer">
-          <img className={classes.jobLogo} src={job.logo} />
-        </a>
-        <Typography type="headline" component="h3">
-          {job.title}
-        </Typography>
-        <Typography className={classes.description} type="body1" component="span">
-          {printDescription(job.description)}
-        </Typography>
-      </Paper>
-    </div>
-  );
+  toggleHover = () => {
+    this.setState({hover: !this.state.hover})
+  };
+
+  render() {
+    const {classes, job} = this.props;
+
+    let linkStyle = (this.state.hover)
+                    ? {color: job.color}
+                    : {color: 'inherit'};
+
+    return (
+      <div>
+        <Paper className={classes.root} elevation={4}>
+          <Grid container justify="space-between">
+            <Grid item xs={12} sm={4} md={3} className={classes.leftGrid}>
+              <a href={job.website} target="_blank" rel="noopener noreferrer">
+                <img onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}
+                     className={classes.jobLogo} src={job.logo} />
+              </a>
+              <Typography type="headline" component="h3">
+                {job.title}
+              </Typography>
+              <Typography type="caption">
+                <a style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}
+                   className={classes.jobAbout} href={job.website} target="_blank" rel="noopener noreferrer">
+                  More info
+                </a>
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={8} md={8} className={classes.description}>
+              <Typography type="body1" component="span">
+                {printDescription(job.description)}
+              </Typography>
+            </Grid>
+          </Grid>
+        </Paper>
+      </div>
+    );
+  }
 }
 
 JobBox.propTypes = {
-  job: PropTypes.object.isRequired,
+  job: PropTypes.shape({
+    logo: PropTypes.string, // like /img/example.jpg
+    title: PropTypes.string,
+    description: PropTypes.oneOfType([ // handled by printDescription
+      PropTypes.string,
+      PropTypes.array
+    ]),
+    website: PropTypes.string, // like http://example.com
+    color: PropTypes.string // rgb(a) or hex
+  }).isRequired,
 };
 
 export default withStyles(styles)(JobBox);

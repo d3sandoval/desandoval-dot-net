@@ -19,7 +19,7 @@ function EmploymentSummary(props) {
     <div className={classes.root}>
       <SectionTitle title="Employment" divider={true} />
       <Grid container justify="center" spacing={8}>
-        <Grid item xs={12} sm={10} md={5}>
+        <Grid item xs={12} sm={10} lg={8}>
           <JobBox  job={{
             logo: '/img/jobs/dio-logo-white.png',
             title: 'Product Designer',
@@ -27,7 +27,7 @@ function EmploymentSummary(props) {
                           'Involving internal and external stakeholders in an iterative design practice to define requirements and generate Agile engineering specifications',
                           'Creating personas, user stories, mockups, prototypes and any other necessary artifacts to carry out the User Centered Design process'],
             website: 'https://www.discuss.io',
-            color: 'rgba(0,197,238,0.3)',
+            color: 'rgb(0,197,238)',
           }} />
         </Grid>
         {/* todo figure out a way to display other jobs without interrupting */}
