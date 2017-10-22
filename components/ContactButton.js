@@ -1,7 +1,6 @@
 // @flow weak
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import ContactRow from './ContactRow';
 import Tooltip from 'material-ui/Tooltip';
@@ -48,9 +47,5 @@ class ContactButton extends React.Component {
     );
   }
 }
-
-ContactButton.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(ContactButton);

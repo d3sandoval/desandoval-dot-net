@@ -124,8 +124,8 @@ class ContactRow extends React.Component {
                     style={this.getStyle()}>
         <a href="mailto:daniel@desandoval.net">
           <Tooltip title="Email me" placement="left">
-            <Button className={classes.emailIcon} fab color="white">
-              <EmailIcon dense={true} />
+            <Button fab className={classes.emailIcon}>
+              <EmailIcon dense={'true'} />
         </Button></Tooltip></a>
       </Animated.div>
       <Animated.div playState={this.state.playState}
@@ -134,8 +134,8 @@ class ContactRow extends React.Component {
                     style={this.getStyle()}>
         <a href="tel:+15417198286">
           <Tooltip title="Call me" placement="left">
-            <Button className={classes.phoneIcon} fab color="white">
-             <PhoneIcon dense={true} />
+            <Button className={classes.phoneIcon} fab>
+             <PhoneIcon dense={'true'} />
         </Button></Tooltip></a>
       </Animated.div>
       <Animated.div playState={this.state.playState}
@@ -145,8 +145,8 @@ class ContactRow extends React.Component {
                     style={this.getStyle()}>
       <a href="https://calendly.com/d3sandoval/30min" target="_blank" rel="noopener noreferrer">
           <Tooltip title="Schedule a call" placement="left">
-            <Button className={classes.calendarIcon} fab color="white">
-              <CalendarIcon dense={true} />
+            <Button className={classes.calendarIcon} fab>
+              <CalendarIcon dense={'true'} />
         </Button></Tooltip></a>
       </Animated.div>
       </div>

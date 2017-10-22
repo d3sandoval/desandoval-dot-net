@@ -77,7 +77,6 @@ function JobBox(props) {
 }
 
 JobBox.propTypes = {
-  classes: PropTypes.object.isRequired,
   job: PropTypes.object.isRequired,
 };
 

@@ -1,7 +1,6 @@
 // @flow weak
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import SectionTitle from './SectionTitle';
 import Grid from 'material-ui/Grid';
@@ -36,9 +35,5 @@ function EmploymentSummary(props) {
     </div>
   );
 }
-
-EmploymentSummary.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(EmploymentSummary);

@@ -1,7 +1,6 @@
 // @flow weak
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import { Animated } from 'react-web-animation';
 import Button from 'material-ui/Button';
@@ -76,16 +75,12 @@ class AnimatedFab extends React.Component {
               onMouseOut={onMouseOut}
       >
         <Animated.div playState={this.state.playState} keyframes={this.getKeyFrames()}
-                      timing={this.getTiming(250)} onFinish={this.animateOut}>
+                      timing={this.getTiming(170)} onFinish={this.animateOut}>
           {buttonIcon}
         </Animated.div>
       </Button>
     );
   }
 }
-
-// AnimatedFab.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
 
 export default withStyles(styles)(AnimatedFab);

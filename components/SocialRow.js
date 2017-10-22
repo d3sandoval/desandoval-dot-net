@@ -1,7 +1,6 @@
 // @flow weak
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import ButtonBase from 'material-ui/ButtonBase';
 import GithubIcon from 'mdi-react/GithubIcon'
@@ -54,9 +53,5 @@ function SocialRow(props) {
     </div>
   );
 }
-
-SocialRow.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(SocialRow);

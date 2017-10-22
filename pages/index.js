@@ -30,24 +30,42 @@ const styles = {
 
 class Index extends Component {
   state = {
-    bodyWidth: {overflowX: 'hidden'}
+    bodyWidth: {overflowX: 'hidden'},
+    positionTop: 0,
   }
 
   handleResize = debounce(() => {
+    let width = document.documentElement.clientWidth;
     this.setState({bodyWidth: {overflowX: 'hidden'}})
+    this.setState({viewWidth: width})
   }, 166)
+
+  handleScroll = debounce(() => {
+    let top  = window.pageYOffset || document.documentElement.scrollTop;
+    this.setState({positionTop: top})
+  })
+
+  componentDidMount() {
+    if (!this.state.viewWidth) {
+      this.setState({viewWidth: document.documentElement.clientWidth});
+    }
+  }
 
   componentWillUnmount() {
     this.handleResize.cancel();
+    this.handleScroll.cancel();
   }
 
   render() {
     return (
       <div className={this.props.classes.root} style={this.state.bodyWidth}>
-        <EventListener target="window" onResize={withOptions(this.handleResize, {passive: true, capture: false})} />
+        <EventListener target="window"
+                       onResize={withOptions(this.handleResize, {passive: true, capture: false})}
+                       onScroll={withOptions(this.handleScroll, {passive: true, capture: true})}
+        />
         <ButtonAppBar />
         <ContactButton />
-        <ProfileImage />
+        <ProfileImage positionTop={this.state.positionTop} viewWidth={this.state.viewWidth} />
         <BlogSummary entries={this.props.entries} />
         <EmploymentSummary />
         <PortfolioSummary />
@@ -66,9 +84,13 @@ Index.propTypes = {
 Index.getInitialProps = async function(context) {
   const res = await fetch('http://localhost:3000' + '/blog/posts?limit=4'); // todo replace with env variable
   const data = await res.json();
+  console.log(context.req)
 
   return {
-    entries: data
+    entries: data,
+    viewWidth: (context.res)
+                ? undefined
+                : document.documentElement.clientWidth,
   }
 }
 

@@ -74,7 +74,7 @@ function AdvancedGridList(props) {
 }
 
 AdvancedGridList.propTypes = {
-  classes: PropTypes.object.isRequired,
+  tileData: PropTypes.array.isRequired,
 };
 
 export default withStyles(styles)(AdvancedGridList);

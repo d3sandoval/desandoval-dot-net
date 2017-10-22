@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 
@@ -11,12 +10,7 @@ const styles = theme => ({
     "background": `url("img/looking-bg.jpg")`,
     "height": "600px",
     "background-size": "cover",
-    "background-position": "bottom",
-  },
-  overlay: {
-    "background-color": "#000",
-    "opacity": "0.4", // todo change on scroll
-    "height":"100%",
+    "background-position": "center",
   },
   logo: {
     position: "relative",
@@ -91,26 +85,33 @@ const styles = theme => ({
   },
 });
 
-function ProfileImage(props) {
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
-      <div className={classes.topImage}>
-        <div className={classes.overlay} />
+class ProfileImage extends React.Component {
+  getOverlayStyle = () => {
+    return {
+      backgroundColor: "#000",
+      opacity: (this.props.viewWidth < 780)
+                ? 1 - ((300 - this.props.positionTop)/600)
+                : 1 - ((600 - this.props.positionTop)/600),
+      height:"100%",
+    }
+  }
+  render() {
+    const { classes } = this.props;
+    return (
+      <div className={classes.root}>
+        <div className={classes.topImage}>
+          <div style={this.getOverlayStyle()} />
+        </div>
+        <img src="img/logo.png" className={classes.logo}/>
+        <Typography type="display3" className={classes.name}>
+          Daniel E. Sandoval
+        </Typography>
+        <Typography type="subheading" className={classes.subName}>
+          Putting the human experience first. Developing solutions to make it better.
+        </Typography>
       </div>
-      <img src="img/logo.png" className={classes.logo}/>
-      <Typography type="display3" className={classes.name}>
-        Daniel E. Sandoval
-      </Typography>
-      <Typography type="subheading" className={classes.subName}>
-        Putting the human experience first. Developing solutions to make it better.
-      </Typography>
-    </div>
-  );
+    );
+  }
 }
-
-ProfileImage.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(ProfileImage);

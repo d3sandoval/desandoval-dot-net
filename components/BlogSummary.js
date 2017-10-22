@@ -53,7 +53,7 @@ function BlogSummary(props) {
 }
 
 BlogSummary.propTypes = {
-  classes: PropTypes.object.isRequired,
+  entries: PropTypes.array.isRequired,
 };
 
 export default withStyles(styles)(BlogSummary);
