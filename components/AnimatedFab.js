@@ -55,11 +55,9 @@ class AnimatedFab extends React.Component {
 
   animateOut = () => {
     this.setState({playState: 'idle'});
-    if (this.state.open) {
-      this.setState({open: false})
-    } else {
-      this.setState({open: true})
-    }
+    (this.state.open)
+    ? this.setState({open: false})
+    : this.setState({open: true});
     this.props.animationCallback(this.state.open);
   }
 

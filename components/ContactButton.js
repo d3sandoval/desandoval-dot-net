@@ -23,13 +23,6 @@ class ContactButton extends React.Component {
     });
   }
 
-  // toggleMenu = () => () => {
-  //   (this.state.open)
-  //     ?  this.setState({open: false, rootTooltipText: "Contact me"})
-  //     :  this.setState({open: true, rootTooltip: false, rootTooltipText: "Close"})
-  //
-  // }
-
   mouseOver = () => () => {
     this.setState({rootTooltip: true});
   }
@@ -50,9 +43,7 @@ class ContactButton extends React.Component {
             animationCallback={(newState) => this.onAnimateOut(newState)}
             initialOpen={this.state.open} />
         </Tooltip>
-        {(this.state.open)
-          ? (<span><ContactRow /></span>)
-          : <span></span>}
+        <ContactRow open={this.state.open} />
       </div>
     );
   }
