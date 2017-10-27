@@ -85,7 +85,7 @@ const styles = theme => ({
   },
 });
 
-class ProfileImage extends React.Component {
+class PortfolioImage extends React.Component {
   getOverlayStyle = () => {
     return {
       backgroundColor: "#000",
@@ -114,4 +114,4 @@ class ProfileImage extends React.Component {
   }
 }
 
-export default withStyles(styles)(ProfileImage);
+export default withStyles(styles)(PortfolioImage);
