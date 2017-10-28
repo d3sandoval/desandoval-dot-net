@@ -11,6 +11,8 @@ There have been many articles written trying to solve the problem of making cons
 - Inconsistent "padding" between the centered text of the button and its edges
 - Not using Sketch symbols at all, and preventing file-level changes to the buttons later on
 
+[relative link](resources/D45B734A6197112E9F7EF285005C9C92.gif)
+[External link](https://google.com)
 As designers, we must ensure that our hi-fi mockups and prototypes are both pixel-perfect and quick to build. In some cases, these demands require a trade-off between one or the other. Since the introduction of the "Pin on resize" feature in Sketch (and thanks to a plugin or two), we can build our mockups/prototypes quickly and _consistently_ - avoiding confusion in user tests and downstream development.
 
 # A Better Solution

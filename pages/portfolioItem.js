@@ -2,12 +2,12 @@
 
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
+import {handleImageURI, paragraphRenderer, headingRenderer, listRenderer, linkRenderer } from '../lib/MarkdownRenderer';
 
 /* material-ui */
 import withStyles from 'material-ui/styles/withStyles';
 import withRoot from '../components/withRoot';
 import Grid from 'material-ui/Grid';
-import Typography from 'material-ui/Typography';
 
 /* my components */
 import PageLayout from '../components/PageLayout';
@@ -27,20 +27,19 @@ content: #Markdown Content
 
 class PortfolioItem extends Component {
 
-  handleImage(uri) {
-    return '/' + uri;
-  }
-
-  paragraphRenderer(props) { // todo create renderers for all typography types
-    return <Typography type="body1" gutterBottom key={props.nodeKey}>{props.children}</Typography>
-  }
-
   render() {
     return (
       <PageLayout>
         <Grid container spacing={24} justify="center">
           <Grid item xs={8}>
-            <ReactMarkdown transformImageUri={this.handleImage} renderers={{Paragraph: this.paragraphRenderer}} source={this.props.url.query.content} />
+            <ReactMarkdown transformImageUri={handleImageURI}
+                           renderers={{
+                             Paragraph: paragraphRenderer,
+                             Heading: headingRenderer,
+                             List: listRenderer,
+                             Link: linkRenderer,
+                           }}
+                           source={this.props.url.query.content} />
           </Grid>
         </Grid>
       </PageLayout>
