@@ -1,7 +1,7 @@
 title: Sketch App - A (better) responsive button using Symbols
 description: I show you how to make buttons better
 date: June 2017
-tags: [tag1, tag two, tag 3#, tag 4%, tag $#!]
+tags: tag1, tag two, tag 3#, tag 4%, tag $#!
 category: test
 topImage: ![Screen Shot 2017-10-25 at 8.47.07 AM.png](resources/1AF7E97F815E72F0392AD67C648FBA8A.png)
 content:

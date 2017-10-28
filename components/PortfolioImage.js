@@ -2,11 +2,10 @@ import React from 'react';
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
+import PortfolioTags from '../components/PortfolioTags';
 
 const styles = theme => ({
-  root: {
-    // height: 500,
-  },
+  root: {},
   name: {
     fontWeight: 900,
     display: "inline-block",
@@ -67,7 +66,7 @@ class PortfolioImage extends React.Component {
           </Grid>
           <Grid item sm={8} md={3} style={{marginLeft: "auto", marginRight: "auto"}}>
             <Typography type="subheading" className={classes.subName}>
-              {headerData.tags}
+              <PortfolioTags tags={headerData.tags} />
             </Typography>
           </Grid>
         </Grid>

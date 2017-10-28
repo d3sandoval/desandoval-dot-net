@@ -15,11 +15,12 @@ import PageLayout from '../components/PageLayout';
 const styles = {};
 
 /*
+// should use getInitialProps instead to parse this data before render()
 Renders a portfolio post from the following data (found in the source .md):
 title: This is text
 description: Also some text
 date: June 2017
-tags: [tag1, tag two, tag 3#, tag 4%, tag $#!]
+tags: tag1, tag two, tag 3#, tag 4%, tag $#!         // need to split on "," to make usable
 category: test                                        // haven't quite decided on this yet
 topImage: ![Screen Shot 2017-10-25 at 8.47.07 AM.png](resources/1AF7E97F815E72F0392AD67C648FBA8A.png) // all images (including this one) have to be saved in the /static/resources directory
 content: #Markdown Content
@@ -34,13 +35,17 @@ class PortfolioItem extends Component {
     return imgUri;
   };
 
+  handleTags = () => {
+    return this.props.url.query.tags.split(',');
+  }
+
   render() {
     let headerData = {
       topImage: this.handleTopImage(),
       title: this.props.url.query.title,
       description: this.props.url.query.description,
       date: this.props.url.query.date,
-      tags: this.props.url.query.tags,
+      tags: this.handleTags(),
     };
 
     return (
