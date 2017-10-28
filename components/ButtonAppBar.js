@@ -6,6 +6,7 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
+import ButtonBase from 'material-ui/ButtonBase';
 import Link from 'next/link';
 import Headroom from 'react-headroom';
 
@@ -19,6 +20,9 @@ const styles = theme => ({
     [theme.breakpoints.down('sm')]: {
       display: 'none',
     }
+  },
+  menu: {
+    margin: '0 0 0 auto',
   },
   menuButton: {
     marginLeft: -12,
@@ -36,12 +40,16 @@ class ButtonAppBar extends React.Component {
         <Headroom>
           <AppBar color="default" position="static">
             <Toolbar>
-              <Typography type="title" color="inherit" className={classes.subTitle}>
-                Human Experience Designer
-              </Typography>
-              <Button href="https://blog.desandoval.net/latest" target="_blank" rel="noopener noreferrer" color="primary">Blog</Button>
-              <Link href="/portfolio"><Button color="primary">Portfolio</Button></Link>
-              <Link href="/iam"><Button color="primary">I am...</Button></Link>
+              <Link href="/">
+                <ButtonBase><Typography type="title" color="inherit" className={classes.subTitle}>
+                  Human Experience Designer
+                </Typography></ButtonBase>
+              </Link>
+              <div className={classes.menu}>
+                <Button href="https://blog.desandoval.net/latest" target="_blank" rel="noopener noreferrer" color="primary">Blog</Button>
+                <Link href="/portfolio"><Button color="primary">Portfolio</Button></Link>
+                <Link href="/iam"><Button color="primary">I am...</Button></Link>
+              </div>
             </Toolbar>
           </AppBar>
         </Headroom>

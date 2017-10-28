@@ -30,6 +30,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-headroom": "^2.2.1",
+    "react-markdown": "^2.5.0",
     "react-web-animation": "^0.6.0",
     "rss-parser": "^2.10.6"
   }

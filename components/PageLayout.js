@@ -33,6 +33,7 @@ class PageLayout extends Component {
 
   componentDidMount() {
     if (!this.state.viewWidth) {
+      // this will be undefined when using SSR - set it here just in case
       this.setState({viewWidth: document.documentElement.clientWidth});
     }
   }
@@ -40,6 +41,22 @@ class PageLayout extends Component {
   componentWillUnmount() {
     this.handleResize.cancel();
     this.handleScroll.cancel();
+  }
+
+  topImage = () => {
+      switch (this.props.pageType) {
+        case "home":
+          return <ProfileImage positionTop={this.state.positionTop} viewWidth={this.state.viewWidth} />;
+          break;
+        case "portfolioItem":
+          return <span></span>;
+          break;
+        case "portfolio":
+          return <span></span>;
+          break;
+        default:
+          return;
+      }
   }
 
   render() {
@@ -51,7 +68,7 @@ class PageLayout extends Component {
         />
         <ButtonAppBar />
         <ContactButton />
-        <ProfileImage positionTop={this.state.positionTop} viewWidth={this.state.viewWidth} />
+        { this.topImage() }
         {this.props.children}
       </div>
     )
@@ -59,7 +76,8 @@ class PageLayout extends Component {
 }
 
 PageLayout.propTypes = {
-  viewWidth: PropTypes.number.isRequired,
+  viewWidth: PropTypes.number,
+  pageType: PropTypes.string,
 };
 
 export default withStyles(styles)(PageLayout);
