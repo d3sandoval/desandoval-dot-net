@@ -7,10 +7,10 @@ const styles = theme => ({
     height: '780px',
   },
   topImage: {
-    "background": `url("img/looking-bg.jpg")`,
-    "height": "600px",
-    "background-size": "cover",
-    "background-position": "center",
+    background: `url("img/looking-bg.jpg")`,
+    height: 600,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   },
   logo: {
     position: "relative",
@@ -26,11 +26,11 @@ const styles = theme => ({
     },
   },
   name: {
-    "font-weight": 900,
+    fontWeight: 900,
     position: "relative",
     display: "inline-block",
     filter: "drop-shadow(5px 5px 5px #222)",
-    "line-height": "50px",
+    lineHeight: "50px",
     [theme.breakpoints.up('md')]: {
       left: "75px",
       top: "-320px",
@@ -65,7 +65,7 @@ const styles = theme => ({
     subName: {
       left: "50px",
       top: "355px",
-      'max-width': '300px',
+      maxWidth: '300px',
       filter: "drop-shadow(5px 5px 5px #222)",
       position: "absolute",
     },

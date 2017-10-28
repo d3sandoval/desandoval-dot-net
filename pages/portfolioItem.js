@@ -27,11 +27,26 @@ content: #Markdown Content
 
 class PortfolioItem extends Component {
 
+  handleTopImage = () => {
+    const regExp = /\(([^)]+)\)/;
+    let imgUri = regExp.exec(this.props.url.query.topImage)[1];
+    imgUri = handleImageURI(imgUri)
+    return imgUri;
+  };
+
   render() {
+    let headerData = {
+      topImage: this.handleTopImage(),
+      title: this.props.url.query.title,
+      description: this.props.url.query.description,
+      date: this.props.url.query.date,
+      tags: this.props.url.query.tags,
+    };
+
     return (
-      <PageLayout>
+      <PageLayout pageType="portfolioItem" headerData={headerData}>
         <Grid container spacing={24} justify="center">
-          <Grid item xs={8}>
+          <Grid item xs={10} sm={8}>
             <ReactMarkdown transformImageUri={handleImageURI}
                            renderers={{
                              Paragraph: paragraphRenderer,

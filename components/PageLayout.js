@@ -7,6 +7,7 @@ import EventListener, {withOptions} from 'react-event-listener'
 import ButtonAppBar from '../components/ButtonAppBar';
 import ContactButton from '../components/ContactButton';
 import ProfileImage from '../components/ProfileImage';
+import PortfolioImage from '../components/PortfolioImage';
 
 const styles = {
   root: {
@@ -49,7 +50,7 @@ class PageLayout extends Component {
           return <ProfileImage positionTop={this.state.positionTop} viewWidth={this.state.viewWidth} />;
           break;
         case "portfolioItem":
-          return <span></span>;
+          return <PortfolioImage headerData={this.props.headerData} positionTop={this.state.positionTop} viewWidth={this.state.viewWidth} />;
           break;
         case "portfolio":
           return <span></span>;
