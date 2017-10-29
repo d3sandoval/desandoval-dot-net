@@ -2,7 +2,14 @@
 
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import {handleImageURI, paragraphRenderer, headingRenderer, listRenderer, linkRenderer } from '../lib/MarkdownRenderer';
+import {
+  handleImageURI,
+  codeBlockRenderer,
+  paragraphRenderer,
+  headingRenderer,
+  listRenderer,
+  linkRenderer,
+} from '../lib/MarkdownRenderer';
 
 /* material-ui */
 import withStyles from 'material-ui/styles/withStyles';
@@ -58,6 +65,7 @@ class PortfolioItem extends Component {
                              Heading: headingRenderer,
                              List: listRenderer,
                              Link: linkRenderer,
+                             CodeBlock: codeBlockRenderer,
                            }}
                            source={this.props.url.query.content} />
           </Grid>

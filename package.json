@@ -20,18 +20,23 @@
   "license": "CC-BY-ND-4.0",
   "dependencies": {
     "animate.css": "^3.5.2",
+    "babel-plugin-inline-import": "^2.0.6",
+    "css-loader": "^0.28.7",
     "express": "^4.16.2",
     "forever": "^0.15.3",
     "isomorphic-unfetch": "^2.0.0",
     "material-ui": "^1.0.0-beta.17",
     "material-ui-icons": "^1.0.0-beta.17",
     "mdi-react": "^2.0.46",
-    "next": "^4.0.5",
+    "next": "^4.1.4",
+    "prismjs": "^1.8.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-headroom": "^2.2.1",
     "react-markdown": "^2.5.0",
+    "react-prism": "^4.3.1",
     "react-web-animation": "^0.6.0",
-    "rss-parser": "^2.10.6"
+    "rss-parser": "^2.10.6",
+    "style-loader": "^0.19.0"
   }
 }
