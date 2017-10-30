@@ -6,7 +6,7 @@ category: Programming
 topImage: ![IMAGE](resources/FF1BCDD8EE6A1465BFE89FF06346B1C5.jpg =571x1013)
 content:
 
-Location-aware messaging to automatically notify those closest to you that you’ve made it somewhere safely
+### Location-aware messaging to automatically notify those closest to you that you’ve made it somewhere safely
 
 _What is it? How does it work?_
 
