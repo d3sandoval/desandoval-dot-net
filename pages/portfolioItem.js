@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import {
+  handleImageSource,
   handleImageURI,
   codeBlockRenderer,
   paragraphRenderer,
@@ -35,19 +36,14 @@ content: #Markdown Content
 
 class PortfolioItem extends Component {
 
-  handleTopImage = () => {
-    const regExp = /\(([^)]+)\)/;
-    let imgUri = regExp.exec(this.props.url.query.topImage)[1];
-    return imgUri;
-  };
-
   handleTags = () => {
     return this.props.url.query.tags.split(',');
-  }
+  };
 
   render() {
+    let topImage = handleImageSource(this.props.url.query.topImage);
     let headerData = {
-      topImage: this.handleTopImage(),
+      topImage: topImage.src,
       title: this.props.url.query.title,
       description: this.props.url.query.description,
       date: this.props.url.query.date,

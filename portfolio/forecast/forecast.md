@@ -3,7 +3,7 @@ description: The weather gods must be crazy
 date: November 2013
 tags: python, interactive, cli, api
 category: programming
-topImage: ![IMAGE](resources/C085BE66295AB2040FA99099ABBB66C6.jpg)
+topImage: ![IMAGE](resources/B6AED7F58F3AA4D605742B037C8B78F2.jpg =1600x900)
 content:
 
 The forecast program is a little project I worked on to see what I can do in an hour with access to an API or two. It was made for the class
