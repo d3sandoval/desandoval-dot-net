@@ -15,6 +15,9 @@ const styles = theme => ({
     // marginTop: theme.spacing.unit * 3,
     width: '100%',
   },
+  appBar: {
+    zIndex: 100,
+  },
   subTitle: {
     flex: 1,
     [theme.breakpoints.down('sm')]: {
@@ -37,7 +40,7 @@ class ButtonAppBar extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Headroom>
+        <Headroom style={{zIndex: 100}}>
           <AppBar color="default" position="static">
             <Toolbar>
               <Link href="/">

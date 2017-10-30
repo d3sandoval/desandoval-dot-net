@@ -92,6 +92,7 @@ app.prepare()
   .then(() => {
     const server = express();
 
+    server.use('/portfolio', express.static(path.join(__dirname, 'portfolio')));
     server.use(express.static(__dirname + '/static'));
 
     server.get('/portfolio/:id', (req, res) => {

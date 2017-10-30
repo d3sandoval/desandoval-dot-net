@@ -9,7 +9,9 @@ content:
 The forecast program is a little project I worked on to see what I can do in an hour with access to an API or two. It was made for the class
 [HCDE310: Interactive Systems Design & Technology](http://www.smunson.com/teaching/hcde310/a13/)
 
-Written using python2.7 (should run without a problem :))
+The program gets data from the “weather gods” by looking up an input location with the google maps api ([https://developers.google.com/maps/](https://developers.google.com/maps/)) and weather data with forecast.io ([https://developer.forecast.io/](https://developer.forecast.io/)).
+
+Written using python2.7 (run with `python forecast.py`))
 ```python
 import urllib
 import urllib2
@@ -142,5 +144,3 @@ while runProgram:
 print "This program will now terminate..."
 ```
 **Download Source:** [http://goo.gl/i3Xwnd](http://goo.gl/i3Xwnd)
-
-The program gets data from the “weather gods” by looking up an input location with the google maps api ([https://developers.google.com/maps/](https://developers.google.com/maps/)) and weather data with forecast.io ([https://developer.forecast.io/](https://developer.forecast.io/)).

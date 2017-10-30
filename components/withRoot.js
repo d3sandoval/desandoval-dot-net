@@ -16,6 +16,13 @@ const styles = theme => ({
     body: {
       margin: 0,
     },
+    'a': {
+      textDecoration: 'none',
+      color: theme.palette.primary[500],
+      '&:hover': {
+        color: theme.palette.secondary[300],
+      }
+    }
   },
 });
 

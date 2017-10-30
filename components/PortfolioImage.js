@@ -7,6 +7,8 @@ import PortfolioTags from '../components/PortfolioTags';
 const styles = theme => ({
   root: {},
   name: {
+    width: "100%",
+    textAlign: "center",
     fontWeight: 900,
     display: "inline-block",
     position: "relative",
@@ -21,7 +23,6 @@ const styles = theme => ({
       top: "-400px",
     },
     [theme.breakpoints.down('sm')]: {
-      textAlign: "center",
       top: "-600px",
     },
   },
@@ -45,7 +46,7 @@ class PortfolioImage extends React.Component {
     const { classes, headerData } = this.props;
     return (
       <div className={classes.root}>
-        <Grid container justify="space-around">
+        <Grid container justify="space-around" >
           <div style={{
             background: `url(${headerData.topImage})`,
             backgroundSize: "cover",
@@ -54,17 +55,19 @@ class PortfolioImage extends React.Component {
           }}>
             <div style={this.getOverlayStyle()} />
             <Grid item xs={12} sm={10} style={{marginLeft: "auto", marginRight: "auto"}}>
-              <Typography type="display3" className={classes.name}>
+              <div className={classes.name}>
+              <Typography type="display3">
                 {headerData.title}
               </Typography>
+              </div>
             </Grid>
           </div>
-          <Grid item sm={8} md={3} style={{marginLeft: "auto", marginRight: "auto"}}>
+          <Grid item sm={8} md={2}>
             <Typography type="subheading" className={classes.subName}>
               {headerData.date} | {headerData.description}
             </Typography>
           </Grid>
-          <Grid item sm={8} md={3} style={{marginLeft: "auto", marginRight: "auto"}}>
+          <Grid item sm={8} md={2}>
             <Typography type="subheading" className={classes.subName}>
               <PortfolioTags tags={headerData.tags} />
             </Typography>

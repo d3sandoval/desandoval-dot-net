@@ -34,13 +34,6 @@ const styles = theme => ({
     paddingBottom: 16,
     paddingLeft: 24,
     paddingRight: 24,
-    '& a': {
-      textDecoration: 'none',
-      color: theme.palette.primary[500],
-      '&:hover': {
-        color: theme.palette.secondary[300],
-      }
-    }
   },
   fullLink: {
     marginTop: theme.spacing.unit,
