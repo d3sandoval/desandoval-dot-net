@@ -22,6 +22,10 @@ const styles = theme => ({
       '&:hover': {
         color: theme.palette.secondary[300],
       }
+    },
+    blockquote: {
+      paddingLeft: 15,
+      borderLeft: '3px solid #ccc',
     }
   },
 });
