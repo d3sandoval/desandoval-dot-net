@@ -2,7 +2,7 @@ title: Designing a More Accessible Textbook Business Model
 description: HCDE Capstone research project exploring academic access to information
 date: July 2015
 tags: Agile, Data Analysis, Design, Formatting, Research, Prescriptive, Technical Communication, User Research, Video, Poster, Audio/Video Production
-category: test
+category: Research
 topImage: ![IMAGE](resources/6759C6EE13095E635FE5AF425A9FAFD2.jpg =1280x720)
 content:
 

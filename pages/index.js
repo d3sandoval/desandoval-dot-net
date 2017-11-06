@@ -25,7 +25,7 @@ class Index extends Component {
   render() {
     return (
       <PageLayout pageType="home">
-        <BlogSummary entries={this.props.entries} />
+        <BlogSummary entries={this.props.blogPosts} />
         <EmploymentSummary />
         <PortfolioSummary />
         {/*<HonorsSummary />*/}
@@ -41,11 +41,16 @@ Index.propTypes = {
 
 
 Index.getInitialProps = async function(context) {
-  const res = await fetch('http://localhost:3000' + '/blog/posts?limit=4'); // todo replace with env variable
-  const data = await res.json();
+  const blog = await fetch('http://localhost:3000' + '/blog/posts?limit=4'); // todo replace with env variable
+  const blogData = await blog.json();
+
+  const portfolio = await fetch('http://localhost:3000' + '/portfolio/list');
+  const portfolioData = await portfolio.json();
+  // console.log(portfolioData);
 
   return {
-    entries: data,
+    blogPosts: blogData,
+    portfolioEntries: portfolioData,
     viewWidth: (context.res)
                 ? undefined
                 : document.documentElement.clientWidth,
