@@ -49,27 +49,9 @@ const styles = theme => ({
 });
 
 class PortfolioSummary extends React.Component {
-  tileData = [{
-      img: 'https://material-ui-next.com/static/images/grid-list/breakfast.jpg',
-      title: 'Breakfast',
-      author: 'author',
-      featured: true,
-    },
-    {
-      img: 'https://material-ui-next.com/static/images/grid-list/burgers.jpg',
-      title: 'Burgers',
-      author: 'author',
-      featured: false,
-    },
-    {
-      img: 'https://material-ui-next.com/static/images/grid-list/camera.jpg',
-      title: 'Camera',
-      author: 'author',
-      feature: false,
-    },
-  ];
+
   render() {
-    const {classes} = this.props;
+    const {classes, entries} = this.props;
 
     return (
       <div className={classes.root}>
@@ -77,7 +59,7 @@ class PortfolioSummary extends React.Component {
         <Grid container spacing={24}>
           {/* Portfolio Pieces */}
           <Grid className={classes.portfolio} item lg={6} xs={12}>
-            <AdvancedGridList tileData={this.tileData} />
+            <AdvancedGridList tileData={entries} />
           </Grid>
           {/* Portfolio Description */}
           <Grid className={classes.portfolioDescription} item lg={6} xs={12}>

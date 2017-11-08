@@ -5,7 +5,10 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import { GridList, GridListTile, GridListTileBar } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
-import StarBorderIcon from 'material-ui-icons/StarBorder';
+import InfoIcon from 'material-ui-icons/Info';
+import InfoIconOutline from 'material-ui-icons/InfoOutline';
+
+import { handleImageSource } from '../lib/MarkdownRenderer';
 
 const styles = theme => ({
   root: {
@@ -28,49 +31,40 @@ const styles = theme => ({
   },
 });
 
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const tileData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *     featured: true,
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
-function AdvancedGridList(props) {
-  const { classes, tileData } = props;
+class AdvancedGridList extends React.Component {
+  getTopImage(id, topImage) {
+    let imageData = handleImageSource(topImage);
+    return '/portfolio/' + id + '/' + imageData.src;
+  }
 
-  return (
-    <div className={classes.root}>
-      <GridList cellHeight={200} spacing={1} className={classes.gridList}>
-        {tileData.map(tile => (
-          <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={1}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              titlePosition="top"
-              actionIcon={
-                <IconButton>
-                  <StarBorderIcon color="white" />
-                </IconButton>
-              }
-              actionPosition="left"
-              className={classes.titleBar}
-            />
-          </GridListTile>
-        ))}
-      </GridList>
-    </div>
-  );
+  render() {
+    const { classes, tileData } = this.props;
+
+    return (
+      <div className={classes.root}>
+        <GridList cellHeight={200} spacing={1} className={classes.gridList}>
+          {tileData.map((tile, index) => (
+            <GridListTile key={tile.id} cols={(index === 0) ? 2 : 1} rows={1}>
+              <a href={`/portfolio/${tile.id}`}>
+                <img width="100%" src={this.getTopImage(tile.id, tile.topImage)} alt={tile.title} />
+                <GridListTileBar
+                  title={tile.title}
+                  titlePosition="top"
+                  actionIcon={
+                    <IconButton>
+                      <InfoIcon color="white" />
+                    </IconButton>
+                  }
+                  actionPosition="left"
+                  className={classes.titleBar}
+                />
+              </a>
+            </GridListTile>
+          ))}
+        </GridList>
+      </div>
+    );
+  }
 }
 
 AdvancedGridList.propTypes = {

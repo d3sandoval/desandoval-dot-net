@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node server.js",
+    "dev": "redis-server /usr/local/etc/redis.conf > ./redis.log | node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "startForever": "NODE_ENV=production forever start server.js",
