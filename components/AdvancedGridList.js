@@ -20,7 +20,6 @@ const styles = theme => ({
   },
   gridList: {
     width: '100%',
-    height: 402,
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
   },
@@ -38,11 +37,13 @@ class AdvancedGridList extends React.Component {
   }
 
   render() {
-    const { classes, tileData } = this.props;
+    const { classes, tileData, large } = this.props;
+    const cellHeight = (large) ? 400 : 200;
+    const listHeight = (large) ? cellHeight * (tileData.length / 2) : 402;
 
     return (
       <div className={classes.root}>
-        <GridList cellHeight={200} spacing={1} className={classes.gridList}>
+        <GridList cellHeight={cellHeight} spacing={(large) ? 12 : 1} className={classes.gridList} style={{height: listHeight}}>
           {tileData.map((tile, index) => (
             <GridListTile key={tile.id} cols={(index === 0) ? 2 : 1} rows={1}>
               <a href={`/portfolio/${tile.id}`}>
@@ -69,6 +70,7 @@ class AdvancedGridList extends React.Component {
 
 AdvancedGridList.propTypes = {
   tileData: PropTypes.array.isRequired,
+  large: PropTypes.bool,
 };
 
 export default withStyles(styles)(AdvancedGridList);

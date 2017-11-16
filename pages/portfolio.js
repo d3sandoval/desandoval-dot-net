@@ -9,7 +9,7 @@ import Grid from 'material-ui/Grid';
 
 /* my components */
 import PageLayout from '../components/PageLayout';
-import PortfolioSummary from '../components/PortfolioSummary';
+import AdvancedGridList from '../components/AdvancedGridList';
 
 const styles = {};
 
@@ -19,7 +19,7 @@ class Portfolio extends Component {
 
     return (
       <PageLayout>
-        <PortfolioSummary entries={this.props.portfolioEntries} />
+        <AdvancedGridList tileData={this.props.portfolioEntries} large={true} />
       </PageLayout>
     )
   }
@@ -27,7 +27,7 @@ class Portfolio extends Component {
 
 Portfolio.getInitialProps = async function(context) {
 
-  const portfolio = await fetch('http://localhost:3000' + '/portfolio/list?limit=3');
+  const portfolio = await fetch('http://localhost:3000' + '/portfolio/list');
   const portfolioData = await portfolio.json();
 
   return {
