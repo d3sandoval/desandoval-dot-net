@@ -54,6 +54,6 @@ Index.getInitialProps = async function(context) {
                 ? undefined
                 : document.documentElement.clientWidth,
   }
-}
+};
 
 export default withRoot(withStyles(styles)(Index));

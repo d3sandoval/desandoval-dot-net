@@ -23,7 +23,7 @@ import PageLayout from '../components/PageLayout';
 const styles = {};
 
 /*
-// should use getInitialProps instead to parse this data before render()
+// todo use getInitialProps instead to parse this data before render()
 Renders a portfolio post from the following data (found in the source .md):
 title: This is text
 description: Also some text

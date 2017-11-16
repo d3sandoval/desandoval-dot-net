@@ -9,8 +9,12 @@ const handle = app.getRequestHandler();
 
 // cache portfolio list (async)
 const helper = new ServerHelper(__dirname);
-helper.getPortfolioList(null, function(entries) {
-  console.log(entries.length + " items added/updated in the portfolio list")
+helper.getPortfolioList(null, function(err, entries) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(entries.length + " items added/updated in the portfolio list")
+  }
 });
 
 // start express
@@ -23,15 +27,19 @@ app.prepare()
 
     server.get('/portfolio/list', (req, res) => {
       res.setHeader('Content-Type', 'application/json');
-      helper.getPortfolioList(req.query.limit, function(entries) {
+      helper.getPortfolioList(req.query.limit, function(err, entries) {
+        if (err) {
+          res.status = 400;
+          handle(req, res);
+        }
         res.send(JSON.stringify(entries));
       })
     });
 
     server.get('/portfolio/:id', (req, res) => {
       const actualPage = '/portfolioItem';
-      helper.getPortfolioPage(req.params.id, function(queryParams) {
-        if (queryParams === '404') {
+      helper.getPortfolioPage(req.params.id, function(err, queryParams) {
+        if (err) {
           res.status = 404;
           handle(req, res, req.url)
         } else {
@@ -42,7 +50,11 @@ app.prepare()
 
     server.get('/blog/posts', (req, res) => {
       res.setHeader('Content-Type', 'application/json');
-      helper.getBlogPosts(req.query.limit, function(entries) {
+      helper.getBlogPosts(req.query.limit, function(err, entries) {
+        if (err) {
+          res.status = 400;
+          handle(req, res, req,url);
+        }
         res.send(JSON.stringify(entries));
       })
     });
@@ -52,7 +64,7 @@ app.prepare()
     });
 
     server.listen(3000, (err) => {
-      if (err) throw err
+      if (err) throw err;
       console.log('> Ready on http://localhost:3000')
     })
   })
