@@ -67,7 +67,7 @@ class PageLayout extends Component {
                        onResize={withOptions(this.handleResize, {passive: true, capture: false})}
                        onScroll={withOptions(this.handleScroll, {passive: true, capture: true})}
         />
-        <ButtonAppBar />
+        <ButtonAppBar currentPage={this.props.currentPage} />
         <ContactButton />
         { this.topImage() }
         {this.props.children}
@@ -79,6 +79,7 @@ class PageLayout extends Component {
 PageLayout.propTypes = {
   viewWidth: PropTypes.number,
   pageType: PropTypes.string,
+  currentPage: PropTypes.string.required, // usually this.props.url.pathname
 };
 
 export default withStyles(styles)(PageLayout);

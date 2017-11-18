@@ -2,7 +2,7 @@ title: Discuss.IO First-Time User Guide
 description: Introductory emails to first time users
 date: November 2014
 tags: Design, Wordpress, Email, Marketing, Technical Communication, Workflow
-category: test
+category: Design
 topImage: ![IMAGE](resources/E30BF1D7041C84956EFBE18FAD3F767A.jpg =1366x1111)
 content:
 

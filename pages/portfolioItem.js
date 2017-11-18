@@ -51,7 +51,7 @@ class PortfolioItem extends Component {
     };
 
     return (
-      <PageLayout pageType="portfolioItem" headerData={headerData}>
+      <PageLayout pageType="portfolioItem" headerData={headerData} currentPage={this.props.url.pathname}>
         <Grid container spacing={24} justify="center">
           <Grid item xs={10} sm={8}>
             <ReactMarkdown renderers={{

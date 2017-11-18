@@ -18,7 +18,7 @@ class Portfolio extends Component {
   render() {
 
     return (
-      <PageLayout>
+      <PageLayout currentPage={this.props.url.pathname}>
         <AdvancedGridList tileData={this.props.portfolioEntries} large={true} />
       </PageLayout>
     )

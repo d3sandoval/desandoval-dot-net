@@ -24,7 +24,7 @@ class Index extends Component {
 
   render() {
     return (
-      <PageLayout pageType="home">
+      <PageLayout currentPage={this.props.url.pathname} pageType="home">
         <BlogSummary entries={this.props.blogPosts} />
         <EmploymentSummary />
         <PortfolioSummary entries={this.props.portfolioEntries} />

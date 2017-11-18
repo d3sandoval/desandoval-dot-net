@@ -36,18 +36,26 @@ const styles = theme => ({
 class ButtonAppBar extends React.Component {
 
   render() {
-    const { classes } = this.props;
+    const { classes, currentPage } = this.props;
+    let homeButton = function() {
+      console.log(currentPage);
+      if (currentPage !== '/') {
+        return(
+          <Link href="/">
+            <ButtonBase>
+              <img src="/img/logo.png" height="40px" />
+            </ButtonBase>
+          </Link>
+        );
+      }
+    }
 
     return (
       <div className={classes.root}>
         <Headroom style={{zIndex: 100}}>
           <AppBar color="default" position="static">
             <Toolbar>
-              <Link href="/">
-                <ButtonBase><Typography type="title" color="inherit" className={classes.subTitle}>
-                  Human Experience Designer
-                </Typography></ButtonBase>
-              </Link>
+              {homeButton()}
               <div className={classes.menu}>
                 <Button href="https://blog.desandoval.net/latest" target="_blank" rel="noopener noreferrer" color="primary">Blog</Button>
                 <Link href="/portfolio"><Button color="primary">Portfolio</Button></Link>

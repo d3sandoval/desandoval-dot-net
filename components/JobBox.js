@@ -19,7 +19,10 @@ const styles = theme => ({
     marginRight: theme.spacing.unit,
   },
   leftGrid: {
-    margin: "auto",
+    margin: "16px auto 0 auto",
+  },
+  jobTitle: {
+    marginBottom: 24,
   },
   jobLogo: {
     [theme.breakpoints.up('xs')]: {
@@ -79,13 +82,13 @@ class JobBox extends React.Component {
         <Paper className={classes.root} elevation={4}>
           <Grid container justify="space-between">
             <Grid item xs={12} sm={4} md={3} className={classes.leftGrid}>
+              <Typography type="headline" component="h3" className={classes.jobTitle}>
+                {job.title}
+              </Typography>
               <a href={job.website} target="_blank" rel="noopener noreferrer">
                 <img onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}
                      className={classes.jobLogo} src={job.logo} />
               </a>
-              <Typography type="headline" component="h3">
-                {job.title}
-              </Typography>
               <Typography type="caption">
                 <a style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}
                    className={classes.jobAbout} href={job.website} target="_blank" rel="noopener noreferrer">

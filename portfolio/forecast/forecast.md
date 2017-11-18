@@ -2,7 +2,7 @@ title: forecast.py
 description: The weather gods must be crazy
 date: November 2013
 tags: python, interactive, cli, api
-category: programming
+category: Programming
 topImage: ![IMAGE](resources/B6AED7F58F3AA4D605742B037C8B78F2.jpg =1600x900)
 content:
 

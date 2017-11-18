@@ -2,7 +2,7 @@ title: Discuss.IO Landing Pages
 description: A revamp of the marketing website to promote new support and login features
 date: March 2015
 tags: Design, Wordpress, Information Architecture, Marketing, Mobile, Technical Communication, Web
-category: test
+category: Design
 topImage: ![IMAGE](resources/CFA9F6840037FF37C0870DD2F1F8FF33.jpg =1366x652)
 content:
 
