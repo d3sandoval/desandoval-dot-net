@@ -28,13 +28,23 @@ const styles = theme => ({
     'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
     'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
   },
+  overlay: {
+    backgroundColor: "#000",
+    opacity: 0.5,
+    height:"100%",
+    transition: 'opacity 0.5s',
+    '&:hover': {
+      opacity: 0,
+      transition: 'opacity 0.25s',
+    }
+  }
 });
 
 class AdvancedGridList extends React.Component {
   getTopImage(id, topImage) {
     let imageData = handleImageSource(topImage);
     return '/portfolio/' + id + '/' + imageData.src;
-  }
+  };
 
   render() {
     const { classes, tileData, large } = this.props;
@@ -45,9 +55,17 @@ class AdvancedGridList extends React.Component {
       <div className={classes.root}>
         <GridList cellHeight={cellHeight} spacing={(large) ? 12 : 1} className={classes.gridList} style={{height: listHeight}}>
           {tileData.map((tile, index) => (
-            <GridListTile key={tile.id} cols={(index === 0) ? 2 : 1} rows={1}>
+            <GridListTile key={tile.id} cols={(index % 3 === 0) ? 2 : 1} rows={1}>
               <a href={`/portfolio/${tile.id}`}>
-                <img width="100%" src={this.getTopImage(tile.id, tile.topImage)} alt={tile.title} />
+                <div style={{
+                  background: `url(${this.getTopImage(tile.id, tile.topImage)})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  height: '100%',
+                  width: '100%',
+                }} alt={tile.title}>
+                  <div className={classes.overlay} />
+                </div>
                 <GridListTileBar
                   title={tile.title}
                   titlePosition="top"
