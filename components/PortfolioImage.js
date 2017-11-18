@@ -3,6 +3,7 @@ import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
 import PortfolioTags from '../components/PortfolioTags';
+import PortfolioIcon from '../components/PortfolioIcon';
 
 const styles = theme => ({
   root: {},
@@ -65,6 +66,8 @@ class PortfolioImage extends React.Component {
           <Grid item sm={8} md={2}>
             <Typography type="subheading" className={classes.subName}>
               {headerData.date} | {headerData.description}
+              <br/><br/>
+              <PortfolioIcon category={headerData.category} /> {headerData.category}
             </Typography>
           </Grid>
           <Grid item sm={8} md={2}>

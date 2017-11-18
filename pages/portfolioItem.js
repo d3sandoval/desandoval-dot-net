@@ -36,22 +36,10 @@ content: #Markdown Content
 
 class PortfolioItem extends Component {
 
-  handleTags = () => {
-    return this.props.url.query.tags.split(',');
-  };
-
   render() {
-    let topImage = handleImageSource(this.props.url.query.topImage);
-    let headerData = {
-      topImage: topImage.src,
-      title: this.props.url.query.title,
-      description: this.props.url.query.description,
-      date: this.props.url.query.date,
-      tags: this.handleTags(),
-    };
 
     return (
-      <PageLayout pageType="portfolioItem" headerData={headerData} currentPage={this.props.url.pathname}>
+      <PageLayout pageType="portfolioItem" headerData={this.props.headerData} currentPage={this.props.url.pathname}>
         <Grid container spacing={24} justify="center">
           <Grid item xs={10} sm={8}>
             <ReactMarkdown renderers={{
@@ -66,6 +54,21 @@ class PortfolioItem extends Component {
         </Grid>
       </PageLayout>
     )
+  }
+}
+
+PortfolioItem.getInitialProps = async function(context) {
+  let topImage = await handleImageSource(context.query.topImage);
+
+  return {
+    headerData: {
+      topImage: topImage.src,
+      title: context.query.title,
+      description: context.query.description,
+      category: context.query.category,
+      date: context.query.date,
+      tags: context.query.tags.split(','),
+    },
   }
 }
 

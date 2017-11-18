@@ -40,11 +40,7 @@ function chooseIcon(category) {
 function SectionTitle(props) {
   const {classes, category} = props;
 
-  return (
-    <IconButton>
-      {chooseIcon(category)}
-    </IconButton>
-  );
+  return chooseIcon(category);
 }
 
 SectionTitle.propTypes = {
