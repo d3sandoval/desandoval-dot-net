@@ -8,7 +8,7 @@ import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import Paper from 'material-ui/Paper';
 import Link from 'next/link';
-import AdvancedGridList from './AdvancedGridList';
+import PortfolioGridList from './PortfolioGridList';
 
 const styles = theme => ({
   root: {
@@ -59,7 +59,7 @@ class PortfolioSummary extends React.Component {
         <Grid container spacing={24}>
           {/* Portfolio Pieces */}
           <Grid className={classes.portfolio} item lg={6} xs={12}>
-            <AdvancedGridList tileData={entries} />
+            <PortfolioGridList tileData={entries} />
           </Grid>
           {/* Portfolio Description */}
           <Grid className={classes.portfolioDescription} item lg={6} xs={12}>

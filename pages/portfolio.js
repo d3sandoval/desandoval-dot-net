@@ -9,7 +9,7 @@ import Grid from 'material-ui/Grid';
 
 /* my components */
 import PageLayout from '../components/PageLayout';
-import AdvancedGridList from '../components/AdvancedGridList';
+import PortfolioGridList from '../components/PortfolioGridList';
 
 const styles = {};
 
@@ -19,7 +19,7 @@ class Portfolio extends Component {
 
     return (
       <PageLayout currentPage={this.props.url.pathname}>
-        <AdvancedGridList tileData={this.props.portfolioEntries} large={true} />
+        <PortfolioGridList tileData={this.props.portfolioEntries} large={true} />
       </PageLayout>
     )
   }

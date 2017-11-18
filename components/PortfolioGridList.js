@@ -4,9 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import { GridList, GridListTile, GridListTileBar } from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import InfoIcon from 'material-ui-icons/Info';
-import InfoIconOutline from 'material-ui-icons/InfoOutline';
+import PortfolioIcon from './PortfolioIcon';
 
 import { handleImageSource } from '../lib/MarkdownRenderer';
 
@@ -70,9 +68,7 @@ class AdvancedGridList extends React.Component {
                   title={tile.title}
                   titlePosition="top"
                   actionIcon={
-                    <IconButton>
-                      <InfoIcon color="white" />
-                    </IconButton>
+                    <PortfolioIcon category={tile.category} />
                   }
                   actionPosition="left"
                   className={classes.titleBar}
