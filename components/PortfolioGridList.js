@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link'
 import { withStyles } from 'material-ui/styles';
 import { GridList, GridListTile, GridListTileBar } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
@@ -39,7 +40,7 @@ const styles = theme => ({
   }
 });
 
-class AdvancedGridList extends React.Component {
+class PortfolioGridList extends React.Component {
   getTopImage(id, topImage) {
     let imageData = handleImageSource(topImage);
     return '/portfolio/' + id + '/' + imageData.src;
@@ -85,9 +86,9 @@ class AdvancedGridList extends React.Component {
   }
 }
 
-AdvancedGridList.propTypes = {
+PortfolioGridList.propTypes = {
   tileData: PropTypes.array.isRequired,
   large: PropTypes.bool,
 };
 
-export default withStyles(styles)(AdvancedGridList);
+export default withStyles(styles)(PortfolioGridList);

@@ -65,7 +65,7 @@ class PortfolioImage extends React.Component {
           </div>
           <Grid item sm={8} md={2}>
             <Typography type="subheading" className={classes.subName}>
-              {headerData.date} | {headerData.description}
+              <strong>{headerData.date}</strong> | {headerData.description}
               <br/><br/>
               <PortfolioIcon category={headerData.category} /> {headerData.category}
             </Typography>

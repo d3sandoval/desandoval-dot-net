@@ -79,7 +79,7 @@ class PageLayout extends Component {
 PageLayout.propTypes = {
   viewWidth: PropTypes.number,
   pageType: PropTypes.string,
-  currentPage: PropTypes.string.required, // usually this.props.url.pathname
+  currentPage: PropTypes.string.isRequired, // usually context.url.pathname or this.props.url.pathname
 };
 
 export default withStyles(styles)(PageLayout);

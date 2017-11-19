@@ -1,6 +1,7 @@
 const express = require('express');
 const next = require('next');
 const path = require('path');
+const serveStatic = require('serve-static');
 const ServerHelper = require('./lib/serverHelper');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -13,7 +14,7 @@ helper.getPortfolioList(null, function(err, entries) {
   if (err) {
     console.log(err);
   } else {
-    console.log(entries.length + " items added/updated in the portfolio list")
+    console.log("> " + entries.length + " items added/updated in the portfolio list")
   }
 });
 
@@ -22,7 +23,6 @@ app.prepare()
   .then(() => {
     const server = express();
 
-    server.use('/portfolio', express.static(path.join(__dirname, 'portfolio')));
     server.use(express.static(__dirname + '/static'));
 
     server.get('/portfolio/list', (req, res) => {
@@ -46,6 +46,12 @@ app.prepare()
           app.render(req, res, actualPage, queryParams)
         }
       });
+    });
+
+    // image handler
+    // todo resize images based on responsive headers
+    server.get('/portfolio/:id/resources/:image', (req, res) => {
+      res.sendFile(path.join(__dirname, 'portfolio', req.params.id, 'resources', req.params.image));
     });
 
     server.get('/blog/posts', (req, res) => {

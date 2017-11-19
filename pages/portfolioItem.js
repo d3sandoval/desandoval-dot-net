@@ -4,12 +4,13 @@ import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import {
   handleImageSource,
-  handleImageURI,
-  codeBlockRenderer,
-  paragraphRenderer,
-  headingRenderer,
-  listRenderer,
-  linkRenderer,
+  MarkdownHelper,
+  // imageRenderer,
+  // codeBlockRenderer,
+  // paragraphRenderer,
+  // headingRenderer,
+  // listRenderer,
+  // linkRenderer,
 } from '../lib/MarkdownRenderer';
 
 /* material-ui */
@@ -23,7 +24,6 @@ import PageLayout from '../components/PageLayout';
 const styles = {};
 
 /*
-// todo use getInitialProps instead to parse this data before render()
 Renders a portfolio post from the following data (found in the source .md):
 title: This is text
 description: Also some text
@@ -37,17 +37,18 @@ content: #Markdown Content
 class PortfolioItem extends Component {
 
   render() {
+    const markdownHelper = new MarkdownHelper(this.props.currentPage);
 
     return (
-      <PageLayout pageType="portfolioItem" headerData={this.props.headerData} currentPage={this.props.url.pathname}>
+      <PageLayout pageType="portfolioItem" headerData={this.props.headerData} currentPage={this.props.currentPage}>
         <Grid container spacing={24} justify="center">
           <Grid item xs={10} sm={8}>
             <ReactMarkdown renderers={{
-                             Paragraph: paragraphRenderer,
-                             Heading: headingRenderer,
-                             List: listRenderer,
-                             Link: linkRenderer,
-                             CodeBlock: codeBlockRenderer,
+                             Paragraph: markdownHelper.paragraphRenderer,
+                             Heading: markdownHelper.headingRenderer,
+                             List: markdownHelper.listRenderer,
+                             Link: markdownHelper.linkRenderer,
+                             CodeBlock: markdownHelper.codeBlockRenderer,
                            }}
                            source={this.props.url.query.content} />
           </Grid>
@@ -62,13 +63,14 @@ PortfolioItem.getInitialProps = async function(context) {
 
   return {
     headerData: {
-      topImage: topImage.src,
+      topImage: context.asPath + '/' + topImage.src,
       title: context.query.title,
       description: context.query.description,
       category: context.query.category,
       date: context.query.date,
       tags: context.query.tags.split(','),
     },
+    currentPage: context.asPath,
   }
 }
 
