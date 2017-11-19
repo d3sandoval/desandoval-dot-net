@@ -13,7 +13,6 @@ import BlogSummary from '../components/BlogSummary';
 import EmploymentSummary from '../components/EmploymentSummary';
 import PortfolioSummary from '../components/PortfolioSummary';
 import HonorsSummary from '../components/HonorsSummary';
-import Footer from '../components/Footer';
 
 /* data sources */
 import fetch from 'isomorphic-unfetch'
@@ -29,7 +28,6 @@ class Index extends Component {
         <EmploymentSummary />
         <PortfolioSummary entries={this.props.portfolioEntries} />
         {/*<HonorsSummary />*/}
-        <Footer />
       </PageLayout>
     );
   }

@@ -8,6 +8,8 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+require('dotenv').config();
+
 // cache portfolio list (async)
 const helper = new ServerHelper(__dirname);
 helper.getPortfolioList(null, function(err, entries) {
@@ -71,10 +73,27 @@ app.prepare()
       helper.getBlogPosts(req.query.limit, function(err, entries) {
         if (err) {
           res.status = 400;
-          handle(req, res, req,url);
+          handle(req, res, req.url);
         }
         res.send(JSON.stringify(entries));
       })
+    });
+
+    server.get('/lastfm/:request', (req,res) => {
+      switch (req.params.request) {
+        case 'recent':
+          helper.getRecentTracks(req.query.limit, function(err, entries) {
+            if (err) {
+              res.status = 400;
+              handle(req, res, req.url);
+            }
+            res.send(JSON.stringify(entries));
+          });
+          break;
+        default:
+          res.status = 400;
+          handle(req, res, req,url);
+      }
     });
 
     server.get('*', (req, res) => {

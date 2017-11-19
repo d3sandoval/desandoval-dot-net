@@ -8,6 +8,7 @@ import ButtonAppBar from '../components/ButtonAppBar';
 import ContactButton from '../components/ContactButton';
 import ProfileImage from '../components/ProfileImage';
 import PortfolioImage from '../components/PortfolioImage';
+import Footer from '../components/Footer';
 
 const styles = {
   root: {
@@ -52,9 +53,6 @@ class PageLayout extends Component {
         case "portfolioItem":
           return <PortfolioImage headerData={this.props.headerData} positionTop={this.state.positionTop} viewWidth={this.state.viewWidth} />;
           break;
-        case "portfolio":
-          return <span></span>;
-          break;
         default:
           return;
       }
@@ -71,6 +69,7 @@ class PageLayout extends Component {
         <ContactButton />
         { this.topImage() }
         {this.props.children}
+        <Footer/>
       </div>
     )
   }

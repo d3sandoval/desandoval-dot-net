@@ -5,12 +5,6 @@ import ReactMarkdown from 'react-markdown';
 import {
   handleImageSource,
   MarkdownHelper,
-  // imageRenderer,
-  // codeBlockRenderer,
-  // paragraphRenderer,
-  // headingRenderer,
-  // listRenderer,
-  // linkRenderer,
 } from '../lib/MarkdownRenderer';
 
 /* material-ui */
