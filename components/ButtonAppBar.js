@@ -38,7 +38,6 @@ class ButtonAppBar extends React.Component {
   render() {
     const { classes, currentPage } = this.props;
     let homeButton = function() {
-      console.log(currentPage);
       if (currentPage !== '/') {
         return(
           <Link href="/">
@@ -48,7 +47,7 @@ class ButtonAppBar extends React.Component {
           </Link>
         );
       }
-    }
+    };
 
     return (
       <div className={classes.root}>

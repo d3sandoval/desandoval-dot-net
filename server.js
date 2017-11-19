@@ -18,12 +18,24 @@ helper.getPortfolioList(null, function(err, entries) {
   }
 });
 
+// url redirect map
+const redirects = [
+  { from: '/i-am', to: '/iam' },
+]
+
 // start express
 app.prepare()
   .then(() => {
     const server = express();
 
     server.use(express.static(__dirname + '/static'));
+
+    // handle 301 redirection for outdated urls
+    redirects.forEach(({ from, to, type = 301, method = 'get' }) => {
+      server[method](from, (req, res) => {
+        res.redirect(type, to)
+      })
+    });
 
     server.get('/portfolio/list', (req, res) => {
       res.setHeader('Content-Type', 'application/json');

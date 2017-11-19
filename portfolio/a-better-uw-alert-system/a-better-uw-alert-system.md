@@ -2,7 +2,7 @@ title: A Better UW Alert System
 description: An SMS/Web Application
 date: December 2013
 tags: Google App Engine, Big Data, Mobile, SMS, Python, Twilio, Web
-category: Progamming
+category: Programming
 topImage: ![IMAGE](resources/CF4D39BFE984A622CCF1BEA3AC455FC3.jpg =738x396)
 content:
 

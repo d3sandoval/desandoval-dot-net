@@ -34,7 +34,7 @@ const styles = theme => ({
     height:"100%",
     transition: 'opacity 0.5s',
     '&:hover': {
-      opacity: 0,
+      opacity: 0.2,
       transition: 'opacity 0.25s',
     }
   }
