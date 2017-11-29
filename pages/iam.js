@@ -12,6 +12,7 @@ import Typography from 'material-ui/Typography';
 /* my components */
 import PageLayout from '../components/PageLayout';
 import LastFMRecent from '../components/LastFMRecent';
+import BlogBox from '../components/BlogBox';
 
 /* data sources */
 import fetch from 'isomorphic-unfetch'
@@ -24,6 +25,7 @@ const styles = {
   }
 };
 
+// todo websockets or long polling for auto-updating page
 class Iam extends Component {
 
   render() {
@@ -33,11 +35,17 @@ class Iam extends Component {
       <PageLayout currentPage={this.props.url.pathname}>
         <Grid container spacing={24} className={classes.root}>
           <Grid item md={6} xs={12}>
-            <Typography type="display2" gutterBottom>Listening To</Typography>;
+            <Typography type="display2" gutterBottom>Listening To</Typography>
             <LastFMRecent tracks={this.props.recentTracks} />
           </Grid>
           <Grid item md={6} xs={12}>
-            <Typography type="display2" gutterBottom>Reading</Typography>;
+            <Typography type="display2" gutterBottom>Reading</Typography>
+            {this.props.wallabagData.map(function(post) {
+                return (
+                  <a href={post.link} target="_blank" rel="noopener noreferrer">
+                    <BlogBox post={post} />
+                  </a>
+                )})}
           </Grid>
         </Grid>
       </PageLayout>
@@ -54,12 +62,12 @@ Iam.getInitialProps = async function(context) {
   const getRecentTracks = await fetch('http://localhost:3000' + '/lastfm/recent?limit=5');
   const recentTracks = await getRecentTracks.json();
 
-  const portfolio = await fetch('http://localhost:3000' + '/portfolio/list?limit=3');
-  const portfolioData = await portfolio.json();
+  const wallabag = await fetch('http://localhost:3000' + '/wallabag/recent?limit=7');
+  const wallabagData = await wallabag.json();
 
   return {
     recentTracks: JSON.parse(recentTracks).recenttracks,
-    portfolioEntries: portfolioData,
+    wallabagData: wallabagData,
     viewWidth: (context.res)
                 ? undefined
                 : document.documentElement.clientWidth,

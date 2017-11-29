@@ -13,6 +13,7 @@ const styles = theme => ({
   root: {
     marginBottom: 24,
     paddingRight: 24,
+    paddingLeft: 8,
     '&:hover': {
       boxShadow: `0 3px 5px 2px ${grey[400]}`
     },
@@ -25,7 +26,7 @@ const styles = theme => ({
     height: 80,
     width: 80,
     position: 'relative',
-    top: 24,
+    top: 32,
     color: grey[400],
   },
 });

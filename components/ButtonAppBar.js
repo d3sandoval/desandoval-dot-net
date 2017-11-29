@@ -40,7 +40,7 @@ class ButtonAppBar extends React.Component {
     let homeButton = function() {
       if (currentPage !== '/') {
         return(
-          <Link href="/">
+          <Link prefetch href="/">
             <ButtonBase>
               <img src="/img/logo.png" height="40px" />
             </ButtonBase>
@@ -57,8 +57,8 @@ class ButtonAppBar extends React.Component {
               {homeButton()}
               <div className={classes.menu}>
                 <Button href="https://blog.desandoval.net/latest" target="_blank" rel="noopener noreferrer" color="primary">Blog</Button>
-                <Link href="/portfolio"><Button color="primary">Portfolio</Button></Link>
-                <Link href="/iam"><Button color="primary">I am...</Button></Link>
+                <Link prefetch href="/portfolio"><Button color="primary">Portfolio</Button></Link>
+                <Link prefetch href="/iam"><Button color="primary">I am...</Button></Link>
               </div>
             </Toolbar>
           </AppBar>

@@ -10,13 +10,27 @@ const handle = app.getRequestHandler();
 
 require('dotenv').config();
 
-// cache portfolio list (async)
+// cache content (async)
 const helper = new ServerHelper(__dirname);
 helper.getPortfolioList(null, function(err, entries) {
   if (err) {
     console.log(err);
   } else {
-    console.log("> " + entries.length + " items added/updated in the portfolio list")
+    console.log("> " + entries.length + " items added/updated in the portfolio cache")
+  }
+});
+helper.getBlogPosts('blog', 4, function(err, entries) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("> " + entries.length + " items added/updated in the blog cache")
+  }
+});
+helper.getBlogPosts('wallabag', 7, function(err, entries) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("> " + entries.length + " items added/updated in the wallabag cache")
   }
 });
 
@@ -70,12 +84,12 @@ app.prepare()
 
     server.get('/blog/posts', (req, res) => {
       res.setHeader('Content-Type', 'application/json');
-      helper.getBlogPosts(req.query.limit, function(err, entries) {
+      helper.getBlogPosts('blog', req.query.limit, function(err, entries) {
         if (err) {
           res.status = 400;
           handle(req, res, req.url);
         }
-        res.send(JSON.stringify(entries));
+        res.end(JSON.stringify(entries));
       })
     });
 
@@ -83,6 +97,23 @@ app.prepare()
       switch (req.params.request) {
         case 'recent':
           helper.getRecentTracks(req.query.limit, function(err, entries) {
+            if (err) {
+              res.status = 400;
+              handle(req, res, req.url);
+            }
+            res.send(JSON.stringify(entries));
+          });
+          break;
+        default:
+          res.status = 400;
+          handle(req, res, req,url);
+      }
+    });
+
+    server.get('/wallabag/:request', (req,res) => {
+      switch (req.params.request) {
+        case 'recent':
+          helper.getBlogPosts('wallabag', req.query.limit, function(err, entries) {
             if (err) {
               res.status = 400;
               handle(req, res, req.url);
