@@ -26,7 +26,7 @@ helper.getBlogPosts('blog', 4, function(err, entries) {
     console.log("> " + entries.length + " items added/updated in the blog cache")
   }
 }, true);
-helper.getBlogPosts('wallabag', 7, function(err, entries) {
+helper.getBlogPosts('wallabag', 10, function(err, entries) {
   if (err) {
     console.log(err);
   } else {
@@ -36,7 +36,7 @@ helper.getBlogPosts('wallabag', 7, function(err, entries) {
 
 // refetch content every hour
 const blogJob = schedule.scheduleJob('10 * * * *', function() {
-  helper.getBlogPosts('wallabag', 7, function(err, entries) {
+  helper.getBlogPosts('wallabag', 10, function(err, entries) {
     if (err) {
       console.log(err);
     } else {
