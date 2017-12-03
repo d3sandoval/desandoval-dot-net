@@ -16,6 +16,7 @@ const styles = {
   },
 }
 
+// todo introduce loading animation: https://github.com/zeit/next.js/tree/master/examples/with-loading
 class PageLayout extends Component {
   state = {
     bodyWidth: {overflowX: 'hidden'},

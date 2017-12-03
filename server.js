@@ -1,7 +1,7 @@
 const express = require('express');
 const next = require('next');
 const path = require('path');
-const serveStatic = require('serve-static');
+const schedule = require('node-schedule');
 const ServerHelper = require('./lib/serverHelper');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -25,19 +25,37 @@ helper.getBlogPosts('blog', 4, function(err, entries) {
   } else {
     console.log("> " + entries.length + " items added/updated in the blog cache")
   }
-});
+}, true);
 helper.getBlogPosts('wallabag', 7, function(err, entries) {
   if (err) {
     console.log(err);
   } else {
     console.log("> " + entries.length + " items added/updated in the wallabag cache")
   }
+}, true);
+
+// refetch content every hour
+const blogJob = schedule.scheduleJob('10 * * * *', function() {
+  helper.getBlogPosts('wallabag', 7, function(err, entries) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("wallabag cache updated")
+    }
+  }, true);
+  helper.getBlogPosts('blog', 4, function(err, entries) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("blog cache updated")
+    }
+  }, true);
 });
 
 // url redirect map
 const redirects = [
   { from: '/i-am', to: '/iam' },
-]
+];
 
 // start express
 app.prepare()
@@ -90,7 +108,7 @@ app.prepare()
           handle(req, res, req.url);
         }
         res.end(JSON.stringify(entries));
-      })
+      }, false)
     });
 
     server.get('/lastfm/:request', (req,res) => {
@@ -119,7 +137,7 @@ app.prepare()
               handle(req, res, req.url);
             }
             res.send(JSON.stringify(entries));
-          });
+          }, false);
           break;
         default:
           res.status = 400;
