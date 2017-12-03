@@ -30,6 +30,7 @@
     "mdi-react": "^2.0.46",
     "next": "^4.1.4",
     "node-schedule": "^1.2.5",
+    "nprogress": "^0.2.0",
     "prismjs": "^1.8.4",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",

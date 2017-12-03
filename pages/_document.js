@@ -44,6 +44,8 @@ class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+          {/* Import CSS for nprogress */}
+          <link rel='stylesheet' type='text/css' href='/static/nprogress.css' />
         </Head>
         <body>
           <Main />

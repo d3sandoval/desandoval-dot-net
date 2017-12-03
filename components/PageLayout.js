@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'material-ui/styles/withStyles';
 import debounce from 'lodash/debounce';
-import EventListener, {withOptions} from 'react-event-listener'
+import EventListener, {withOptions} from 'react-event-listener';
+import NProgress from 'nprogress';
+import Router from 'next/router'
 
 import ButtonAppBar from '../components/ButtonAppBar';
 import ContactButton from '../components/ContactButton';
@@ -10,13 +12,19 @@ import ProfileImage from '../components/ProfileImage';
 import PortfolioImage from '../components/PortfolioImage';
 import Footer from '../components/Footer';
 
+// loading animation
+Router.onRouteChangeStart = (url) => {
+  NProgress.start();
+};
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
+
 const styles = {
   root: {
     overflowX: 'hidden',
   },
 }
 
-// todo introduce loading animation: https://github.com/zeit/next.js/tree/master/examples/with-loading
 class PageLayout extends Component {
   state = {
     bodyWidth: {overflowX: 'hidden'},
