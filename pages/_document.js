@@ -46,6 +46,22 @@ class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
           {/* Import CSS for nprogress */}
           <link rel='stylesheet' type='text/css' href='/static/nprogress.css' />
+          <script>{`
+            * {
+             box-sizing: border-box;
+            }
+
+            *:before,
+            *:after {
+             box-sizing: border-box;
+            }
+
+            html,
+            body {
+             height: 100%;
+             position: relative;
+            }
+          `}</script>
         </Head>
         <body>
           <Main />

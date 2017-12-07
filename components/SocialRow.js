@@ -3,10 +3,11 @@
 import React from 'react';
 import {withStyles} from 'material-ui/styles';
 import ButtonBase from 'material-ui/ButtonBase';
-import GithubIcon from 'mdi-react/GithubIcon'
-import TwitterIcon from 'mdi-react/TwitterIcon'
-import FacebookIcon from 'mdi-react/FacebookIcon'
-import LinkedinIcon from 'mdi-react/LinkedinIcon'
+import GithubIcon from 'mdi-react/GithubIcon';
+import TwitterIcon from 'mdi-react/TwitterIcon';
+import FacebookIcon from 'mdi-react/FacebookIcon';
+import LinkedinIcon from 'mdi-react/LinkedinIcon';
+import SpotifyIcon from 'mdi-react/SpotifyIcon';
 
 const styles = theme => ({
   root: {
@@ -39,6 +40,11 @@ function SocialRow(props) {
                   keyboardFocusedClassName={classes.keyboardFocused}
                   className={classes.button} aria-label="twitter">
         <TwitterIcon className={classes.icon} />
+      </ButtonBase>
+      <ButtonBase href="https://open.spotify.com/artist/47mXmNmm2ekoxyCwowItaX" target="_blank" rel="noopener noreferrer" centerRipple
+                  keyboardFocusedClassName={classes.keyboardFocused}
+                  className={classes.button} aria-label="spotify">
+        <SpotifyIcon className={classes.icon} />
       </ButtonBase>
       <ButtonBase href="https://facebook.com/d3sandoval" target="_blank" rel="noopener noreferrer" centerRipple
                   keyboardFocusedClassName={classes.keyboardFocused}

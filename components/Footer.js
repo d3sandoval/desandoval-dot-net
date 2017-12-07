@@ -12,6 +12,9 @@ const styles = theme => ({
     paddingTop: 16,
     paddingBottom: 16,
     paddingLeft: 24,
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
   },
   footerContent: {
     width: 'calc(100% - 88px)'

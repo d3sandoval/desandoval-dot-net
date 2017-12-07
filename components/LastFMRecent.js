@@ -39,6 +39,7 @@ class LastFMRecent extends React.Component {
     return (
       <div>
         {tracks.track.map(function(track) {
+          console.log(track);
           return (
             <a href={track.url} target="_blank" rel="noopener noreferrer">
               <Paper className={classes.root} elevation={4}>
@@ -55,7 +56,7 @@ class LastFMRecent extends React.Component {
                     <Typography type="body1" component="p">
                       {track.artist['#text']}
                       <br/>
-                      {track.date["#text"]}
+                      {(track.date) ? 'Played ' + track.date["#text"]: 'Now Playing'}
                     </Typography>
                   </Grid>
                 </Grid>

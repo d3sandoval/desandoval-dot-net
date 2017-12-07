@@ -21,7 +21,11 @@ Router.onRouteChangeError = () => NProgress.done();
 
 const styles = {
   root: {
-    overflowX: 'hidden',
+    minHeight: '100vh',
+    overflow: 'hidden',
+    display: 'block',
+    position: 'relative',
+    paddingBottom: '120px',
   },
 }
 
@@ -77,7 +81,9 @@ class PageLayout extends Component {
         <ButtonAppBar currentPage={this.props.currentPage} />
         <ContactButton />
         { this.topImage() }
-        {this.props.children}
+        <main>
+          {this.props.children}
+        </main>
         <Footer/>
       </div>
     )

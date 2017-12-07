@@ -55,6 +55,9 @@ const blogJob = schedule.scheduleJob('10 * * * *', function() {
 // url redirect map
 const redirects = [
   { from: '/i-am', to: '/iam' },
+  { from: '/design-web', to: '/portfolio' },
+  { from: '/art-music', to: '/portfolio' },
+
 ];
 
 // start express
