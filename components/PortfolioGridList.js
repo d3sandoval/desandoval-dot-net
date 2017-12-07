@@ -49,7 +49,7 @@ class PortfolioGridList extends React.Component {
   render() {
     const { classes, tileData, large } = this.props;
     const cellHeight = (large) ? 400 : 200;
-    const listHeight = (large) ? cellHeight * (tileData.length / 2) : 402;
+    const listHeight = (large) ? '100%' : 402;
 
     return (
       <div className={classes.root}>
