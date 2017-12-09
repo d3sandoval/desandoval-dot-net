@@ -59,7 +59,7 @@ const honors = [
     logo: '/img/honors/hcde.png',
     title: 'Dean\'s List & Diversity Scholar',
     organization: 'University of Washington',
-    description: 'Scholarship status awarded based on GPA\nCum: 3.65 | Major: 3.89',
+    description: 'Scholarship status awarded based on GPA',
     url: 'http://www.washington.edu/students/qtrdean/',
   },
   {
