@@ -1,6 +1,7 @@
 .next
 .idea
 .env
+.secrets
 node_modules
 *.log
 .DS_Store
