@@ -1,8 +1,15 @@
+/* builds and modules */
 .next
-.idea
-.env
-.secrets
 node_modules
-*.log
+
+/* secrets */
+.env
+DESandoval-net*.json
+
+/* environment-specific stuff */
 .DS_Store
+.idea
+
+/* locks and logs */
 package-lock.json
+*.log
