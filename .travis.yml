@@ -1,6 +1,8 @@
 language: node_js
 before_install:
 - openssl aes-256-cbc -K $encrypted_18b95b300614_key -iv $encrypted_18b95b300614_iv
+  -in DESandoval-net-5892a0e8d050.json.enc -out DESandoval-net-5892a0e8d050.json -d
+- openssl aes-256-cbc -K $encrypted_18b95b300614_key -iv $encrypted_18b95b300614_iv
   -in DESandoval-net-5892a0e8d050.json.enc -out .secrets/GoogleAppEngine/DESandoval-net-5892a0e8d050.json
   -d
 install:
