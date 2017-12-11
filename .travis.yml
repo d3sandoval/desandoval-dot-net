@@ -1,6 +1,5 @@
 language: node_js
 node_js:
-- "node"
 - "8"
 cache:
   directories:
@@ -16,4 +15,5 @@ script:
 deploy:
   provider: gae
   keyfile: DESandoval-net-5892a0e8d050.json
-  project: DESandoval-net
+  project: desandoval-net
+  on: master
