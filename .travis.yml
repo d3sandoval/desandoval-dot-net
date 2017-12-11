@@ -16,4 +16,5 @@ deploy:
   provider: gae
   keyfile: DESandoval-net-5892a0e8d050.json
   project: desandoval-net
+  verbosity: debug
   on: master
