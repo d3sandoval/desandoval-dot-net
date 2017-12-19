@@ -15,6 +15,9 @@ const styles = theme => ({
     right: 16,
     zIndex: 100,
   },
+  buttonIcon: {
+    color: '#fff',
+  }
 });
 
 class AnimatedFab extends React.Component {
@@ -63,8 +66,8 @@ class AnimatedFab extends React.Component {
   render() {
     const {classes, animationCallback, onMouseOver, onMouseOut} = this.props;
     let buttonIcon = (this.state.open)
-      ? <CloseIcon color="white" key="value1" />
-      : <QuestionAnswerIcon color="white" key="value2" />;
+      ? <CloseIcon className={classes.buttonIcon} key="value1" />
+      : <QuestionAnswerIcon className={classes.buttonIcon} key="value2" />;
 
     return (
       <Button fab color="primary" aria-label="contact" className={classes.button}
