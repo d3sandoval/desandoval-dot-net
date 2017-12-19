@@ -44,7 +44,7 @@ class PortfolioItem extends Component {
                              Link: markdownHelper.linkRenderer,
                              CodeBlock: markdownHelper.codeBlockRenderer,
                            }}
-                           source={this.props.url.query.content} />
+                           source={this.props.source} />
           </Grid>
         </Grid>
       </PageLayout>
@@ -53,17 +53,18 @@ class PortfolioItem extends Component {
 }
 
 PortfolioItem.getInitialProps = async function(context) {
-  let topImage = await handleImageSource(context.query.topImage);
+  let topImage = await handleImageSource(context.query.topImage.toString());
 
   return {
     headerData: {
       topImage: context.asPath + '/' + topImage.src,
-      title: context.query.title,
-      description: context.query.description,
-      category: context.query.category,
-      date: context.query.date,
-      tags: context.query.tags.split(','),
+      title: context.query.title.toString(),
+      description: context.query.description.toString(),
+      category: context.query.category.toString(),
+      date: context.query.date.toString(),
+      tags: context.query.tags.toString().split(','),
     },
+    source: context.query.content.toString(),
     currentPage: context.asPath,
   }
 }
