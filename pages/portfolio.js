@@ -27,7 +27,8 @@ class Portfolio extends Component {
 
 Portfolio.getInitialProps = async function(context) {
 
-  const portfolio = await fetch('http://localhost:3000' + '/portfolio/list');
+  const portfolio = await fetch(process.env.SERVER_HOST + ':' + process.env.SERVER_PORT
+                                + '/portfolio/list');
   const portfolioData = await portfolio.json();
 
   return {
