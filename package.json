@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "redis-server /usr/local/etc/redis.conf > ./redis.log | node server.js",
     "build": "next build",
+    "prestart": "node getEnv",
     "start": "NODE_ENV=production node server.js",
     "startForever": "NODE_ENV=production forever start server.js",
     "status": "forever list",
@@ -19,6 +20,7 @@
   "repository": "git@github.com:d3sandoval/desandoval-dot-net.git",
   "license": "CC-BY-ND-4.0",
   "dependencies": {
+    "@google-cloud/storage": "^1.5.1",
     "babel-plugin-inline-import": "^2.0.6",
     "css-loader": "^0.28.7",
     "dotenv": "^4.0.0",
