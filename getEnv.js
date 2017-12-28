@@ -6,6 +6,7 @@ if (dotEnvExists) {
   process.exit()
 }
 
+if (process.env.GCLOUD_PROJECT) {
 // On Google Cloud Platform authentication is handled for us
 const gcs = require('@google-cloud/storage')();
 const bucketName = `envvars-${process.env.GCLOUD_PROJECT}`;
@@ -21,3 +22,6 @@ gcs
   .catch(e => {
     console.error(`getEnv.js: There was an error: ${JSON.stringify(e, undefined, 2)}`)
   });
+} else {
+  console.log('Not running in GAE, please provide a separate .env file or equivalent')
+}
