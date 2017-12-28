@@ -7,7 +7,6 @@ import SectionTitle from './SectionTitle';
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import Paper from 'material-ui/Paper';
-import Link from 'next/link';
 import PortfolioGridList from './PortfolioGridList';
 
 const styles = theme => ({

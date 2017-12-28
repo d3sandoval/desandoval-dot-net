@@ -4,10 +4,8 @@ import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import ButtonBase from 'material-ui/ButtonBase';
-import Link from 'next/link';
 import Headroom from 'react-headroom';
 
 const styles = theme => ({

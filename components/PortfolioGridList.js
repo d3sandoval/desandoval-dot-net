@@ -2,7 +2,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link'
 import { withStyles } from 'material-ui/styles';
 import { GridList, GridListTile, GridListTileBar } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
