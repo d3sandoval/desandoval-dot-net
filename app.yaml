@@ -1,4 +1,2 @@
 runtime: nodejs
 env: flex
-automatic_scaling:
-  min_idle_instances: 1
