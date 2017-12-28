@@ -70,8 +70,8 @@ class PortfolioSummary extends React.Component {
                 and education. <strong>People use digital artifacts every day</strong>. Those that are significant provide
                 practical and navigable solutions to their users' problems.
               </Typography>
-              <Typography type="title" gutterBottom paragraph>As a Human Experience Designer, <Link href="/portfolio/">
-                <a title="Portfolio">I generate such solutions</a></Link>.
+              <Typography type="title" gutterBottom paragraph>As a Human Experience Designer,
+                <a href="/portfolio/" title="Portfolio">I generate such solutions</a>.
               </Typography>
               <Typography type="body2" gutterBottom paragraph> In the fall of 2014, I studied computer science, software development, and design
                 at <a title="Computer Science Institute" href="http://www.ait-budapest.com/" target="_blank" rel="noopener noreferrer"> AIT-Budapest.</a> I
@@ -85,7 +85,7 @@ class PortfolioSummary extends React.Component {
               </Typography>
             </Paper>
             <Typography className={classes.fullLink} type="subheading" align="right" gutterBottom>
-              <Link href="/portfolio"><a>View my entire portfolio...</a></Link>
+              <a href="/portfolio">View my entire portfolio...</a>
             </Typography>
           </Grid>
         </Grid>
