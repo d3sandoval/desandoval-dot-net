@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-- "8"
+- '8'
 cache:
   directories:
-    - "node_modules"
+  - node_modules
 before_install:
 - npm i -g npm@5.x
 - openssl aes-256-cbc -K $encrypted_18b95b300614_key -iv $encrypted_18b95b300614_iv
@@ -13,9 +13,9 @@ install:
 script:
 - npm run build
 deploy:
-  provider: gae
-  skip_cleanup: true
-  keyfile: DESandoval-net-5892a0e8d050.json
-  project: desandoval-net
-  verbosity: debug
-  on: master
+  provider: heroku
+  api_key:
+    secure: bM/S8AK6bNlWpYQsGd+/1uAbkzlYw454K0pKO2/JhYf9NatymJ6nD9jbgwGA7bnKgYBrZO3Kzjn7aaVhXtmfeO05vuA7VQxEN6vfmul9TMQBLzI6Wp2GfBR/8j8stTOBLZTCFXMQkiihVlBEQyHg193uQeBnCdLny7gRhPtEBd3AL23u3cbryjmzBgit/WZOUgneSN1qWg7IaUuxWbTucXHwEGVcYs2Ee+YlLXyNGvhUQk/riMTo6wSWWoJab7scHP7WrECzJRVx81LPwigH9T55Ap2YvcVyK2KZMCMZ+OD0RK4PyHZvWdJ056fWdpjPnN+6iK8Y1n5FhdUFU4bw0CXX8ipnIhamNwM2afyxQZsNwunIndTwALj/tvm3WgtUi/aPO7rHaNpZZPDWpCRf04UAIre7BxmciTu1QURilFPyepI/1IUvxpcobNJG4u2ot2/KUs8m8XFcURublW6d6fi54vQHO89+oGeI58kIpZRP5/8X5lNCH3F7GAIpLin122WWwUBTfi6gMBseJlahHU4521cITB6RJVARJ8Zf/Jfgafuu342z4SfH1Q2kWj/PCrPnGju3mi5uowKokpstUGyDOp2YtnKyvwSn2nJwRbG7tZSGRZ5iB+UN1BLOtxmwc6IaxvYYlI8KnxoQbbCWb+Dlbpo5/+gF9AsGndNCxV4=
+  app: desandoval-dot-net
+  on:
+    repo: d3sandoval/desandoval-dot-net
