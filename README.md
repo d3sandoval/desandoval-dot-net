@@ -1,8 +1,10 @@
 # desandoval-dot-net
 
+![](https://travis-ci.org/d3sandoval/desandoval-dot-net.svg?branch=master)
 
+This repository contains all of the source code for [DESandoval.net](https://desandoval.net) - the personal website for Daniel E. Sandoval. This repository is meant to showcase the code used to create a dynamic portfolio website using static markdown files as the main source of content.
 
-This repository contains all of the source code for [DESandoval.net](https://desandoval.net) - the personal website for Daniel E. Sandoval. It is licensed under Creative Commons Attribution-NoDerivatives 4.0. This repository is meant to showcase the code used to create a dynamic portfolio website using static markdown files as the main source of content. All contributions are by [@d3sandoval](https://github.com/d3sandoval) unless otherwise specified in a commit message/author.
+All contributions are by [@d3sandoval](https://github.com/d3sandoval) unless otherwise specified in a commit message/author.
 
 ## Getting Started
 
@@ -10,9 +12,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-The application uses next.js with an express server for the majority of the work. You'll need the [latest node and npm versions](https://docs.npmjs.com/all#how-to-install-npm--manage-npm-versions).
-
-You'll also need a local redis database for development with the cache. [Quick Start](https://redis.io/topics/quickstart)
+* the [latest node and npm versions](https://docs.npmjs.com/all#how-to-install-npm--manage-npm-versions).
+* a local redis database for development with the cache. [Quick Start](https://redis.io/topics/quickstart)
 
 ### Installing
 To get started, simply run:
@@ -34,7 +35,8 @@ REDIS_HOSTNAME=IP_ADDRESS_OR_FQDN
 REDIS_PORT_NUMBER=SOME_PORT
 REDIS_PASSWORD=YOUR_PASSWORD_HERE
 ```
-Use these if you have a remote or unique redis instance that you'd like to connect to.
+^ Use these if you have a remote or unique redis instance that you'd like to connect to.
+
 
 The `dev` script will start up a local redis database and an HMR-ready environment:
 
@@ -74,7 +76,7 @@ Coming Soon.
 
 ## Deployment
 
-The app is currently deployed on [heroku](https://heroku.com) with Travis-CI as an intermediary build step. You can see the config in the [.travis.yml file](.travis.yml)
+The app is currently deployed on [heroku](https://heroku.com) with [Travis-CI](https://travis-ci.org/d3sandoval/desandoval-dot-net) as an intermediary build step. You can see the config in the [.travis.yml file](.travis.yml)
 
 ## Built With
 
