@@ -8,7 +8,8 @@ before_install:
 - npm i -g npm@5.x
 install:
 - npm install
-script: ./build.sh
+script:
+- npm run build
 deploy:
   provider: heroku
   api_key:
