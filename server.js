@@ -1,7 +1,6 @@
 const express = require('express');
 const next = require('next');
 const path = require('path');
-const schedule = require('node-schedule');
 const ServerHelper = require('./lib/serverHelper');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -34,23 +33,6 @@ helper.getBlogPosts('wallabag', 10, function(err, entries) {
   }
 }, true);
 
-// refetch content every hour
-const blogJob = schedule.scheduleJob('10 * * * *', function() {
-  helper.getBlogPosts('wallabag', 10, function(err, entries) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("wallabag cache updated")
-    }
-  }, true);
-  helper.getBlogPosts('blog', 4, function(err, entries) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("blog cache updated")
-    }
-  }, true);
-});
 
 // url redirect map
 const redirects = [
