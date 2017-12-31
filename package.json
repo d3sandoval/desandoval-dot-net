@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "redis-server /usr/local/etc/redis.conf > ./redis.log | node server.js",
     "build": "next build",
-    "prestart": "node getEnv",
     "start": "NODE_ENV=production node server.js",
     "startForever": "NODE_ENV=production forever start server.js",
     "status": "forever list",

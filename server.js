@@ -152,9 +152,9 @@ app.prepare()
       return handle(req, res)
     });
 
-    server.listen(process.env.SERVER_PORT, (err) => {
+    server.listen(process.env.PORT, (err) => {
       if (err) throw err;
-      console.log('> Ready on ' + process.env.SERVER_HOST + ':' + process.env.SERVER_PORT)
+      console.log('> Ready on ' + process.env.SERVER_HOST + ':' + process.env.PORT)
     })
   })
   .catch((ex) => {
