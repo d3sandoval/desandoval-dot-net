@@ -11,5 +11,4 @@ DESandoval-net*.json
 .idea
 
 /* locks and logs */
-package-lock.json
 *.log
