@@ -39,12 +39,12 @@ Index.propTypes = {
 
 
 Index.getInitialProps = async function(context) {
-  const blog = await fetch(process.env.SERVER_HOST + ':' + process.env.PORT
-                            + '/blog/posts?limit=4');
+  const baseUrl = context.res ? `http://localhost:${process.env.PORT}` : '';
+
+  const blog = await fetch(baseUrl + '/blog/posts?limit=4');
   const blogData = await blog.json();
 
-  const portfolio = await fetch(process.env.SERVER_HOST + ':' + process.env.PORT
-                                  + '/portfolio/list?limit=3');
+  const portfolio = await fetch(baseUrl + '/portfolio/list?limit=3');
   const portfolioData = await portfolio.json();
 
   return {

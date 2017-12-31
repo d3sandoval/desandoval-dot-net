@@ -136,7 +136,7 @@ app.prepare()
 
     server.listen(process.env.PORT, (err) => {
       if (err) throw err;
-      console.log('> Ready on ' + process.env.SERVER_HOST + ':' + process.env.PORT)
+      console.log('> Ready on localhost:' + process.env.PORT)
     })
   })
   .catch((ex) => {

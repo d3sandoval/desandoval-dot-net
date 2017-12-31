@@ -59,12 +59,12 @@ Iam.propTypes = {
 
 
 Iam.getInitialProps = async function(context) {
-  const getRecentTracks = await fetch(process.env.SERVER_HOST + ':' + process.env.PORT
-                                        + '/lastfm/recent?limit=5');
+  const baseUrl = context.res ? `http://localhost:${process.env.PORT}` : '';
+
+  const getRecentTracks = await fetch(baseUrl + '/lastfm/recent?limit=5');
   const recentTracks = await getRecentTracks.json();
 
-  const wallabag = await fetch(process.env.SERVER_HOST + ':' + process.env.PORT
-                                + '/wallabag/recent?limit=8');
+  const wallabag = await fetch(baseUrl + '/wallabag/recent?limit=8');
   const wallabagData = await wallabag.json();
 
   return {

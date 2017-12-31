@@ -25,7 +25,6 @@ npm install
 You'll need a `.env` file with the following items:
 ```
 LASTFM_API_KEY=YOUR_KEY_HERE
-SERVER_HOST=http://localhost
 PORT=8080
 ```
 

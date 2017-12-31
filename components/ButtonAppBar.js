@@ -6,6 +6,7 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Button from 'material-ui/Button';
 import ButtonBase from 'material-ui/ButtonBase';
+import Link from 'next/link';
 import Headroom from 'react-headroom';
 
 const styles = theme => ({
@@ -38,11 +39,11 @@ class ButtonAppBar extends React.Component {
     let homeButton = function() {
       if (currentPage !== '/') {
         return(
-          <a href="/">
+          <Link prefetch href="/">
             <ButtonBase>
               <img src="/img/logo.png" height="40px" />
             </ButtonBase>
-          </a>
+          </Link>
         );
       }
     };
@@ -55,8 +56,8 @@ class ButtonAppBar extends React.Component {
               {homeButton()}
               <div className={classes.menu}>
                 <Button href="https://blog.desandoval.net/latest" target="_blank" rel="noopener noreferrer" color="primary">Blog</Button>
-                <a href="/portfolio"><Button color="primary">Portfolio</Button></a>
-                <a href="/iam"><Button color="primary">I am...</Button></a>
+                <Link prefetch href="/portfolio"><Button color="primary">Portfolio</Button></Link>
+                <Link prefetch href="/iam"><Button color="primary">I am...</Button></Link>
               </div>
             </Toolbar>
           </AppBar>
