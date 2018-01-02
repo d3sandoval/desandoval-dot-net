@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import withStyles from 'material-ui/styles/withStyles';
 import debounce from 'lodash/debounce';
 import EventListener, {withOptions} from 'react-event-listener';
+import ReactGA from 'react-ga';
 import NProgress from 'nprogress';
 import Router from 'next/router'
 
@@ -11,6 +12,11 @@ import ContactButton from '../components/ContactButton';
 import ProfileImage from '../components/ProfileImage';
 import PortfolioImage from '../components/PortfolioImage';
 import Footer from '../components/Footer';
+
+// google analytics page tracking
+if (process.env.NODE_ENV === 'production') {
+  ReactGA.initialize('UA-42632397-1');
+}
 
 // loading animation
 Router.onRouteChangeStart = (url) => {
@@ -51,6 +57,7 @@ class PageLayout extends Component {
       // this will be undefined when using SSR - set it here just in case
       this.setState({viewWidth: document.documentElement.clientWidth});
     }
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   componentWillUnmount() {
