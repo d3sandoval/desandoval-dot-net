@@ -55,7 +55,7 @@ class ButtonAppBar extends React.Component {
             <Toolbar>
               {homeButton()}
               <div className={classes.menu}>
-                <Button href="https://blog.desandoval.net/latest" target="_blank" rel="noopener noreferrer" color="primary">Blog</Button>
+                <Button href="https://medium.com/@d3sandoval/latest" target="_blank" rel="noopener noreferrer" color="primary">Blog</Button>
                 <Link prefetch href="/portfolio"><Button color="primary">Portfolio</Button></Link>
                 <Link prefetch href="/iam"><Button color="primary">I am...</Button></Link>
               </div>

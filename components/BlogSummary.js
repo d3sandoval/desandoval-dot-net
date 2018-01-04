@@ -62,7 +62,7 @@ function BlogSummary(props) {
                                                                                                target="_blank" rel="noopener noreferrer">KEXP</a>
         </Typography>
         <Typography className={classes.fullLink} type="subheading" align="right" gutterBottom>
-          <a href="https://blog.desandoval.net/latest" target="_blank" rel="noopener noreferrer">View all from my blog...</a>
+          <a href="https://medium.com/@d3sandoval/latest" target="_blank" rel="noopener noreferrer">View all from my blog...</a>
         </Typography>
       </div>
     </div>
