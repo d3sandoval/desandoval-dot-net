@@ -17,9 +17,12 @@ const styles = theme => ({
     fill: 'inherit',
     paddingLeft: 8,
     paddingRight: 8,
+    path: {
+      fill: 'inherit',
+    }
   },
   button: {
-    fill: theme.palette.common.darkWhite,
+    fill: '#fafafa',
     '&:hover': {
       fill: theme.palette.primary[500],
     }
