@@ -20,11 +20,14 @@ const styles = theme => ({
     [theme.breakpoints.up('md')]: {
       top: "-320px",
     },
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.up('sm')]: {
       top: "-400px",
     },
     [theme.breakpoints.down('sm')]: {
       top: "-600px",
+    },
+    [theme.breakpoints.down('xs')]: {
+      top: "-720px",
     },
   },
   subName: {
