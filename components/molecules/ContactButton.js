@@ -4,7 +4,7 @@ import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import ContactRow from './ContactRow';
 import Tooltip from 'material-ui/Tooltip';
-import AnimatedFab from './AnimatedFab';
+import AnimatedFab from '../atoms/AnimatedFab';
 
 const styles = theme => ({});
 

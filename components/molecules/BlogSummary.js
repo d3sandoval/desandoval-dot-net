@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
-import BlogBox from './BlogBox';
-import SectionTitle from './SectionTitle';
+import BlogBox from '../atoms/BlogBox';
+import SectionTitle from '../atoms/SectionTitle';
 
 const styles = theme => ({
   root: {

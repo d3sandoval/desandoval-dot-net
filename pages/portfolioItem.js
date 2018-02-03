@@ -9,11 +9,11 @@ import {
 
 /* material-ui */
 import withStyles from 'material-ui/styles/withStyles';
-import withRoot from '../components/withRoot';
+import withRoot from '../templates/withRoot';
 import Grid from 'material-ui/Grid';
 
 /* my components */
-import PageLayout from '../components/PageLayout';
+import PageLayout from '../templates/PageLayout';
 
 const styles = {};
 

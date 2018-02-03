@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 
 /* material-ui */
 import withStyles from 'material-ui/styles/withStyles';
-import withRoot from '../components/withRoot';
+import withRoot from '../templates/withRoot';
 
 /* my components */
-import PageLayout from '../components/PageLayout';
-import BlogSummary from '../components/BlogSummary';
-import EmploymentSummary from '../components/EmploymentSummary';
-import PortfolioSummary from '../components/PortfolioSummary';
-import HonorsSummary from '../components/HonorsSummary';
+import PageLayout from '../templates/PageLayout';
+import BlogSummary from '../components/molecules/BlogSummary';
+import EmploymentSummary from '../components/organisms/EmploymentSummary';
+import PortfolioSummary from '../components/organisms/PortfolioSummary';
+import HonorsSummary from '../components/organisms/HonorsSummary';
 
 /* data sources */
 import fetch from 'isomorphic-unfetch'

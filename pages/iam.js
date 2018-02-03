@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 
 /* material-ui */
 import withStyles from 'material-ui/styles/withStyles';
-import withRoot from '../components/withRoot';
+import withRoot from '../templates/withRoot';
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
 
 /* my components */
-import PageLayout from '../components/PageLayout';
-import LastFMRecent from '../components/LastFMRecent';
-import BlogBox from '../components/BlogBox';
+import PageLayout from '../templates/PageLayout';
+import LastFMRecent from '../components/molecules/LastFMRecent';
+import BlogBox from '../components/atoms/BlogBox';
 
 /* data sources */
 import fetch from 'isomorphic-unfetch'

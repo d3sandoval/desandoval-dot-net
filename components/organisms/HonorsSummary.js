@@ -2,9 +2,9 @@
 
 import React from 'react';
 import {withStyles} from 'material-ui/styles';
-import SectionTitle from './SectionTitle';
+import SectionTitle from '../atoms/SectionTitle';
 import Grid from 'material-ui/Grid';
-import HonorsBox from './HonorsBox';
+import HonorsBox from '../atoms/HonorsBox';
 
 const styles = theme => ({
   root: {

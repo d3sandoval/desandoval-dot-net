@@ -3,12 +3,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
-import SectionTitle from './SectionTitle';
+import SectionTitle from '../atoms/SectionTitle';
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import Paper from 'material-ui/Paper';
 import Link from 'next/link';
-import PortfolioGridList from './PortfolioGridList';
+import PortfolioGridList from '../molecules/PortfolioGridList';
 
 const styles = theme => ({
   root: {

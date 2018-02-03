@@ -7,11 +7,11 @@ import ReactGA from 'react-ga';
 import NProgress from 'nprogress';
 import Router from 'next/router'
 
-import ButtonAppBar from '../components/ButtonAppBar';
-import ContactButton from '../components/ContactButton';
-import ProfileImage from '../components/ProfileImage';
-import PortfolioImage from '../components/PortfolioImage';
-import Footer from '../components/Footer';
+import ButtonAppBar from '../components/molecules/ButtonAppBar';
+import ContactButton from '../components/molecules/ContactButton';
+import ProfileImage from './ProfileImage';
+import PortfolioImage from './PortfolioImage';
+import Footer from '../components/molecules/Footer';
 
 // google analytics page tracking
 if (process.env.NODE_ENV === 'production') {

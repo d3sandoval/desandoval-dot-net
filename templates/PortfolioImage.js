@@ -2,8 +2,8 @@ import React from 'react';
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
-import PortfolioTags from '../components/PortfolioTags';
-import PortfolioIcon from '../components/PortfolioIcon';
+import PortfolioTags from '../components/atoms/PortfolioTags';
+import PortfolioIcon from '../components/atoms/PortfolioIcon';
 
 const styles = theme => ({
   root: {},

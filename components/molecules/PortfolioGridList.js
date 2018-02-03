@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
-import PortfolioIcon from './PortfolioIcon';
+import PortfolioIcon from '../atoms/PortfolioIcon';
 
-import { handleImageSource } from '../lib/MarkdownRenderer';
+import { handleImageSource } from '../../lib/MarkdownRenderer';
 
 const styles = theme => ({
   root: {

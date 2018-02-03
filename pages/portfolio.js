@@ -4,12 +4,12 @@ import React, { Component } from 'react';
 
 /* material-ui */
 import withStyles from 'material-ui/styles/withStyles';
-import withRoot from '../components/withRoot';
+import withRoot from '../templates/withRoot';
 import Grid from 'material-ui/Grid';
 
 /* my components */
-import PageLayout from '../components/PageLayout';
-import PortfolioGridList from '../components/PortfolioGridList';
+import PageLayout from '../templates/PageLayout';
+import PortfolioGridList from '../components/molecules/PortfolioGridList';
 
 const styles = {};
 
