@@ -18,22 +18,22 @@ const styles = theme => ({
 function chooseIcon(category) {
   switch(category) {
     case "Research":
-      return <ResearchIcon color="white" />;
+      return <ResearchIcon color="inherit" />;
       break;
     case "Prototyping":
-      return <PrototypingIcon color="white" />;
+      return <PrototypingIcon color="inherit" />;
       break;
     case "Design":
-      return <DesignIcon color="white" />;
+      return <DesignIcon color="inherit" />;
       break;
     case "Hackathon":
-      return <HackathonIcon color="white" />;
+      return <HackathonIcon color="inherit" />;
       break;
     case "Programming":
-      return <ProgrammingIcon color="white" />;
+      return <ProgrammingIcon color="inherit" />;
       break;
     default:
-      return <InfoIcon color="white" />;
+      return <InfoIcon color="inherit" />;
   }
 }
 

@@ -39,9 +39,8 @@ class LastFMRecent extends React.Component {
     return (
       <div>
         {tracks.track.map(function(track) {
-          console.log(track);
           return (
-            <a href={track.url} target="_blank" rel="noopener noreferrer">
+            <a key={track.url} href={track.url} target="_blank" rel="noopener noreferrer">
               <Paper className={classes.root} elevation={4}>
                 <Grid container justify="space-between" alignItems="center">
                   <Grid item xs={4} className={classes.leftSide}>

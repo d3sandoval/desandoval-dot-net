@@ -19,7 +19,7 @@ function PortfolioTags(props) {
     <div className={classes.root}>
       {tags.map(function(tag) {
         return (
-          <Chip label={tag} className={classes.chip} />
+          <Chip key={tag} label={tag} className={classes.chip} />
         );
       })}
     </div>

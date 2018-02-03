@@ -86,7 +86,7 @@ function HonorsSummary(props) {
       <SectionTitle title="Honors" divider={true} />
       <Grid container justify="space-around" alignItems="flex-start">
         {honors.map(honor => (
-          <Grid item xs={8} sm={4} lg={3}>
+          <Grid key={honor.title} item xs={8} sm={4} lg={3}>
             <HonorsBox details={honor} />
           </Grid>
         ))}
