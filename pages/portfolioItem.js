@@ -31,6 +31,7 @@ content: #Markdown Content
 class PortfolioItem extends Component {
 
   render() {
+    const {classes} = this.props;
     const markdownHelper = new MarkdownHelper(this.props.currentPage);
 
     return (
