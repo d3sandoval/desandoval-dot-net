@@ -39,6 +39,7 @@ const redirects = [
   { from: '/i-am', to: '/iam' },
   { from: '/design-web', to: '/portfolio' },
   { from: '/art-music', to: '/portfolio' },
+  { from: '/calendar', to: 'https://calendly.com/d3sandoval/30min' },
 
 ];
 
