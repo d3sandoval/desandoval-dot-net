@@ -59,7 +59,7 @@ class ContactRow extends React.Component {
 
   state = {
     playState: 'idle',
-    hasOpened: false, // need redux to make this more robust
+    hasOpened: false,
   };
 
   fadeIn() {
@@ -101,6 +101,7 @@ class ContactRow extends React.Component {
 
   getParentStyle() {
     if(!this.props.open && this.state.hasOpened) {
+      this.setState({hasOpened: false});
       return {display: 'block'}
     } else if (this.props.open) {
       return {display: 'block'}

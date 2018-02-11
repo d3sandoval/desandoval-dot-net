@@ -14,10 +14,6 @@ type Props = {
   classes: Object,
 }
 
-type State = {
-  rootTooltip: boolean,
-}
-
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
@@ -32,18 +28,7 @@ const styles = theme => ({
   }
 });
 
-class ContactButton extends React.Component<Props, State> {
-  state = {
-    rootTooltip: false,
-  };
-
-  mouseOver = () => () => {
-    this.setState({rootTooltip: true});
-  }
-
-  mouseOut = () => () => {
-    this.setState({rootTooltip: false});
-  }
+class ContactButton extends React.Component<Props> {
 
   render() {
     const { classes } = this.props;
@@ -52,10 +37,12 @@ class ContactButton extends React.Component<Props, State> {
       <Subscribe to={[ButtonStateContainer]}>
         {buttonState => (
           <div className={classes.button}>
-          <Tooltip classes={{popper: classes.tooltipText}} title={buttonState.state.rootTooltipText} placement="left" open={(this.state) ? this.state.rootTooltip : false}>
+          <Tooltip classes={{popper: classes.tooltipText}} title={buttonState.state.rootTooltipText} placement="left" open={buttonState.state.rootTooltip}>
           <AnimatedFab
-              onMouseOver={this.mouseOver()}
-              onMouseOut={this.mouseOut()}/>
+              onMouseOver={buttonState.mouseOver}
+              onMouseOut={buttonState.mouseOut}
+              onTouchStart={buttonState.mouseOver}
+          />
             </Tooltip>
             <ContactRow open={buttonState.state.open} />
           </div>

@@ -14,19 +14,39 @@ class ButtonStateContainer extends Container<ContactButtonState> {
     rootTooltipText: "Contact me"
   };
 
-  setOpen = () => {
+  setOpen = (mouse = true) => {
     this.setState({
       open: true,
-      rootTooltipText: "Close"
     });
+    if (mouse) {
+      this.setState({
+        rootTooltipText: "Close"
+      });
+    }
   };
 
-  setClosed = () => {
+  setClosed = (mouse = true) => {
     this.setState({
       open: false,
-      rootTooltipText: "Contact me"
     });
-  }
+    if (mouse) {
+      this.setState({
+        rootTooltipText: "Contact me"
+      });
+    } else {
+      this.setState({
+        rootTooltip: false,
+      })
+    }
+  };
+
+  mouseOver = () => {
+    this.setState({rootTooltip: true});
+  };
+
+  mouseOut = () => {
+    this.setState({rootTooltip: false});
+  };
 }
 
 export {ButtonStateContainer};
