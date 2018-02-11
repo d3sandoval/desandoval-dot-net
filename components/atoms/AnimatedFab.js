@@ -1,5 +1,3 @@
-// @flow weak
-
 import React from 'react';
 import {withStyles} from 'material-ui/styles';
 import { Animated } from 'react-web-animation';
@@ -7,27 +5,19 @@ import Button from 'material-ui/Button';
 import QuestionAnswerIcon from 'material-ui-icons/QuestionAnswer';
 import CloseIcon from 'material-ui-icons/Close';
 
+import { Subscribe } from 'unstated';
+import {ButtonStateContainer} from '../StateContainers/ContactButtonState';
+
 const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-    position: 'fixed',
-    bottom: 16,
-    right: 16,
-    zIndex: 100,
-  },
   buttonIcon: {
     color: '#fff',
   }
 });
 
 class AnimatedFab extends React.Component {
-  constructor({ initialOpen }) {
-    super();
-    this.state = {
-      open: initialOpen,
-      playState: 'idle',
-    }
-  }
+  state = {
+    playState: 'idle',
+  };
 
   getKeyFrames() {
     return [
@@ -55,33 +45,36 @@ class AnimatedFab extends React.Component {
     };
   }
 
-  animateOut = () => {
+  animateOut (buttonState) {
     this.setState({playState: 'idle'});
-    (this.state.open)
-    ? this.setState({open: false})
-    : this.setState({open: true});
-    this.props.animationCallback(this.state.open);
+    (buttonState.state.open)
+    ? buttonState.setClosed()
+    : buttonState.setOpen();
   }
 
   render() {
     const {classes, animationCallback, onMouseOver, onMouseOut} = this.props;
-    let buttonIcon = (this.state.open)
-      ? <CloseIcon className={classes.buttonIcon} key="value1" />
-      : <QuestionAnswerIcon className={classes.buttonIcon} key="value2" />;
 
     return (
-      <Button fab color="primary" aria-label="contact" className={classes.button}
-              onClick={() => {
-                this.setState({ playState: 'running' });
-              }}
-              onMouseOver={onMouseOver}
-              onMouseOut={onMouseOut}
-      >
-        <Animated.div playState={this.state.playState} keyframes={this.getKeyFrames()}
-                      timing={this.getTiming(170)} onFinish={this.animateOut}>
-          {buttonIcon}
-        </Animated.div>
-      </Button>
+      <Subscribe to={[ButtonStateContainer]}>
+        {buttonState => (
+          <div>
+            <Button fab color="primary" aria-label="contact" className={classes.button}
+                             onClick={(buttonState.state.open)
+                               ? buttonState.setClosed
+                               : buttonState.setOpen
+                             }
+                             onMouseOver={onMouseOver}
+                             onMouseOut={onMouseOut}
+          >
+
+              {(buttonState.state.open)
+                ? <CloseIcon className={classes.buttonIcon} key="value1" />
+                : <QuestionAnswerIcon className={classes.buttonIcon} key="value2" />}
+          </Button>
+          </div>
+        )}
+      </Subscribe>
     );
   }
 }

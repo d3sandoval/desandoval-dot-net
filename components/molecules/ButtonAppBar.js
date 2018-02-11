@@ -1,5 +1,3 @@
-// @flow weak
-
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';

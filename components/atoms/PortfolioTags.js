@@ -1,5 +1,3 @@
-// @flow weak
-
 import React from 'react';
 import {withStyles} from 'material-ui/styles';
 import Chip from 'material-ui/Chip';

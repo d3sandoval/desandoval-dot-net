@@ -13,6 +13,8 @@ import ProfileImage from './ProfileImage';
 import PortfolioImage from './PortfolioImage';
 import Footer from '../components/molecules/Footer';
 
+import { Provider } from 'unstated';
+
 // google analytics page tracking
 if (process.env.NODE_ENV === 'production') {
   ReactGA.initialize('UA-42632397-1');
@@ -86,7 +88,9 @@ class PageLayout extends Component {
                        onScroll={withOptions(this.handleScroll, {passive: true, capture: true})}
         />
         <ButtonAppBar currentPage={this.props.currentPage} />
-        <ContactButton />
+        <Provider>
+          <ContactButton />
+        </Provider>
         { this.topImage() }
         <main>
           {this.props.children}

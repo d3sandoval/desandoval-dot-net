@@ -1,5 +1,3 @@
-// @flow weak
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
@@ -50,6 +48,10 @@ const styles = theme => ({
     right: 24,
     zIndex: 100,
   },
+  tooltipText: {
+    width: 'max-content',
+    textAlign: 'center',
+  }
 });
 
 class ContactRow extends React.Component {
@@ -123,7 +125,7 @@ class ContactRow extends React.Component {
                     timing={this.getTiming(this.transitionTime, 0)}
                     style={this.getStyle()}>
         <a href="mailto:daniel@desandoval.net">
-          <Tooltip title="Email me" placement="left">
+          <Tooltip classes={{popper: classes.tooltipText}} title="Email me" placement="left">
             <Button fab className={classes.emailIcon}>
               <EmailIcon dense={'true'} />
         </Button></Tooltip></a>
@@ -133,7 +135,7 @@ class ContactRow extends React.Component {
                     timing={this.getTiming(this.transitionTime, this.transitionTime / 2)}
                     style={this.getStyle()}>
         <a href="tel:+15417198286">
-          <Tooltip title="Call me" placement="left">
+          <Tooltip classes={{popper: classes.tooltipText}} title="Call me" placement="left">
             <Button className={classes.phoneIcon} fab>
              <PhoneIcon dense={'true'} />
         </Button></Tooltip></a>
@@ -144,7 +146,7 @@ class ContactRow extends React.Component {
                     onFinish={this.animateOut}
                     style={this.getStyle()}>
       <a href="https://calendly.com/d3sandoval/30min" target="_blank" rel="noopener noreferrer">
-          <Tooltip title="Schedule a call" placement="left">
+          <Tooltip classes={{popper: classes.tooltipText}} title="Schedule a call" placement="left">
             <Button className={classes.calendarIcon} fab>
               <CalendarIcon dense={'true'} />
         </Button></Tooltip></a>

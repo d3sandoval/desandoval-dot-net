@@ -6,21 +6,36 @@ import ContactRow from './ContactRow';
 import Tooltip from 'material-ui/Tooltip';
 import AnimatedFab from '../atoms/AnimatedFab';
 
-const styles = theme => ({});
+import { Subscribe } from 'unstated';
 
-class ContactButton extends React.Component {
-  state = {
-    open: false,
-    rootTooltip: false,
-    rootTooltipText: "Contact me",
-  };
+import {ButtonStateContainer} from '../StateContainers/ContactButtonState';
 
-  onAnimateOut(newState) {
-    this.setState({
-      open: newState,
-      rootTooltipText: (newState) ?  "Close" : "Contact me"
-    });
+type Props = {
+  classes: Object,
+}
+
+type State = {
+  rootTooltip: boolean,
+}
+
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit,
+    position: 'fixed',
+    bottom: 16,
+    right: 16,
+    zIndex: 100,
+  },
+  tooltipText: {
+    width: 'max-content',
+    textAlign: 'center',
   }
+});
+
+class ContactButton extends React.Component<Props, State> {
+  state = {
+    rootTooltip: false,
+  };
 
   mouseOver = () => () => {
     this.setState({rootTooltip: true});
@@ -34,16 +49,18 @@ class ContactButton extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
-        <Tooltip title={this.state.rootTooltipText} placement="left" open={this.state.rootTooltip}>
+      <Subscribe to={[ButtonStateContainer]}>
+        {buttonState => (
+          <div className={classes.button}>
+          <Tooltip classes={{popper: classes.tooltipText}} title={buttonState.state.rootTooltipText} placement="left" open={(this.state) ? this.state.rootTooltip : false}>
           <AnimatedFab
-            onMouseOver={this.mouseOver()}
-            onMouseOut={this.mouseOut()}
-            animationCallback={(newState) => this.onAnimateOut(newState)}
-            initialOpen={this.state.open} />
-        </Tooltip>
-        <ContactRow open={this.state.open} />
-      </div>
+              onMouseOver={this.mouseOver()}
+              onMouseOut={this.mouseOut()}/>
+            </Tooltip>
+            <ContactRow open={buttonState.state.open} />
+          </div>
+        )}
+      </Subscribe>
     );
   }
 }
