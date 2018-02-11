@@ -42,6 +42,9 @@ As the event came closer, I produced a flyer, sticker and t-shirts...
 #### Back
 ![SSJH T-Shirt - Back](resources/0D813CE1F8B45B9C4865519BF1BBC178.jpg =1603x708)
 
+#### IRL
+![IMAGE](resources/7457E1B498E4B32785770CACEC5C3D17.jpg =1024x1024)
+
 ## The Day Of
 For the day of the event, I created banners (full-size to go next to the podium), posters and various printouts (including a customizable letterhead) to go around Seattle University's School of Law - the event venue:
 
@@ -62,11 +65,18 @@ Photo from GeekWire's [coverage of the event](https://www.geekwire.com/2016/soci
 ### Letterhead
 ![SSJH Letterhead Example](resources/05AAF4D2B0C33A3E3D20F069B1F76D76.jpg =2328x464)
 
+#### More photos from the Hackathon
+![IMAGE](resources/8AE04D9217C6B393F8CF698C40D14330.jpg =691x449)
+
+![IMAGE](resources/DA27AD53A388FD1E1BE2503CAF50F4BA.jpg =835x886)
+
 
 ## The Demo Day
 Following a long weekend full of coffee, computers and internet connectivity issues, the hackathon came to a close. After getting some sleep, Miguel and I started work on the Demo Day - planned for February 2016 at City Hall.
 
 Along with designing the assests for the event, I also advised the three winning teams of SSJH as a UX professional.
+
+![IMAGE](resources/BEDF85CFED8B9CCE92EBCE6C22837C76.jpg =1024x1024)
 
 ### Updated Website
 ![SSJH Website - Updated for Demo Day](resources/1D788574B4568B14C1802D5FAC2B4F02.jpg =1919x9560)

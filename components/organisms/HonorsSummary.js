@@ -23,7 +23,7 @@ const honors = [
     title: 'Designer & Co-Organizer',
     organization: 'Seattle\'s Social Justice Hackathon',
     description: 'Designed and organized a Hackathon and Demo Day at Seattle University’s School of Law and Seattle’s City Hall, respectively',
-    url: 'http://socialjusticehackathon.com/',
+    url: '/portfolio/social-justice-hackathon',
   },
   {
     logo: '/img/honors/cscw.png',
