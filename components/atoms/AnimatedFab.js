@@ -63,7 +63,6 @@ class AnimatedFab extends React.Component {
   };
 
   handleScroll = (buttonState) => {
-    console.log('here!');
     buttonState.setClosed(!this.state.touched);
   };
 
@@ -77,7 +76,7 @@ class AnimatedFab extends React.Component {
             <EventListener target="window"
                            onScroll={withOptions(() => this.handleScroll(buttonState), {capture: true})}
             />
-            <Button fab color="primary" aria-label="contact" className={classes.button}
+            <Button variant="fab" color="primary" aria-label="contact" className={classes.button}
               onClick={() => this.onClick(buttonState)}
               onMouseOver={onMouseOver}
               onMouseOut={onMouseOut}

@@ -35,14 +35,14 @@ class Iam extends Component {
       <PageLayout currentPage={this.props.url.pathname}>
         <Grid container spacing={24} className={classes.root}>
           <Grid item md={6} xs={12}>
-            <Typography type="display2" gutterBottom>Listening To</Typography>
+            <Typography variant="display2" gutterBottom>Listening To</Typography>
             <LastFMRecent tracks={this.props.recentTracks} />
           </Grid>
           <Grid item md={6} xs={12}>
-            <Typography type="display2" gutterBottom>Reading</Typography>
+            <Typography variant="display2" gutterBottom>Reading</Typography>
             {this.props.wallabagData.map(function(post) {
                 return (
-                  <a href={post.link} target="_blank" rel="noopener noreferrer">
+                  <a key={post.link} href={post.link} target="_blank" rel="noopener noreferrer">
                     <BlogBox post={post} />
                   </a>
                 )})}

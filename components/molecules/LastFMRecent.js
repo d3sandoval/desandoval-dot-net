@@ -47,10 +47,10 @@ class LastFMRecent extends React.Component {
                     : <Audiotrack className={classes.albumPlaceholder} />}
                   </Grid>
                   <Grid item xs={8}>
-                    <Typography type="headline" component="h3">
+                    <Typography variant="headline" component="h3">
                       {track.name}
                     </Typography>
-                    <Typography type="body1" component="p">
+                    <Typography variant="body1" component="p">
                       {track.artist['#text']}
                       <br/>
                       {(track.date) ? 'Played ' + track.date["#text"]: 'Now Playing'}

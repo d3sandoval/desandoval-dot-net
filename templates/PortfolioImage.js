@@ -60,21 +60,21 @@ class PortfolioImage extends React.Component {
             <div style={this.getOverlayStyle()} />
             <Grid item xs={12} sm={10} style={{marginLeft: "auto", marginRight: "auto"}}>
               <div className={classes.name}>
-              <Typography type="display3">
+              <Typography variant="display3">
                 {headerData.title}
               </Typography>
               </div>
             </Grid>
           </div>
           <Grid item sm={8} md={2}>
-            <Typography type="subheading" className={classes.subName}>
+            <Typography variant="subheading" className={classes.subName}>
               <strong>{headerData.date}</strong> | {headerData.description}
               <br/><br/>
               <PortfolioIcon category={headerData.category} /> {headerData.category}
             </Typography>
           </Grid>
           <Grid item sm={8} md={2}>
-            <Typography type="subheading" className={classes.subName}>
+            <Typography variant="subheading" className={classes.subName}>
               <PortfolioTags tags={headerData.tags} />
             </Typography>
           </Grid>

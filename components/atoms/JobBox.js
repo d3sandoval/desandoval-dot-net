@@ -80,14 +80,14 @@ class JobBox extends React.Component {
         <Paper className={classes.root} elevation={4}>
           <Grid container justify="space-between">
             <Grid item xs={12} sm={4} md={3} className={classes.leftGrid}>
-              <Typography type="headline" component="h3" className={classes.jobTitle}>
+              <Typography variant="headline" component="h3" className={classes.jobTitle}>
                 {job.title}
               </Typography>
               <a href={job.website} target="_blank" rel="noopener noreferrer">
                 <img onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}
                      className={classes.jobLogo} src={job.logo} />
               </a>
-              <Typography type="caption">
+              <Typography variant="caption">
                 <a style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}
                    className={classes.jobAbout} href={job.website} target="_blank" rel="noopener noreferrer">
                   More info
@@ -95,7 +95,7 @@ class JobBox extends React.Component {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={8} md={8} className={classes.description}>
-              <Typography type="body1" component="span">
+              <Typography variant="body1" component="span">
                 {printDescription(job.description)}
               </Typography>
             </Grid>

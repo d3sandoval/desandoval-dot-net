@@ -14,7 +14,7 @@ class ButtonStateContainer extends Container<ContactButtonState> {
     rootTooltipText: "Contact me"
   };
 
-  setOpen = (mouse = true) => {
+  setOpen = (mouse: boolean = true) => {
     this.setState({
       open: true,
     });
@@ -25,7 +25,7 @@ class ButtonStateContainer extends Container<ContactButtonState> {
     }
   };
 
-  setClosed = (mouse = true) => {
+  setClosed = (mouse: boolean = true) => {
     this.setState({
       open: false,
     });

@@ -16,7 +16,7 @@ function SectionTitle(props) {
       {divider &&
         <Divider light style={{marginBottom: 24}} className="divider" />
       }
-      <Typography id={title} type="display1" align="center" gutterBottom>
+      <Typography id={title} variant="display1" align="center" gutterBottom>
         {title}
       </Typography>
     </div>

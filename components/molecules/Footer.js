@@ -6,7 +6,7 @@ import SocialRow from './SocialRow';
 
 const styles = theme => ({
   root: {
-    backgroundColor: theme.palette.background.appBar,
+    backgroundColor: theme.palette.grey[900],
     paddingTop: 16,
     paddingBottom: 16,
     paddingLeft: 24,
@@ -15,7 +15,7 @@ const styles = theme => ({
     width: '100%',
   },
   footerContent: {
-    width: 'calc(100% - 88px)'
+    width: 'calc(100% - 112px)'
   },
   footerLeft: {
     paddingTop: 12,
