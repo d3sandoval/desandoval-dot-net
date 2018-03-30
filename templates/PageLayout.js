@@ -12,8 +12,7 @@ import ContactButton from '../components/molecules/ContactButton';
 import ProfileImage from './ProfileImage';
 import PortfolioImage from './PortfolioImage';
 import Footer from '../components/molecules/Footer';
-
-import { Provider } from 'unstated';
+import { ButtonProvider } from '../components/StateContainers/ContactButtonState';
 
 // google analytics page tracking
 if (process.env.NODE_ENV === 'production') {
@@ -88,9 +87,9 @@ class PageLayout extends Component {
                        onScroll={withOptions(this.handleScroll, {passive: true, capture: true})}
         />
         <ButtonAppBar currentPage={this.props.currentPage} />
-        <Provider>
+        <ButtonProvider>
           <ContactButton />
-        </Provider>
+        </ButtonProvider>
         { this.topImage() }
         <main>
           {this.props.children}

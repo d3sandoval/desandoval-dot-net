@@ -5,9 +5,7 @@ import { Animated } from 'react-web-animation';
 import Button from 'material-ui/Button';
 import QuestionAnswerIcon from 'material-ui-icons/QuestionAnswer';
 import CloseIcon from 'material-ui-icons/Close';
-
-import { Subscribe } from 'unstated';
-import {ButtonStateContainer} from '../StateContainers/ContactButtonState';
+import { ButtonContext } from '../StateContainers/ContactButtonState';
 
 const styles = theme => ({
   buttonIcon: {
@@ -70,8 +68,8 @@ class AnimatedFab extends React.Component {
     const {classes, animationCallback, onMouseOver, onMouseOut} = this.props;
 
     return (
-      <Subscribe to={[ButtonStateContainer]}>
-        {buttonState => (
+      <ButtonContext>
+        {(buttonState) => (
           <div>
             <EventListener target="window"
                            onScroll={withOptions(() => this.handleScroll(buttonState), {capture: true})}
@@ -88,7 +86,7 @@ class AnimatedFab extends React.Component {
           </Button>
           </div>
         )}
-      </Subscribe>
+      </ButtonContext>
     );
   }
 }

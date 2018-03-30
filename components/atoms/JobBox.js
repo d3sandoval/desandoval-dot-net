@@ -64,8 +64,12 @@ class JobBox extends React.Component {
     hover: false
   };
 
-  toggleHover = () => {
-    this.setState({hover: !this.state.hover})
+  toggleHoverOn = () => {
+    this.setState({hover: true})
+  };
+
+  toggleHoverOff = () => {
+    this.setState({hover: false})
   };
 
   render() {
@@ -84,11 +88,11 @@ class JobBox extends React.Component {
                 {job.title}
               </Typography>
               <a href={job.website} target="_blank" rel="noopener noreferrer">
-                <img onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}
+                <img onMouseEnter={this.toggleHoverOn} onMouseLeave={this.toggleHoverOff}
                      className={classes.jobLogo} src={job.logo} />
               </a>
               <Typography variant="caption">
-                <a style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}
+                <a style={linkStyle} onMouseEnter={this.toggleHoverOn} onMouseLeave={this.toggleHoverOff}
                    className={classes.jobAbout} href={job.website} target="_blank" rel="noopener noreferrer">
                   More info
                 </a>
