@@ -17,12 +17,12 @@ After reducing the amount of polygons to a more manageable level, I imported the
 
 I then projected the design onto a large piece of construction paper – allowing me to build a larger-than-life size model:
 
-![IMAGE](resources/9F492AB59C794ADCF326BC549C07CC70.jpg =1836x3264)
+![IMAGE](resources/9F492AB59C794ADCF326BC549C07CC70.jpg =gallery)
 
-![IMAGE](resources/E1A564355BD833111EFA09AB5E8032BE.jpg =1836x3264) 
+![IMAGE](resources/E1A564355BD833111EFA09AB5E8032BE.jpg =gallery)
 
-![IMAGE](resources/E93D9714B0BF57C863F5032135C785FC.jpg =1836x3264)
+![IMAGE](resources/E93D9714B0BF57C863F5032135C785FC.jpg =gallery)
 
-![IMAGE](resources/5819694F37E8F14641489EDB2CB3ACE7.jpg =3264x1836)
+![IMAGE](resources/5819694F37E8F14641489EDB2CB3ACE7.jpg =gallery)
 
-![IMAGE](resources/AA9A53A76375EE9F3E5B912D22775ACC.jpg =3264x1836)
+![IMAGE](resources/AA9A53A76375EE9F3E5B912D22775ACC.jpg =gallery)

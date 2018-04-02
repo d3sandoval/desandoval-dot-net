@@ -44,7 +44,7 @@ class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
           {/* Import CSS for nprogress */}
           <link rel='stylesheet' type='text/css' href='/static/nprogress.css' />
-          <script>{`
+          <style type="text/css">{`
             * {
              box-sizing: border-box;
             }
@@ -59,7 +59,28 @@ class MyDocument extends Document {
              height: 100%;
              position: relative;
             }
-          `}</script>
+            .portfolio {
+              text-align: center;
+            }
+            .portfolio .img {
+              margin-bottom: 24px;
+            }
+            .portfolio .img .left {
+              float: left;
+              padding: 0 16px 16px 0px;
+            }
+            .portfolio .img .right {
+              float: right;
+              padding: 0 0px 16px 16px;
+            }
+            .portfolio .img .full {
+              width: 100% !important;
+              max-height: none !important;
+            }
+            .portfolio .img .banner {
+              width: 100% !important;
+            }
+          `}</style>
         </Head>
         <body>
           <Main />

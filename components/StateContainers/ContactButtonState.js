@@ -31,7 +31,7 @@ class ButtonProvider extends Component {
         },
 
         setClosed: (mouse: boolean = true) => {
-          console.log(this.state);
+          // console.log(this.state);
           this.setState({
             open: false,
           });

@@ -10,7 +10,7 @@ After a disappointing turnout towards [Discuss.IO](https://discuss.io)‘s UserV
 
 Through a series of screenshots, step-by-step instructions and easy-to-read language, I was able to create help.discuss.io – a general knowledge base which I designed and maintained. The design is based off a search-first model that encourages users find what they are looking for via a search bar at the top of the page, instead of having to navigate through lists.
 
-![IMAGE](resources/1F4FE75A280B506B2E2382E296DD84E4.jpg =1366x1485)
+![IMAGE](resources/1F4FE75A280B506B2E2382E296DD84E4.jpg =full)
 
 This content has since been replaced by support.discuss.io
 

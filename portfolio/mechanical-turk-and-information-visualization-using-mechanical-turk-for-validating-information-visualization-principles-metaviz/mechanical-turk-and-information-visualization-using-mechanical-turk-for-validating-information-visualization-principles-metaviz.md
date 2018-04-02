@@ -26,7 +26,7 @@ For a detailed explanation our process and outcomes, please read the final paper
 
 The above statement originates from our team’s project proposal which was generated over a two week period as we explored problems many visualization creators face. The entire proposal is available below:
 
-![IMAGE](resources/C6928AC6047103749E43C47D9C673F3F.jpg =588x762)
+![IMAGE](resources/C6928AC6047103749E43C47D9C673F3F.jpg =banner)
 
 [View the document](https://onedrive.live.com/redir?resid=a7dc0acf39d74449%21128495)
 
@@ -56,7 +56,7 @@ This deliverable, along with the final paper may provide a basis for additional 
 
 View our final paper below:
 
-![IMAGE](resources/F1191084CE272666FBFE4B5F4060459D.jpg =590x763)
+![IMAGE](resources/F1191084CE272666FBFE4B5F4060459D.jpg =full)
 
 [View the document](https://onedrive.live.com/redir?resid=a7dc0acf39d74449%21128492)
 

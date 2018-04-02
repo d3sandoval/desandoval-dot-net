@@ -56,5 +56,5 @@ In the image above, you can see a new footer that is now being used across the e
 
 The marketing site has since changed but you view the landing page screenshot below:
 
-![Healthcare landing page](resources/81806E39124A7C34CFB9BB1647DD36E8.jpg =1366x3101)
+![Healthcare landing page](resources/81806E39124A7C34CFB9BB1647DD36E8.jpg =full)
 

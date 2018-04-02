@@ -44,21 +44,21 @@ From here, the user can tap “Edit Group” to add contacts to a list that will
 
 Contacts can be added to the list by name or by number. One can also tap to remove the contact from this list:
 
-![Typing a number into the search field](resources/14F9954A14FD5F95CA6434684161A52B.jpg =572x1013)
+![Typing a number into the search field](resources/14F9954A14FD5F95CA6434684161A52B.jpg =gallery)
 
-![Typing "Mom" into the search field](resources/18CD5A4ADE5D27E6F18A81035815A0D3.jpg =570x972)
+![Typing "Mom" into the search field](resources/18CD5A4ADE5D27E6F18A81035815A0D3.jpg =gallery)
 
-!["Mom" and "Spouse" appear on the list below the text field](resources/2F6522605402113F52BE977B84483475.jpg =571x1015)
+!["Mom" and "Spouse" appear on the list below the text field](resources/2F6522605402113F52BE977B84483475.jpg =gallery)
 
-!["Spouse has been removed from the list](resources/29C1FAC03A30FEC0D3C7EB0EDE12E196.jpg =570x1014)
+!["Spouse has been removed from the list](resources/29C1FAC03A30FEC0D3C7EB0EDE12E196.jpg =gallery)
 
 Clicking on Add/Edit Locations brings the user to the “Edit Custom Locations” screen. This screen allows them to set a spot where they would like ImHere to be aware of:
 
-![Edit custom locations screen 1](resources/C46F98A08964A942786A67CB2A3CA7DB.jpg =569x1016)
+![Edit custom locations screen 1](resources/C46F98A08964A942786A67CB2A3CA7DB.jpg =gallery)
 
-![Edit custom locations screen 2](resources/0C659BC10E14D7287B05F1A2EBE9AE5E.jpg =567x1013)
+![Edit custom locations screen 2](resources/0C659BC10E14D7287B05F1A2EBE9AE5E.jpg =gallery)
 
-![Edit custom locations screen 3](resources/06B5D1AD5826C07508DFF975329B036F.jpg =568x1014)
+![Edit custom locations screen 3](resources/06B5D1AD5826C07508DFF975329B036F.jpg =gallery)
 
 Upon arriving at a custom location **or after traveling over 100 miles between check-ins**, the user will receive a notification from ImHere:
 
@@ -70,9 +70,9 @@ Clicking on the notification brings the user to the following screen, which show
 
 Clicking “Send via SMS” takes the user to their messaging application, the message already written out:
 
-![Android SMS screen with text from previous screen in the message field](resources/93E8C6C967BB99F54C602664E1698A4A.jpg =569x1016)
+![Android SMS screen with text from previous screen in the message field](resources/93E8C6C967BB99F54C602664E1698A4A.jpg =gallery)
 
-![Group text with message sent](resources/5B67A98A3D5BEF46F472E3AF072B9E5F.jpg =570x1013)
+![Group text with message sent](resources/5B67A98A3D5BEF46F472E3AF072B9E5F.jpg =gallery)
 
 # Future Integrations
 

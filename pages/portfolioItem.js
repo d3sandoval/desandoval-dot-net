@@ -36,7 +36,7 @@ class PortfolioItem extends Component {
 
     return (
       <PageLayout pageType="portfolioItem" headerData={this.props.headerData} currentPage={this.props.currentPage}>
-        <Grid container spacing={24} justify="center">
+        <Grid container className={"portfolio"} spacing={24} justify="center">
           <Grid item xs={10} sm={8}>
             <ReactMarkdown renderers={{
                              Paragraph: markdownHelper.paragraphRenderer,

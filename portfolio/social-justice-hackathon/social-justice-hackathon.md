@@ -17,50 +17,52 @@ I spent most of my time working as the designer - creating the website, social m
 
 From this, I created the first asset - a logo that represented the event:
 
-![SSJH Logo](resources/00226B004F4A70805AE56E1A9CCFF222.jpg =1353x1355)
+![SSJH Logo](resources/00226B004F4A70805AE56E1A9CCFF222.jpg =gallery)
 
 This logo ended up on the website, whose content, font style and color scheme was adjusted to match:
 ### Before
-![SSJH Website - Before](resources/E312271546157E93F6018021A5E4202E.jpg =1919x3048)
+![SSJH Website - Before](resources/E312271546157E93F6018021A5E4202E.jpg =banner-500)
 
 ### After
-![SSJH Website - After](resources/A1A3BD3D80F9312D5DD90F0252DFAA32.jpg =1919x13512)
+![SSJH Website - After](resources/A1A3BD3D80F9312D5DD90F0252DFAA32.jpg =banner-500)
 
 [View full size](/portfolio/social-justice-hackathon/resources/A1A3BD3D80F9312D5DD90F0252DFAA32.jpg)
 
 As the event came closer, I produced a flyer, sticker and t-shirts...
 ### Flyer
-![SSJH Flyer](resources/842CC8D61E3FB08E4C4A65E2EEC4BB40.jpg =792x1008)
+![SSJH Flyer](resources/842CC8D61E3FB08E4C4A65E2EEC4BB40.jpg =gallery)
 
 ### Sticker
-![SSJH Sticket](resources/92CFF9883E7FC3146766E19C97C72255.jpg =1500x1500)
+![SSJH Sticket](resources/92CFF9883E7FC3146766E19C97C72255.jpg =gallery)
 
 ### T-Shirt
 #### Front
-![SSJH T-Shirt - Front](resources/D6AE881E8293DAD7DB804105EF5B8D68.jpg =1602x717)
+![SSJH T-Shirt - Front](resources/D6AE881E8293DAD7DB804105EF5B8D68.jpg =full)
 
 #### Back
-![SSJH T-Shirt - Back](resources/0D813CE1F8B45B9C4865519BF1BBC178.jpg =1603x708)
+![SSJH T-Shirt - Back](resources/0D813CE1F8B45B9C4865519BF1BBC178.jpg =full)
 
 #### IRL
-![IMAGE](resources/7457E1B498E4B32785770CACEC5C3D17.jpg =1024x1024)
+![IMAGE](resources/7457E1B498E4B32785770CACEC5C3D17.jpg =full)
 
 ## The Day Of
+
+![SSJH Event Photo](resources/0C2D90DD0EF725C83DA8557F91C68475.jpg =left)
+
 For the day of the event, I created banners (full-size to go next to the podium), posters and various printouts (including a customizable letterhead) to go around Seattle University's School of Law - the event venue:
 
-![SSJH Event Photo](resources/0C2D90DD0EF725C83DA8557F91C68475.jpg =630x479)
 
 Photo from GeekWire's [coverage of the event](https://www.geekwire.com/2016/social-justice-hackathon-brings-real-solutions-to-those-in-need-oflegal-aid/).
 
 
 ### Banner (Tall)
-![SSJH Banner - Tall](resources/0345875150061EE683BFD3E3C68821CF.jpg =2160x5184)
+![SSJH Banner - Tall](resources/0345875150061EE683BFD3E3C68821CF.jpg =gallery)
 
 ### Banner (Short)
-![SSJH Banner - Short](resources/87559B1DF8FF1063C79F25B5BC16E13A.jpg =2592x3456)
+![SSJH Banner - Short](resources/87559B1DF8FF1063C79F25B5BC16E13A.jpg =gallery)
 
 ### Break out printout
-![SSJH Breakout Handout](resources/27F9DB1F5801AFEE655A41225FB954B1.jpg =792x612)
+![SSJH Breakout Handout](resources/27F9DB1F5801AFEE655A41225FB954B1.jpg =gallery)
 
 ### Letterhead
 ![SSJH Letterhead Example](resources/05AAF4D2B0C33A3E3D20F069B1F76D76.jpg =2328x464)
@@ -72,14 +74,15 @@ Photo from GeekWire's [coverage of the event](https://www.geekwire.com/2016/soci
 
 
 ## The Demo Day
+![IMAGE](resources/BEDF85CFED8B9CCE92EBCE6C22837C76.jpg =right)
+
 Following a long weekend full of coffee, computers and internet connectivity issues, the hackathon came to a close. After getting some sleep, Miguel and I started work on the Demo Day - planned for February 2016 at City Hall.
 
 Along with designing the assests for the event, I also advised the three winning teams of SSJH as a UX professional.
 
-![IMAGE](resources/BEDF85CFED8B9CCE92EBCE6C22837C76.jpg =1024x1024)
 
 ### Updated Website
-![SSJH Website - Updated for Demo Day](resources/1D788574B4568B14C1802D5FAC2B4F02.jpg =1919x9560)
+![SSJH Website - Updated for Demo Day](resources/1D788574B4568B14C1802D5FAC2B4F02.jpg =banner-500)
 
 [View full size](/portfolio/social-justice-hackathon/resources/1D788574B4568B14C1802D5FAC2B4F02.jpg)
 

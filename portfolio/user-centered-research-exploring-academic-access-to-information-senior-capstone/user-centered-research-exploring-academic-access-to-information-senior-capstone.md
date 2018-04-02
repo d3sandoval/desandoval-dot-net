@@ -28,7 +28,7 @@ Capstone Project topics should be broad enough for students to spend an entire q
 
 During the months of January-March, I spent the quarter planning out my capstone project. At the end of the quarter, I generated a final document that detailed the goals and timeline for the months of March-June:
 
-![Revised project proposal](resources/DF6701088986B01E7BF8BE89920AE648.jpg =791x1024)
+![Revised project proposal](resources/DF6701088986B01E7BF8BE89920AE648.jpg =banner)
 
 [View the document](http://desandoval.net/wp-content/uploads/2015/06/1-Revised-Project-Proposal.pdf)
 
@@ -38,7 +38,7 @@ See the entire project at: [books.desandoval.net](http://books.desandoval.net/)
 
 Poster presentation embedded below:
 
-![IMAGE](resources/B465CA0CBAB28FA8C8627D479B493100.jpg =1728x2592)
+![IMAGE](resources/B465CA0CBAB28FA8C8627D479B493100.jpg =full)
 
 [View full-size](https://desandoval.net/wp-content/uploads/2015/06/Exploring-Academic-Access-Poster.pdf)
 

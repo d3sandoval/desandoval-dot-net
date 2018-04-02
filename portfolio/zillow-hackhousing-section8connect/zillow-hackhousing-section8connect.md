@@ -46,7 +46,7 @@ In order for this application to be as valuable as it can be, we must continue t
 
 You can also [check out the infographic](https://github.com/d3sandoval/hack-housing-section8connect/blob/master/research-results.jpg)!
 
-![Seciton 8 Infographic](resources/4059A6336008FBC521FEF8345C864C86.jpg =588x2016)
+![Seciton 8 Infographic](resources/4059A6336008FBC521FEF8345C864C86.jpg =banner-500)
 
 ## Team Members
 
