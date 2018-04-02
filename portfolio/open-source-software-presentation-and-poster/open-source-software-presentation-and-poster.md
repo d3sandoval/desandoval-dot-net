@@ -37,7 +37,7 @@ Design wise:
 
 In response to these critiques, I generated a final design which better fit the theme of my presentation:
 
-![IMAGE](resources/637EB31D56EFD99C55A73DCB48B9B50D.jpg =659x851)
+![IMAGE](resources/637EB31D56EFD99C55A73DCB48B9B50D.jpg =full)
 
 [PDF Version](/docs/Assignment-3-Sustainability-Poster-Redone.pdf)
 

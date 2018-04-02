@@ -35,7 +35,7 @@ Your **initial plan** should cover these things:
 
 When you have a plan ready and have negotiated access (if applicable), go to your study site at least three (3) times, each for approximately 30-45 minutes over the course of the next two weeks. As you are in the field, take detailed notes about what you observe, reflections about your participation or observations/interpretations, thoughts about what people are doing and how they are interacting with the objects around them. Sometimes in participant-observation work, it is very difficult to take notes while an event is occurring (such as participating in a sporting event or a videogame), so be sure to write notes and reflections as soon as possible after each field study session.
 
-![IMAGE](resources/10778C2D21EEEDD4ABC92F55231CD947.jpg =428x552)
+![IMAGE](resources/10778C2D21EEEDD4ABC92F55231CD947.jpg =banner)
 
 [Click here to view the document](http://1drv.ms/1JG4Vex)
 
@@ -47,7 +47,7 @@ This assignment is designed to help you learn to be a better interviewer, and an
 
 Your goal with this assignment is to drill down on questions that arose from the analysis of your fieldnotes in the previous assignment. You will identify those questions, build an interview script designed to elicit more information that can answer those questions more comprehensively than observation alone, you will transcribe at least *one* of those interviews, and you will analyze the data from all of the interviews.
 
-![IMAGE](resources/7B40DFB2420CCA2A01247CF40D6B033E.jpg =428x555)
+![IMAGE](resources/7B40DFB2420CCA2A01247CF40D6B033E.jpg =banner)
 
 [Click here to view the document](http://1drv.ms/1OqONEc)
 
@@ -86,13 +86,13 @@ Together with a group of 3 other students, I generated the survey shown above (c
 
 [Click here to view the document](https://docs.google.com/document/d/1zp2glv6nCPwk5LdczqFQhwjS9gVgV0C8m3JdSrXEm8A/edit?usp=sharing)
 
-![IMAGE](resources/A03804D4C65AEBA1B83553DEDC0479C0.jpg =342x426)
+![IMAGE](resources/A03804D4C65AEBA1B83553DEDC0479C0.jpg =banner)
 
 [Click here to view the document](https://docs.google.com/document/d/1P34JPeIliE4ZptI1xuPRB9FRG4pHK-JKkDIE7Jy50-k/edit?usp=sharing)
 
 The group collaborated to code the collected qualitative data and visualize the various collected quantitative measures. Together, we came up with the following document which includes a copy of the survey and its top lines:
 
-![IMAGE](resources/5F544F1D27D75D482CF8BAD2D7ED6B22.jpg =403x522)
+![IMAGE](resources/5F544F1D27D75D482CF8BAD2D7ED6B22.jpg =banner)
 
 [Click here to view the document](https://drive.google.com/file/d/0B3BoCDEl2M27ZmREbjJTN0xaVXM/view?usp=sharing)
 
@@ -104,7 +104,7 @@ Think about what these stakeholders design. Is it a product? A policy? A space? 
 
 What have you learned about those users that is most important for your stakeholders’ work? From this, you will create a summary of the target user population that synthesizes findings and analyzes your data. In addition to this user profile, you will then extract opportunities for how to design for the population.
 
-![IMAGE](resources/5768E36520313F242833DB8CF32DB3A1.jpg =430x557)
+![IMAGE](resources/5768E36520313F242833DB8CF32DB3A1.jpg =full)
 
 [Click here to view the document](http://1drv.ms/1IYm1nF)
 
