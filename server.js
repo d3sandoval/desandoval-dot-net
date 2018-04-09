@@ -1,6 +1,7 @@
 const express = require('express');
 const next = require('next');
 const path = require('path');
+const helmet = require('helmet');
 const ServerHelper = require('./lib/serverHelper');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -47,6 +48,8 @@ const redirects = [
 app.prepare()
   .then(() => {
     const server = express();
+
+    server.use(helmet());
 
     server.use(express.static(__dirname + '/static'));
 
