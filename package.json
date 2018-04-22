@@ -23,7 +23,7 @@
     "isomorphic-unfetch": "^2.0.0",
     "material-ui": "^1.0.0-beta.39",
     "material-ui-icons": "^1.0.0-beta.36",
-    "mdi-react": "^2.1.19",
+    "mdi-react": "^3.0.0",
     "medium-json-feed": "0.0.2",
     "next": "^5.1.0",
     "nprogress": "^0.2.0",
