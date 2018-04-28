@@ -36,7 +36,7 @@
     "react-markdown": "^2.5.1",
     "react-medium-image-zoom": "^3.0.10",
     "react-prism": "^4.3.2",
-    "react-web-animation": "^0.6.1",
+    "react-web-animation": "^0.7.0",
     "redis": "^2.8.0",
     "rss-parser": "^2.12.1",
     "style-loader": "^0.19.1"
