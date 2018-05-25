@@ -1,15 +1,9 @@
-// @flow weak
-
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import ContactRow from './ContactRow';
 import Tooltip from 'material-ui/Tooltip';
 import AnimatedFab from '../atoms/AnimatedFab';
 import { ButtonContext } from '../StateContainers/ContactButtonState';
-
-type Props = {
-  classes: Object,
-}
 
 const styles = theme => ({
   button: {
@@ -25,7 +19,7 @@ const styles = theme => ({
   }
 });
 
-class ContactButton extends React.Component<Props> {
+class ContactButton extends React.Component {
 
   render() {
     const { classes } = this.props;
