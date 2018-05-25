@@ -69,7 +69,7 @@ class PortfolioSummary extends React.Component {
                 practical and navigable solutions to their users' problems.
               </Typography>
               <Typography variant="title" gutterBottom paragraph>As a Human Experience Designer,
-                <Link href="/portfolio"><a title="Portfolio"> I generate such solutions</a></Link>.
+                <Link prefetch href="/portfolio"><a title="Portfolio"> I generate such solutions</a></Link>.
               </Typography>
               <Typography variant="body2" gutterBottom paragraph> In the fall of 2014, I studied computer science, software development, and design
                 at <a title="Computer Science Institute" href="http://www.ait-budapest.com/" target="_blank" rel="noopener noreferrer"> AIT-Budapest.</a> I
@@ -83,7 +83,7 @@ class PortfolioSummary extends React.Component {
               </Typography>
             </Paper>
             <Typography className={classes.fullLink} variant="subheading" align="right" gutterBottom>
-              <Link href="/portfolio"><a title="Portfolio">View my entire portfolio...</a></Link>
+              <Link prefetch href="/portfolio"><a title="Portfolio">View my entire portfolio...</a></Link>
             </Typography>
           </Grid>
         </Grid>

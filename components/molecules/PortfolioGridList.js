@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
+import Link from 'next/link'
 import PortfolioIcon from '../atoms/PortfolioIcon';
 
 import { handleImageSource } from '../../lib/MarkdownRenderer';
@@ -31,6 +32,7 @@ const styles = theme => ({
     height:"100%",
     transition: 'opacity 0.5s',
     '&:hover': {
+      cursor: "pointer",
       opacity: 0.2,
       transition: 'opacity 0.25s',
     }
@@ -53,7 +55,7 @@ class PortfolioGridList extends React.Component {
         <GridList cellHeight={cellHeight} spacing={(large) ? 12 : 1} className={classes.gridList} style={{height: listHeight}}>
           {tileData.map((tile, index) => (
             <GridListTile key={tile.id} cols={(index % 3 === 0) ? 2 : 1} rows={1}>
-              <a href={`/portfolio/${tile.id}`}>
+              <Link prefetch href={`/portfolio/${tile.id}`}>
                 <div style={{
                   background: `url(${this.getTopImage(tile.id, tile.topImage)})`,
                   backgroundSize: "cover",
@@ -62,19 +64,19 @@ class PortfolioGridList extends React.Component {
                   width: '100%',
                 }} alt={tile.title}>
                   <div className={classes.overlay} />
+                  <GridListTileBar
+                    title={tile.title}
+                    titlePosition="top"
+                    actionIcon={
+                      <IconButton>
+                        <PortfolioIcon category={tile.category} />
+                      </IconButton>
+                    }
+                    actionPosition="left"
+                    className={classes.titleBar}
+                  />
                 </div>
-                <GridListTileBar
-                  title={tile.title}
-                  titlePosition="top"
-                  actionIcon={
-                    <IconButton>
-                      <PortfolioIcon category={tile.category} />
-                    </IconButton>
-                  }
-                  actionPosition="left"
-                  className={classes.titleBar}
-                />
-              </a>
+              </Link>
             </GridListTile>
           ))}
         </GridList>
