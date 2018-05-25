@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 
-type ContactButtonState = {
-  open: boolean,
-  rootTooltip: boolean,
-  rootTooltipText: string,
-}
-
 const ButtonContext = React.createContext();
 
 class ButtonProvider extends Component {
@@ -19,7 +13,7 @@ class ButtonProvider extends Component {
     return(
       <ButtonContext.Provider value={{
         state: this.state,
-        setOpen: (mouse: boolean = true) => {
+        setOpen: (mouse) => {
           this.setState({
             open: true,
           });
@@ -30,7 +24,7 @@ class ButtonProvider extends Component {
           }
         },
 
-        setClosed: (mouse: boolean = true) => {
+        setClosed: (mouse) => {
           // console.log(this.state);
           this.setState({
             open: false,
