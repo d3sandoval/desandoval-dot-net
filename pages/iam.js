@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'next/router'
 
 /* material-ui */
 import withStyles from 'material-ui/styles/withStyles';
@@ -32,7 +33,7 @@ class Iam extends Component {
     const {classes} = this.props;
 
     return (
-      <PageLayout currentPage={this.props.url.pathname}>
+      <PageLayout currentPage={this.props.router.pathname}>
         <Grid container spacing={24} className={classes.root}>
           <Grid item md={6} xs={12}>
             <Typography variant="display2" gutterBottom>Listening To</Typography>
@@ -76,4 +77,4 @@ Iam.getInitialProps = async function(context) {
   }
 };
 
-export default withRoot(withStyles(styles)(Iam));
+export default withRouter(withRoot(withStyles(styles)(Iam)));

@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {withRouter} from "next/router";
 
 /* material-ui */
 import withStyles from 'material-ui/styles/withStyles';
@@ -23,7 +24,7 @@ class Index extends Component {
 
   render() {
     return (
-      <PageLayout currentPage={this.props.url.pathname} pageType="home">
+      <PageLayout currentPage={this.props.router.pathname} pageType="home">
         <BlogSummary entries={this.props.blogPosts} />
         <EmploymentSummary />
         <PortfolioSummary entries={this.props.portfolioEntries} />
@@ -56,4 +57,4 @@ Index.getInitialProps = async function(context) {
   }
 };
 
-export default withRoot(withStyles(styles)(Index));
+export default withRouter(withRoot(withStyles(styles)(Index)));
