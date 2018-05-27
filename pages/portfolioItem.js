@@ -9,7 +9,6 @@ import {
 
 /* material-ui */
 import withStyles from 'material-ui/styles/withStyles';
-import withRoot from '../templates/withRoot';
 import Grid from 'material-ui/Grid';
 
 /* my components */
@@ -35,7 +34,7 @@ class PortfolioItem extends Component {
     const markdownHelper = new MarkdownHelper(this.props.currentPage);
 
     return (
-      <PageLayout pageType="portfolioItem" headerData={this.props.headerData} currentPage={this.props.currentPage}>
+      <PageLayout headerData={this.props.headerData} currentPage={this.props.currentPage}>
         <Grid container className={"portfolio"} spacing={24} justify="center">
           <Grid item xs={10} sm={8}>
             <ReactMarkdown renderers={{
@@ -70,4 +69,4 @@ PortfolioItem.getInitialProps = async function(context) {
   }
 }
 
-export default withRoot(withStyles(styles)(PortfolioItem));
+export default withStyles(styles)(PortfolioItem);

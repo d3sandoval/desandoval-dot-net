@@ -1,11 +1,9 @@
 /* eslint-disable flowtype/require-valid-file-annotation */
 
 import React, { Component } from 'react';
-import {withRouter} from "next/router";
 
 /* material-ui */
 import withStyles from 'material-ui/styles/withStyles';
-import withRoot from '../templates/withRoot';
 
 /* my components */
 import PageLayout from '../templates/PageLayout';
@@ -18,7 +16,7 @@ class Portfolio extends Component {
   render() {
 
     return (
-      <PageLayout currentPage={this.props.router.pathname}>
+      <PageLayout currentPage={this.props.pathName}>
         <PortfolioGridList tileData={this.props.portfolioEntries} large={true} />
       </PageLayout>
     )
@@ -36,4 +34,4 @@ Portfolio.getInitialProps = async function(context) {
   }
 };
 
-export default withRouter(withRoot(withStyles(styles)(Portfolio)));
+export default withStyles(styles)(Portfolio);

@@ -1,9 +1,12 @@
-/* eslint-disable flowtype/require-valid-file-annotation */
+/* global window document */
 
 import React, { Component } from 'react';
 import { withStyles, MuiThemeProvider } from 'material-ui/styles';
 import wrapDisplayName from 'recompose/wrapDisplayName';
 import getContext from '../styles/getContext';
+import { initAnalytics, logPageView } from '../lib/analytics';
+
+initAnalytics();
 
 // Apply some reset
 const styles = theme => ({
@@ -16,17 +19,17 @@ const styles = theme => ({
     body: {
       margin: 0,
     },
-    'a': {
+    a: {
       textDecoration: 'none',
       color: theme.palette.primary[500],
       '&:hover': {
         color: theme.palette.secondary[300],
-      }
+      },
     },
     blockquote: {
       paddingLeft: 15,
       borderLeft: '3px solid #ccc',
-    }
+    },
   },
 });
 
@@ -54,9 +57,13 @@ function withRoot(BaseComponent) {
       if (jssStyles && jssStyles.parentNode) {
         jssStyles.parentNode.removeChild(jssStyles);
       }
+      logPageView(this.props.router.asPath);
     }
 
     render() {
+      // get the path name while we still have a router
+      this.props.pageProps.pathName = this.props.router.asPath;
+
       return (
         <MuiThemeProvider
           theme={this.styleContext.theme}

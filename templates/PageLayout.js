@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import withStyles from 'material-ui/styles/withStyles';
 import debounce from 'lodash/debounce';
 import EventListener, {withOptions} from 'react-event-listener';
-import ReactGA from 'react-ga'; // todo pull this out into a utility
 
 import ButtonAppBar from '../components/molecules/ButtonAppBar';
 import ContactButton from '../components/molecules/ContactButton';
@@ -44,7 +43,6 @@ class PageLayout extends Component {
       // this will be undefined when using SSR - set it here just in case
       this.setState({viewWidth: document.documentElement.clientWidth});
     }
-    ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   componentWillUnmount() {
@@ -53,16 +51,19 @@ class PageLayout extends Component {
   }
 
   topImage = () => {
-      switch (this.props.pageType) {
-        case "home":
-          return <ProfileImage positionTop={this.state.positionTop} viewWidth={this.state.viewWidth} />;
-          break;
-        case "portfolioItem":
+    const path = this.props.currentPage.split("/");
+    switch (path[1]) {
+      case "":
+        return <ProfileImage positionTop={this.state.positionTop} viewWidth={this.state.viewWidth} />;
+        break;
+      case "portfolio":
+        if (path[2]) {
           return <PortfolioImage headerData={this.props.headerData} positionTop={this.state.positionTop} viewWidth={this.state.viewWidth} />;
-          break;
-        default:
-          return;
-      }
+        }
+        break;
+      default:
+        return;
+    }
   };
 
   render() {

@@ -24,7 +24,7 @@ class Index extends Component {
 
   render() {
     return (
-      <PageLayout currentPage={this.props.router.pathname} pageType="home">
+      <PageLayout currentPage={this.props.pathName}>
         <BlogSummary entries={this.props.blogPosts} />
         <EmploymentSummary />
         <PortfolioSummary entries={this.props.portfolioEntries} />
@@ -57,4 +57,4 @@ Index.getInitialProps = async function(context) {
   }
 };
 
-export default withRouter(withRoot(withStyles(styles)(Index)));
+export default withStyles(styles)(Index);
