@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import withStyles from 'material-ui/styles/withStyles';
 import debounce from 'lodash/debounce';
 import EventListener, {withOptions} from 'react-event-listener';
+import ReactGA from 'react-ga'; // todo pull this out into a utility
 
 import ButtonAppBar from '../components/molecules/ButtonAppBar';
 import ContactButton from '../components/molecules/ContactButton';

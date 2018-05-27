@@ -55,7 +55,7 @@ class PortfolioGridList extends React.Component {
         <GridList cellHeight={cellHeight} spacing={(large) ? 12 : 1} className={classes.gridList} style={{height: listHeight}}>
           {tileData.map((tile, index) => (
             <GridListTile key={tile.id} cols={(index % 3 === 0) ? 2 : 1} rows={1}>
-              <Link prefetch href={`/portfolio/${tile.id}`}>
+              <Link href={`/portfolio/${tile.id}`}>
                 <div style={{
                   background: `url(${this.getTopImage(tile.id, tile.topImage)})`,
                   backgroundSize: "cover",
