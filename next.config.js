@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+
 module.exports = {
   webpack: (config) => {
     // Remove minifed react aliases for material-ui so production builds work
