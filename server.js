@@ -35,6 +35,12 @@ helper.getBlogPosts('wallabag', 10, (err, entries) => {
     console.log(`> ${entries.length} items added/updated in the wallabag cache`);
   }
 }, true);
+helper.getRecentTracks(5, (err, entries) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log(`> ${entries.length} items added/updated in the recent tracks cache`);
+});
 
 
 // url redirect map
