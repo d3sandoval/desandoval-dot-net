@@ -1,42 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withStyles} from 'material-ui/styles';
-import IconButton from 'material-ui/IconButton';
+import { withStyles } from 'material-ui/styles';
 import InfoIcon from 'material-ui-icons/Info';
-import ResearchIcon from 'material-ui-icons/FindInPage'
-import PrototypingIcon from 'material-ui-icons/Compare'
-import ProgrammingIcon from 'material-ui-icons/Computer'
-import HackathonIcon from 'material-ui-icons/FreeBreakfast'
-import DesignIcon from 'material-ui-icons/Palette'
+import ResearchIcon from 'material-ui-icons/FindInPage';
+import PrototypingIcon from 'material-ui-icons/Compare';
+import ProgrammingIcon from 'material-ui-icons/Computer';
+import HackathonIcon from 'material-ui-icons/FreeBreakfast';
+import DesignIcon from 'material-ui-icons/Palette';
 
 const styles = theme => ({
   root: {},
 });
 
 function chooseIcon(category) {
-  switch(category) {
-    case "Research":
+  switch (category) {
+    case 'Research':
       return <ResearchIcon color="inherit" />;
-      break;
-    case "Prototyping":
+    case 'Prototyping':
       return <PrototypingIcon color="inherit" />;
-      break;
-    case "Design":
+    case 'Design':
       return <DesignIcon color="inherit" />;
-      break;
-    case "Hackathon":
+    case 'Hackathon':
       return <HackathonIcon color="inherit" />;
-      break;
-    case "Programming":
+    case 'Programming':
       return <ProgrammingIcon color="inherit" />;
-      break;
     default:
       return <InfoIcon color="inherit" />;
   }
 }
 
 function SectionTitle(props) {
-  const {classes, category} = props;
+  const { category } = props;
 
   return chooseIcon(category);
 }

@@ -1,8 +1,6 @@
-/* global window document */
-
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withStyles, MuiThemeProvider } from 'material-ui/styles';
-import wrapDisplayName from 'recompose/wrapDisplayName';
 import getContext from '../styles/getContext';
 import { initAnalytics, logPageView } from '../lib/analytics';
 
@@ -77,9 +75,10 @@ function withRoot(BaseComponent) {
     }
   }
 
-  if (process.env.NODE_ENV !== 'production') {
-    WithRoot.displayName = wrapDisplayName(BaseComponent, 'withRoot');
-  }
+  WithRoot.propTypes = {
+    router: PropTypes.object.isRequired,
+    pageProps: PropTypes.object.isRequired,
+  };
 
   return WithRoot;
 }

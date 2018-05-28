@@ -20,7 +20,7 @@ export const daniGreen = {
   A200: '#beffa8',
   A400: '#98ff75',
   A700: '#85ff5c',
-  'contrastDefaultColor': 'dark',
+  contrastDefaultColor: 'dark',
 };
 
 export const daniPurple = {
@@ -38,18 +38,18 @@ export const daniPurple = {
   A200: '#ffbbc5',
   A400: '#ff8899',
   A700: '#ff6e83',
-  'contrastDefaultColor': 'light',
+  contrastDefaultColor: 'light',
 };
 
 const theme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: daniGreen,
-    secondary: daniPurple
+    secondary: daniPurple,
   },
   typography: {
     fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
-  }
+  },
 });
 
 // Configure JSS

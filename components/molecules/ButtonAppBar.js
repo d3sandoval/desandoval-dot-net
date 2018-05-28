@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Link from 'next/link';
+import Headroom from 'react-headroom';
+
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Button from 'material-ui/Button';
 import ButtonBase from 'material-ui/ButtonBase';
-import Link from 'next/link';
-import Headroom from 'react-headroom';
 
 const styles = theme => ({
   root: {
@@ -19,7 +21,7 @@ const styles = theme => ({
     flex: 1,
     [theme.breakpoints.down('sm')]: {
       display: 'none',
-    }
+    },
   },
   menu: {
     margin: '0 0 0 auto',
@@ -31,27 +33,28 @@ const styles = theme => ({
 });
 
 class ButtonAppBar extends React.Component {
+  /* eslint-disable-next-line consistent-return */
+  getHomeButton = () => {
+    if (this.props.currentPage !== '/') {
+      return (
+        <Link prefetch href="/">
+          <ButtonBase>
+            <img alt="home page" src="/img/logo.png" height="40px" />
+          </ButtonBase>
+        </Link>
+      );
+    }
+  };
 
   render() {
-    const { classes, currentPage } = this.props;
-    let homeButton = function() {
-      if (currentPage !== '/') {
-        return(
-          <Link prefetch href="/">
-            <ButtonBase>
-              <img src="/img/logo.png" height="40px" />
-            </ButtonBase>
-          </Link>
-        );
-      }
-    };
+    const { classes } = this.props;
 
     return (
       <div className={classes.root}>
-        <Headroom style={{zIndex: 100}}>
+        <Headroom style={{ zIndex: 100 }}>
           <AppBar color="default" position="static">
             <Toolbar>
-              {homeButton()}
+              {this.getHomeButton()}
               <div className={classes.menu}>
                 <Button href="https://medium.com/@d3sandoval/latest" target="_blank" rel="noopener noreferrer" color="primary">Blog</Button>
                 <Link prefetch href="/portfolio"><Button color="primary">Portfolio</Button></Link>
@@ -64,5 +67,14 @@ class ButtonAppBar extends React.Component {
     );
   }
 }
+
+ButtonAppBar.defaultProps = {
+  classes: {},
+};
+
+ButtonAppBar.propTypes = {
+  classes: PropTypes.object,
+  currentPage: PropTypes.string.isRequired,
+};
 
 export default withStyles(styles)(ButtonAppBar);

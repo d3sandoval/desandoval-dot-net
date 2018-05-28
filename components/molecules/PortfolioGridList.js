@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
-import Link from 'next/link'
+import Link from 'next/link';
 import PortfolioIcon from '../atoms/PortfolioIcon';
 
 import { handleImageSource } from '../../lib/MarkdownRenderer';
@@ -27,24 +27,24 @@ const styles = theme => ({
     'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
   },
   overlay: {
-    backgroundColor: "#000",
+    backgroundColor: '#000',
     opacity: 0.5,
-    height:"100%",
+    height: '100%',
     transition: 'opacity 0.5s',
     '&:hover': {
-      cursor: "pointer",
+      cursor: 'pointer',
       opacity: 0.2,
       transition: 'opacity 0.25s',
-    }
-  }
+    },
+  },
 });
 
-class PortfolioGridList extends React.Component {
-  getTopImage(id, topImage) {
-    let imageData = handleImageSource(topImage);
-    return '/portfolio/' + id + '/' + imageData.src;
-  };
+function getTopImage(id, topImage) {
+  const imageData = handleImageSource(topImage);
+  return `/portfolio/${id}/${imageData.src}`;
+}
 
+class PortfolioGridList extends React.Component {
   render() {
     const { classes, tileData, large } = this.props;
     const cellHeight = (large) ? 400 : 200;
@@ -52,17 +52,25 @@ class PortfolioGridList extends React.Component {
 
     return (
       <div className={classes.root}>
-        <GridList cellHeight={cellHeight} spacing={(large) ? 12 : 1} className={classes.gridList} style={{height: listHeight}}>
+        <GridList
+          cellHeight={cellHeight}
+          spacing={(large) ? 12 : 1}
+          className={classes.gridList}
+          style={{ height: listHeight }}
+        >
           {tileData.map((tile, index) => (
             <GridListTile key={tile.id} cols={(index % 3 === 0) ? 2 : 1} rows={1}>
               <Link href={`/portfolio/${tile.id}`}>
-                <div style={{
-                  background: `url(${this.getTopImage(tile.id, tile.topImage)})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
+                <div
+                  style={{
+                  background: `url(${getTopImage(tile.id, tile.topImage)})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                   height: '100%',
                   width: '100%',
-                }} alt={tile.title}>
+                }}
+                  alt={tile.title}
+                >
                   <div className={classes.overlay} />
                   <GridListTileBar
                     title={tile.title}
@@ -85,7 +93,13 @@ class PortfolioGridList extends React.Component {
   }
 }
 
+PortfolioGridList.defaultProps = {
+  classes: {},
+  large: false,
+};
+
 PortfolioGridList.propTypes = {
+  classes: PropTypes.object,
   tileData: PropTypes.array.isRequired,
   large: PropTypes.bool,
 };

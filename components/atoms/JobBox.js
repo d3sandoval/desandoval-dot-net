@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withStyles} from 'material-ui/styles';
+import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
@@ -17,14 +17,14 @@ const styles = theme => ({
     marginRight: theme.spacing.unit,
   },
   leftGrid: {
-    margin: "16px auto 0 auto",
+    margin: '16px auto 0 auto',
   },
   jobTitle: {
     marginBottom: 24,
   },
   jobLogo: {
     [theme.breakpoints.up('xs')]: {
-      width: 160
+      width: 160,
     },
     [theme.breakpoints.down('sm')]: {
       width: 250,
@@ -38,8 +38,8 @@ const styles = theme => ({
   description: {
     textAlign: 'left',
     '& li': {
-      marginBottom:theme.spacing.unit,
-    }
+      marginBottom: theme.spacing.unit,
+    },
   },
 });
 
@@ -48,36 +48,34 @@ const styles = theme => ({
 function printDescription(description) {
   if (typeof description === 'string') {
     return description;
-  } else {
-    return (<ul>
-      {description.map(function(listItem) {
-        return (
-          <li key={listItem}>{listItem}</li>
-        );
-      })}
-    </ul>);
   }
+  return (
+    <ul>
+      {description.map(listItem => (
+        <li key={listItem}>{listItem}</li>
+        ))}
+    </ul>);
 }
 
 class JobBox extends React.Component {
   state = {
-    hover: false
+    hover: false,
   };
 
   toggleHoverOn = () => {
-    this.setState({hover: true})
+    this.setState({ hover: true });
   };
 
   toggleHoverOff = () => {
-    this.setState({hover: false})
+    this.setState({ hover: false });
   };
 
   render() {
-    const {classes, job} = this.props;
+    const { classes, job } = this.props;
 
-    let linkStyle = (this.state.hover)
-                    ? {color: job.color}
-                    : {color: 'inherit'};
+    const linkStyle = (this.state.hover)
+      ? { color: job.color }
+      : { color: 'inherit' };
 
     return (
       <div>
@@ -88,12 +86,24 @@ class JobBox extends React.Component {
                 {job.title}
               </Typography>
               <a href={job.website} target="_blank" rel="noopener noreferrer">
-                <img onMouseEnter={this.toggleHoverOn} onMouseLeave={this.toggleHoverOff}
-                     className={classes.jobLogo} src={job.logo} />
+                <img
+                  alt={`logo for ${job.title} job`}
+                  onMouseEnter={this.toggleHoverOn}
+                  onMouseLeave={this.toggleHoverOff}
+                  className={classes.jobLogo}
+                  src={job.logo}
+                />
               </a>
               <Typography variant="caption">
-                <a style={linkStyle} onMouseEnter={this.toggleHoverOn} onMouseLeave={this.toggleHoverOff}
-                   className={classes.jobAbout} href={job.website} target="_blank" rel="noopener noreferrer">
+                <a
+                  style={linkStyle}
+                  onMouseEnter={this.toggleHoverOn}
+                  onMouseLeave={this.toggleHoverOff}
+                  className={classes.jobAbout}
+                  href={job.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   More info
                 </a>
               </Typography>
@@ -110,16 +120,21 @@ class JobBox extends React.Component {
   }
 }
 
+JobBox.defaultProps = {
+  classes: {},
+};
+
 JobBox.propTypes = {
+  classes: PropTypes.object,
   job: PropTypes.shape({
     logo: PropTypes.string, // like /img/example.jpg
     title: PropTypes.string,
     description: PropTypes.oneOfType([ // handled by printDescription
       PropTypes.string,
-      PropTypes.array
+      PropTypes.array,
     ]),
     website: PropTypes.string, // like http://example.com
-    color: PropTypes.string // rgb(a) or hex
+    color: PropTypes.string, // rgb(a) or hex
   }).isRequired,
 };
 

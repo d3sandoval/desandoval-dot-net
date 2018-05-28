@@ -33,7 +33,7 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
           <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
-          <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png" />
+          <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -43,7 +43,7 @@ class MyDocument extends Document {
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
           {/* Import CSS for nprogress */}
-          <link rel='stylesheet' type='text/css' href='/static/nprogress.css' />
+          <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
           <style type="text/css">{`
             * {
              box-sizing: border-box;
@@ -58,6 +58,7 @@ class MyDocument extends Document {
             body {
              height: 100%;
              position: relative;
+             background-color: #303030;
             }
             .portfolio {
               text-align: center;
@@ -80,7 +81,8 @@ class MyDocument extends Document {
             .portfolio .img .banner {
               width: 100% !important;
             }
-          `}</style>
+          `}
+          </style>
         </Head>
         <body>
           <Main />
@@ -91,7 +93,7 @@ class MyDocument extends Document {
   }
 }
 
-MyDocument.getInitialProps = ctx => {
+MyDocument.getInitialProps = (ctx) => {
   // Resolution order
   //
   // On the server:

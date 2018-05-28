@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const ButtonContext = React.createContext();
 
@@ -6,11 +7,11 @@ class ButtonProvider extends Component {
   state = {
     open: false,
     rootTooltip: false,
-    rootTooltipText: "Contact me"
+    rootTooltipText: 'Contact me',
   };
 
   render() {
-    return(
+    return (
       <ButtonContext.Provider value={{
         state: this.state,
         setOpen: (mouse) => {
@@ -19,19 +20,18 @@ class ButtonProvider extends Component {
           });
           if (mouse) {
             this.setState({
-              rootTooltipText: "Close"
+              rootTooltipText: 'Close',
             });
           }
         },
 
         setClosed: (mouse) => {
-          // console.log(this.state);
           this.setState({
             open: false,
           });
           if (mouse) {
             this.setState({
-              rootTooltipText: "Contact me"
+              rootTooltipText: 'Contact me',
             });
           } else {
             this.setState({
@@ -41,17 +41,22 @@ class ButtonProvider extends Component {
         },
 
         mouseOver: () => {
-          this.setState({rootTooltip: true});
+          this.setState({ rootTooltip: true });
         },
 
         mouseOut: () => {
-          this.setState({rootTooltip: false});
+          this.setState({ rootTooltip: false });
         },
-      }}>
+      }}
+      >
         {this.props.children}
       </ButtonContext.Provider>
-    )
+    );
   }
 }
 
-export {ButtonContext, ButtonProvider};
+ButtonProvider.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
+export { ButtonContext, ButtonProvider };

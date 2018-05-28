@@ -1,13 +1,15 @@
 import React from 'react';
-import {withStyles} from 'material-ui/styles';
-import SectionTitle from '../atoms/SectionTitle';
+import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+
 import Grid from 'material-ui/Grid';
+import SectionTitle from '../atoms/SectionTitle';
 import HonorsBox from '../atoms/HonorsBox';
 
 const styles = theme => ({
   root: {
 
-  }
+  },
 });
 
 const honors = [
@@ -74,14 +76,14 @@ const honors = [
     description: 'Designed and developed home-made electronic whiteboards for Mercy High School',
     url: 'http://www.nesa.org/trail.html',
   },
-]
+];
 
 function HonorsSummary(props) {
-  const {classes} = props;
+  const { classes } = props;
 
   return (
     <div className={classes.root}>
-      <SectionTitle title="Honors" divider={true} />
+      <SectionTitle title="Honors" divider />
       <Grid container justify="space-around" alignItems="flex-start">
         {honors.map(honor => (
           <Grid key={honor.title} item xs={8} sm={4} lg={3}>
@@ -93,4 +95,12 @@ function HonorsSummary(props) {
   );
 }
 
-export default withStyles(styles)(HonorsSummary);(HonorsSummary);
+HonorsSummary.defaultProps = {
+  classes: {},
+};
+
+HonorsSummary.propTypes = {
+  classes: PropTypes.object,
+};
+
+export default withStyles(styles)(HonorsSummary);

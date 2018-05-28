@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'material-ui/styles/withStyles';
 import debounce from 'lodash/debounce';
-import EventListener, {withOptions} from 'react-event-listener';
+import EventListener, { withOptions } from 'react-event-listener';
 
 import ButtonAppBar from '../components/molecules/ButtonAppBar';
 import ContactButton from '../components/molecules/ContactButton';
@@ -23,55 +23,67 @@ const styles = {
 
 class PageLayout extends Component {
   state = {
-    bodyWidth: {overflowX: 'hidden'},
+    bodyWidth: { overflowX: 'hidden' },
     positionTop: 0,
   };
-
-  handleResize = debounce(() => {
-    let width = document.documentElement.clientWidth;
-    this.setState({bodyWidth: {overflowX: 'hidden'}})
-    this.setState({viewWidth: width})
-  }, 166);
-
-  handleScroll = debounce(() => {
-    let top  = window.pageYOffset || document.documentElement.scrollTop;
-    this.setState({positionTop: top})
-  });
 
   componentDidMount() {
     if (!this.state.viewWidth) {
       // this will be undefined when using SSR - set it here just in case
-      this.setState({viewWidth: document.documentElement.clientWidth});
+      /* eslint-disable-next-line react/no-did-mount-set-state */
+      this.setState({ viewWidth: document.documentElement.clientWidth });
     }
   }
 
   componentWillUnmount() {
-    this.handleResize.cancel();
-    this.handleScroll.cancel();
+    if (this.handleResize.cancel) {
+      this.handleResize.cancel();
+    }
+    if (this.handleScroll.cancel) {
+      this.handleScroll.cancel();
+    }
   }
 
+  handleResize = debounce(() => {
+    const width = document.documentElement.clientWidth;
+    this.setState({ bodyWidth: { overflowX: 'hidden' } });
+    this.setState({ viewWidth: width });
+  }, 166);
+
+  handleScroll = debounce(() => {
+    const top = window.pageYOffset || document.documentElement.scrollTop;
+    this.setState({ positionTop: top });
+  });
+
+  /* eslint-disable-next-line consistent-return */
   topImage = () => {
-    const path = this.props.currentPage.split("/");
+    const path = this.props.currentPage.split('/');
     switch (path[1]) {
-      case "":
-        return <ProfileImage positionTop={this.state.positionTop} viewWidth={this.state.viewWidth} />;
-        break;
-      case "portfolio":
+      case '':
+        return (<ProfileImage
+          positionTop={this.state.positionTop}
+          viewWidth={this.state.viewWidth}
+        />);
+      case 'portfolio':
         if (path[2]) {
-          return <PortfolioImage headerData={this.props.headerData} positionTop={this.state.positionTop} viewWidth={this.state.viewWidth} />;
+          return (<PortfolioImage
+            headerData={this.props.headerData}
+            positionTop={this.state.positionTop}
+            viewWidth={this.state.viewWidth}
+          />);
         }
         break;
       default:
-        return;
     }
   };
 
   render() {
     return (
       <div className={this.props.classes.root} style={this.state.bodyWidth}>
-        <EventListener target="window"
-                       onResize={withOptions(this.handleResize, {passive: true, capture: false})}
-                       onScroll={withOptions(this.handleScroll, {passive: true, capture: true})}
+        <EventListener
+          target="window"
+          onResize={withOptions(this.handleResize, { passive: true, capture: false })}
+          onScroll={withOptions(this.handleScroll, { passive: true, capture: true })}
         />
         <ButtonAppBar currentPage={this.props.currentPage} />
         <ButtonProvider>
@@ -81,16 +93,21 @@ class PageLayout extends Component {
         <main>
           {this.props.children}
         </main>
-        <Footer/>
+        <Footer />
       </div>
-    )
+    );
   }
 }
 
+PageLayout.defaultProps = {
+  classes: {},
+};
+
 PageLayout.propTypes = {
-  viewWidth: PropTypes.number,
-  pageType: PropTypes.string,
-  currentPage: PropTypes.string.isRequired, // usually context.url.pathname or this.props.url.pathname
+  currentPage: PropTypes.string.isRequired,
+  headerData: PropTypes.object.isRequired,
+  classes: PropTypes.object,
+  children: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(PageLayout);

@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import ContactRow from './ContactRow';
+
 import Tooltip from 'material-ui/Tooltip';
+import ContactRow from './ContactRow';
 import AnimatedFab from '../atoms/AnimatedFab';
 import { ButtonContext } from '../StateContainers/ContactButtonState';
 
@@ -16,24 +18,25 @@ const styles = theme => ({
   tooltipText: {
     width: 'max-content',
     textAlign: 'center',
-  }
+  },
 });
 
 class ContactButton extends React.Component {
-
   render() {
     const { classes } = this.props;
 
     return (
       <ButtonContext>
-        {(buttonState) => (
+        {buttonState => (
           <div className={classes.button}>
-          <Tooltip classes={{popper: classes.tooltipText}} title={buttonState.state.rootTooltipText} placement="left" open={buttonState.state.rootTooltip}>
-          <AnimatedFab
-              onMouseOver={buttonState.mouseOver}
-              onMouseOut={buttonState.mouseOut}
-              onTouchStart={buttonState.mouseOver}
-          />
+            <Tooltip classes={{ popper: classes.tooltipText }} title={buttonState.state.rootTooltipText} placement="left" open={buttonState.state.rootTooltip}>
+              <AnimatedFab
+                onMouseOver={buttonState.mouseOver}
+                onFocus={buttonState.mouseOver}
+                onMouseOut={buttonState.mouseOut}
+                onBlur={buttonState.mouseOut}
+                onTouchStart={buttonState.mouseOver}
+              />
             </Tooltip>
             <ContactRow open={buttonState.state.open} />
           </div>
@@ -42,5 +45,13 @@ class ContactButton extends React.Component {
     );
   }
 }
+
+ContactButton.defaultProps = {
+  classes: {},
+};
+
+ContactButton.propTypes = {
+  classes: PropTypes.object,
+};
 
 export default withStyles(styles)(ContactButton);

@@ -1,11 +1,15 @@
+/* eslint-disable max-len */
+
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withStyles} from 'material-ui/styles';
-import SectionTitle from '../atoms/SectionTitle';
+import Link from 'next/link';
+
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import Paper from 'material-ui/Paper';
-import Link from 'next/link';
+import { withStyles } from 'material-ui/styles';
+
+import SectionTitle from '../atoms/SectionTitle';
 import PortfolioGridList from '../molecules/PortfolioGridList';
 
 const styles = theme => ({
@@ -17,15 +21,15 @@ const styles = theme => ({
     paddingBottom: 16,
     marginTop: theme.spacing.unit,
     marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit
+    marginRight: theme.spacing.unit,
   }),
   portfolio: {
-    marginTop: theme.spacing.unit *2,
-    paddingLeft: theme.spacing.unit *4,
+    marginTop: theme.spacing.unit * 2,
+    paddingLeft: theme.spacing.unit * 4,
   },
   portfolioDescription: {
-    marginTop: theme.spacing.unit *2,
-    paddingLeft: theme.spacing.unit *2,
+    marginTop: theme.spacing.unit * 2,
+    paddingLeft: theme.spacing.unit * 2,
   },
   paperDescription: {
     paddingTop: 16,
@@ -41,19 +45,18 @@ const styles = theme => ({
       color: 'inherit',
       '&:hover': {
         color: theme.palette.primary[500],
-      }
+      },
     },
   },
 });
 
 class PortfolioSummary extends React.Component {
-
   render() {
-    const {classes, entries} = this.props;
+    const { classes, entries } = this.props;
 
     return (
       <div className={classes.root}>
-        <SectionTitle title="Portfolio" divider={true} />
+        <SectionTitle title="Portfolio" divider />
         <Grid container spacing={24}>
           {/* Portfolio Pieces */}
           <Grid className={classes.portfolio} item lg={6} xs={12}>
@@ -66,7 +69,7 @@ class PortfolioSummary extends React.Component {
                 of <strong>human-computer interaction</strong>. Through my studies in mathematics, software development,
                 and user-centered design, I have found that ubiquitous computing will lead to success in art, science,
                 and education. <strong>People use digital artifacts every day</strong>. Those that are significant provide
-                practical and navigable solutions to their users' problems.
+                practical and navigable solutions to their users&#39; problems.
               </Typography>
               <Typography variant="title" gutterBottom paragraph>As a Human Experience Designer,
                 <Link prefetch href="/portfolio"><a title="Portfolio"> I generate such solutions</a></Link>.
@@ -92,8 +95,13 @@ class PortfolioSummary extends React.Component {
   }
 }
 
+PortfolioSummary.defaultProps = {
+  classes: {},
+};
+
 PortfolioSummary.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object,
+  entries: PropTypes.array.isRequired,
 };
 
 export default withStyles(styles)(PortfolioSummary);

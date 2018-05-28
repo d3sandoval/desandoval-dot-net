@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withStyles} from 'material-ui/styles';
+import { withStyles } from 'material-ui/styles';
 import Tooltip from 'material-ui/Tooltip';
 import Button from 'material-ui/Button';
 import EmailIcon from 'material-ui-icons/Email';
@@ -51,115 +51,131 @@ const styles = theme => ({
   tooltipText: {
     width: 'max-content',
     textAlign: 'center',
-  }
+  },
 });
 
-class ContactRow extends React.Component {
-  transitionTime = 100;
+function fadeIn() {
+  return [
+    { opacity: '0', offset: 0 },
+    { opacity: '1', offset: 1 },
+  ];
+}
 
+function fadeOut() {
+  return [
+    { opacity: '1', offset: 0 },
+    { opacity: '0', offset: 1 },
+  ];
+}
+
+class ContactRow extends React.Component {
   state = {
     playState: 'idle',
     hasOpened: false,
   };
 
-  fadeIn() {
-    return [
-      { opacity: '0', offset: 0 },
-      { opacity: '1', offset: 1 },
-    ];
+  getStyle() {
+    // hacky - should fix with redux
+    if ((this.state.hasOpened && this.props.open)
+        || (this.state.hasOpened && !this.props.open)) {
+      return { opacity: 1 };
+    }
+    return { opacity: 0 };
   }
 
-  fadeOut() {
-    return [
-      { opacity: '1', offset: 0 },
-      { opacity: '0', offset: 1 },
-    ];
+  getParentStyle() {
+    if (!this.props.open && this.state.hasOpened) {
+      this.setState({ hasOpened: false });
+      return { display: 'block' };
+    } else if (this.props.open) {
+      return { display: 'block' };
+    }
+    return { display: 'none' };
   }
 
-  getTiming( duration, delay ) {
+  getTiming(duration, delay) {
     return {
-      duration: duration,
+      duration,
       easing: 'ease-in-out',
       delay: (this.props.open)
         ? delay
         : (this.transitionTime - delay),
       iterations: 1,
       direction: 'alternate',
-      fill: 'forwards'
+      fill: 'forwards',
     };
   }
 
-  getStyle() {
-    // hacky - should fix with redux
-    if ((this.state.hasOpened && this.props.open)
-        || this.state.hasOpened && !this.props.open) {
-      return {opacity: 1}
-    } else {
-      return {opacity: 0}
-    }
-  }
-
-  getParentStyle() {
-    if(!this.props.open && this.state.hasOpened) {
-      this.setState({hasOpened: false});
-      return {display: 'block'}
-    } else if (this.props.open) {
-      return {display: 'block'}
-    } else {
-      return {display: 'none'}
-    }
-  }
-
   animateOut = () => {
+    /* eslint-disable-next-line no-unused-expressions */
     (this.props.open)
-      ? this.setState({playState: 'idle', hasOpened: true})
-      : this.setState({playState: 'idle', hasOpened: false})
+      ? this.setState({ playState: 'idle', hasOpened: true })
+      : this.setState({ playState: 'idle', hasOpened: false });
   }
 
-  render () {
-    const {classes, open} = this.props;
+  transitionTime = 100;
+
+  render() {
+    const { classes, open } = this.props;
 
     return (
       <div style={this.getParentStyle()}>
-      <Animated.div playState={this.state.playState}
-                    keyframes={(open) ? this.fadeIn() : this.fadeOut()}
-                    timing={this.getTiming(this.transitionTime, 0)}
-                    style={this.getStyle()}>
-        <a href="mailto:daniel@desandoval.net">
-          <Tooltip classes={{popper: classes.tooltipText}} title="Email me" placement="left">
-            <Button variant="fab" className={classes.emailIcon}>
-              <EmailIcon dense={'true'} />
-        </Button></Tooltip></a>
-      </Animated.div>
-      <Animated.div playState={this.state.playState}
-                    keyframes={(open) ? this.fadeIn() : this.fadeOut()}
-                    timing={this.getTiming(this.transitionTime, this.transitionTime / 2)}
-                    style={this.getStyle()}>
-        <a href="tel:+15417198286">
-          <Tooltip classes={{popper: classes.tooltipText}} title="Call me" placement="left">
-            <Button variant="fab" className={classes.phoneIcon}>
-             <PhoneIcon dense={'true'} />
-        </Button></Tooltip></a>
-      </Animated.div>
-      <Animated.div playState={this.state.playState}
-                    keyframes={(open) ? this.fadeIn() : this.fadeOut()}
-                    timing={this.getTiming(this.transitionTime, this.transitionTime)}
-                    onFinish={this.animateOut}
-                    style={this.getStyle()}>
-      <a href="https://calendly.com/d3sandoval/30min" target="_blank" rel="noopener noreferrer">
-          <Tooltip classes={{popper: classes.tooltipText}} title="Schedule a call" placement="left">
-            <Button variant="fab" className={classes.calendarIcon}>
-              <CalendarIcon dense={'true'} />
-        </Button></Tooltip></a>
-      </Animated.div>
+        <Animated.div
+          playState={this.state.playState}
+          keyframes={(open) ? fadeIn() : fadeOut()}
+          timing={this.getTiming(this.transitionTime, 0)}
+          style={this.getStyle()}
+        >
+          <a href="mailto:daniel@desandoval.net">
+            <Tooltip classes={{ popper: classes.tooltipText }} title="Email me" placement="left">
+              <Button variant="fab" className={classes.emailIcon}>
+                <EmailIcon dense="true" />
+              </Button>
+            </Tooltip>
+          </a>
+        </Animated.div>
+        <Animated.div
+          playState={this.state.playState}
+          keyframes={(open) ? fadeIn() : fadeOut()}
+          timing={this.getTiming(this.transitionTime, this.transitionTime / 2)}
+          style={this.getStyle()}
+        >
+          <a href="tel:+15417198286">
+            <Tooltip classes={{ popper: classes.tooltipText }} title="Call me" placement="left">
+              <Button variant="fab" className={classes.phoneIcon}>
+                <PhoneIcon dense="true" />
+              </Button>
+            </Tooltip>
+          </a>
+        </Animated.div>
+        <Animated.div
+          playState={this.state.playState}
+          keyframes={(open) ? fadeIn() : fadeOut()}
+          timing={this.getTiming(this.transitionTime, this.transitionTime)}
+          onFinish={this.animateOut}
+          style={this.getStyle()}
+        >
+          <a href="https://calendly.com/d3sandoval/30min" target="_blank" rel="noopener noreferrer">
+            <Tooltip classes={{ popper: classes.tooltipText }} title="Schedule a call" placement="left">
+              <Button variant="fab" className={classes.calendarIcon}>
+                <CalendarIcon dense="true" />
+              </Button>
+            </Tooltip>
+          </a>
+        </Animated.div>
       </div>
 
     );
   }
 }
 
+ContactRow.defaultProps = {
+  classes: {},
+};
+
 ContactRow.propTypes = {
   open: PropTypes.bool.isRequired,
+  classes: PropTypes.object,
 };
 
 export default withStyles(styles)(ContactRow);

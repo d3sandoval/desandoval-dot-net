@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 
@@ -7,50 +8,50 @@ const styles = theme => ({
     height: '780px',
   },
   topImage: {
-    background: `url("img/looking-bg.jpg")`,
+    background: 'url("img/looking-bg.jpg")',
     height: 600,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
   },
   logo: {
-    position: "relative",
-    left: "50px",
-    filter: "drop-shadow(5px 5px 5px #222)",
+    position: 'relative',
+    left: '50px',
+    filter: 'drop-shadow(5px 5px 5px #222)',
     [theme.breakpoints.up('md')]: {
-      width: "300px",
-      top: "-150px",
+      width: '300px',
+      top: '-150px',
     },
     [theme.breakpoints.down('md')]: {
-      width: "150px",
-      top: "-75px",
+      width: '150px',
+      top: '-75px',
     },
   },
   name: {
     fontWeight: 900,
-    position: "relative",
-    display: "inline-block",
-    filter: "drop-shadow(5px 5px 5px #222)",
-    lineHeight: "50px",
+    position: 'relative',
+    display: 'inline-block',
+    filter: 'drop-shadow(5px 5px 5px #222)',
+    lineHeight: '50px',
     [theme.breakpoints.up('md')]: {
-      left: "75px",
-      top: "-320px",
+      left: '75px',
+      top: '-320px',
     },
     [theme.breakpoints.down('md')]: {
-      left: "75px",
-      top: "-170px",
+      left: '75px',
+      top: '-170px',
     },
   },
   subName: {
-    position: "relative",
-    display: "block",
+    position: 'relative',
+    display: 'block',
     [theme.breakpoints.up('md')]: {
-      left: "378px",
-      top: "-300px",
+      left: '378px',
+      top: '-300px',
       fontSize: 18,
     },
     [theme.breakpoints.down('md')]: {
-      left: "228px",
-      top: "-150px",
+      left: '228px',
+      top: '-150px',
     },
   },
   '@media (max-width: 780px)': {
@@ -58,43 +59,41 @@ const styles = theme => ({
       height: '640px',
     },
     name: {
-      left: "50px",
-      top: "290px",
-      position: "absolute"
+      left: '50px',
+      top: '290px',
+      position: 'absolute',
     },
     subName: {
-      left: "50px",
-      top: "355px",
+      left: '50px',
+      top: '355px',
       maxWidth: '300px',
-      filter: "drop-shadow(5px 5px 5px #222)",
-      position: "absolute",
+      filter: 'drop-shadow(5px 5px 5px #222)',
+      position: 'absolute',
     },
     logo: {
-      position: "absolute",
-      width: "180px",
-      top: "95px",
+      position: 'absolute',
+      width: '180px',
+      top: '95px',
     },
     '@media (max-width: 532px)': {
       name: {
         'max-width': '300px',
       },
       subName: {
-        top: "400px",
-      }
-    }
+        top: '400px',
+      },
+    },
   },
 });
 
 class ProfileImage extends React.Component {
-  getOverlayStyle = () => {
-    return {
-      backgroundColor: "#000",
-      opacity: (this.props.viewWidth < 780)
-                ? 0.5 // dynamic opacity does not work well on phones
-                : 1 - ((600 - this.props.positionTop)/600),
-      height:"100%",
-    }
-  }
+  getOverlayStyle = () => ({
+    backgroundColor: '#000',
+    opacity: (this.props.viewWidth < 780)
+      ? 0.5 // dynamic opacity does not work well on phones
+      : 1 - ((600 - this.props.positionTop) / 600),
+    height: '100%',
+  })
   render() {
     const { classes } = this.props;
     return (
@@ -102,7 +101,7 @@ class ProfileImage extends React.Component {
         <div className={classes.topImage}>
           <div style={this.getOverlayStyle()} />
         </div>
-        <img src="img/logo.png" className={classes.logo}/>
+        <img alt="Daniel E. Sandoval logo" src="img/logo.png" className={classes.logo} />
         <Typography variant="display3" className={classes.name}>
           Daniel E. Sandoval
         </Typography>
@@ -113,5 +112,15 @@ class ProfileImage extends React.Component {
     );
   }
 }
+
+ProfileImage.defaultProps = {
+  classes: {},
+};
+
+ProfileImage.propTypes = {
+  classes: PropTypes.object,
+  viewWidth: PropTypes.number.isRequired,
+  positionTop: PropTypes.number.isRequired,
+};
 
 export default withStyles(styles)(ProfileImage);

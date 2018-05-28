@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* global url */
 const express = require('express');
 const next = require('next');
 const path = require('path');
@@ -12,25 +14,25 @@ require('dotenv').config();
 
 // cache content (async)
 const helper = new ServerHelper(__dirname);
-helper.getPortfolioList(null, function(err, entries) {
+helper.getPortfolioList(null, (err, entries) => {
   if (err) {
     console.log(err);
   } else {
-    console.log("> " + entries.length + " items added/updated in the portfolio cache")
+    console.log(`> ${entries.length} items added/updated in the portfolio cache`);
   }
 });
-helper.getBlogPosts('blog', 4, function(err, entries) {
+helper.getBlogPosts('blog', 4, (err, entries) => {
   if (err) {
     console.log(err);
   } else {
-    console.log("> " + entries.length + " items added/updated in the blog cache")
+    console.log(`> ${entries.length} items added/updated in the blog cache`);
   }
 }, true);
-helper.getBlogPosts('wallabag', 10, function(err, entries) {
+helper.getBlogPosts('wallabag', 10, (err, entries) => {
   if (err) {
     console.log(err);
   } else {
-    console.log("> " + entries.length + " items added/updated in the wallabag cache")
+    console.log(`> ${entries.length} items added/updated in the wallabag cache`);
   }
 }, true);
 
@@ -51,34 +53,36 @@ app.prepare()
 
     server.use(helmet());
 
-    server.use(express.static(__dirname + '/static'));
+    server.use(express.static(`${__dirname}/static`));
 
     // handle 301 redirection for outdated urls
-    redirects.forEach(({ from, to, type = 301, method = 'get' }) => {
+    redirects.forEach(({
+      from, to, type = 301, method = 'get',
+    }) => {
       server[method](from, (req, res) => {
-        res.redirect(type, to)
-      })
+        res.redirect(type, to);
+      });
     });
 
     server.get('/portfolio/list', (req, res) => {
       res.setHeader('Content-Type', 'application/json');
-      helper.getPortfolioList(req.query.limit, function(err, entries) {
+      helper.getPortfolioList(req.query.limit, (err, entries) => {
         if (err) {
           res.status = 400;
           handle(req, res);
         }
         res.send(JSON.stringify(entries));
-      })
+      });
     });
 
     server.get('/portfolio/:id', (req, res) => {
       const actualPage = '/portfolioItem';
-      helper.getPortfolioPage(req.params.id, function(err, queryParams) {
+      helper.getPortfolioPage(req.params.id, (err, queryParams) => {
         if (err) {
           res.status = 404;
-          handle(req, res, req.url)
+          handle(req, res, req.url);
         } else {
-          app.render(req, res, actualPage, queryParams)
+          app.render(req, res, actualPage, queryParams);
         }
       });
     });
@@ -91,19 +95,19 @@ app.prepare()
 
     server.get('/blog/posts', (req, res) => {
       res.setHeader('Content-Type', 'application/json');
-      helper.getBlogPosts('blog', req.query.limit, function(err, entries) {
+      helper.getBlogPosts('blog', req.query.limit, (err, entries) => {
         if (err) {
           res.status = 400;
           handle(req, res, req.url);
         }
         res.end(JSON.stringify(entries));
-      }, false)
+      }, false);
     });
 
-    server.get('/lastfm/:request', (req,res) => {
+    server.get('/lastfm/:request', (req, res) => {
       switch (req.params.request) {
         case 'recent':
-          helper.getRecentTracks(req.query.limit, function(err, entries) {
+          helper.getRecentTracks(req.query.limit, (err, entries) => {
             if (err) {
               res.status = 400;
               handle(req, res, req.url);
@@ -113,14 +117,14 @@ app.prepare()
           break;
         default:
           res.status = 400;
-          handle(req, res, req,url);
+          handle(req, res, req, url);
       }
     });
 
-    server.get('/wallabag/:request', (req,res) => {
+    server.get('/wallabag/:request', (req, res) => {
       switch (req.params.request) {
         case 'recent':
-          helper.getBlogPosts('wallabag', req.query.limit, function(err, entries) {
+          helper.getBlogPosts('wallabag', req.query.limit, (err, entries) => {
             if (err) {
               res.status = 400;
               handle(req, res, req.url);
@@ -130,18 +134,16 @@ app.prepare()
           break;
         default:
           res.status = 400;
-          handle(req, res, req,url);
+          handle(req, res, req, url);
       }
     });
 
-    server.get('*', (req, res) => {
-      return handle(req, res)
-    });
+    server.get('*', (req, res) => handle(req, res));
 
     server.listen(process.env.PORT, (err) => {
       if (err) throw err;
-      console.log('> Ready on localhost:' + process.env.PORT)
-    })
+      console.log(`> Ready on localhost:${process.env.PORT}`);
+    });
   })
   .catch((ex) => {
     console.error(ex.stack);

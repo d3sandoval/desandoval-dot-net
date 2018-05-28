@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withStyles} from 'material-ui/styles';
+import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
@@ -8,27 +8,27 @@ const styles = theme => ({
     '& img': {
       height: 50,
     },
-    '& a':{
+    '& a': {
       color: '#fff',
       '&:hover': {
         color: theme.palette.primary[500],
-      }
+      },
     },
     textAlign: 'center',
     marginBottom: 16,
   },
   linkText: {
     color: 'inherit',
-  }
+  },
 });
 
 function HonorsBox(props) {
-  const {classes, details} = props;
+  const { classes, details } = props;
 
   return (
     <div className={classes.root}>
       <a href={details.url} target="_blank" rel="noopener noreferrer">
-        <img src={details.logo} />
+        <img src={details.logo} alt={`${details.organization} logo`} />
         <Typography variant="title" className={classes.linkText}>
           {details.title}
         </Typography>
@@ -43,8 +43,13 @@ function HonorsBox(props) {
   );
 }
 
+HonorsBox.defaultProps = {
+  classes: {},
+};
+
 HonorsBox.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object,
+  details: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(HonorsBox);
