@@ -70,7 +70,7 @@ LastFMRecent.defaultProps = {
 
 LastFMRecent.propTypes = {
   classes: PropTypes.object,
-  tracks: PropTypes.arrayOf({
+  tracks: PropTypes.shape({
     album: PropTypes.shape({
       '#text': PropTypes.string,
       mbid: PropTypes.string,

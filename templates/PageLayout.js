@@ -101,13 +101,17 @@ class PageLayout extends Component {
 
 PageLayout.defaultProps = {
   classes: {},
+  headerData: {},
 };
 
 PageLayout.propTypes = {
   currentPage: PropTypes.string.isRequired,
-  headerData: PropTypes.object.isRequired,
+  headerData: PropTypes.object,
   classes: PropTypes.object,
-  children: PropTypes.object.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
 };
 
 export default withStyles(styles)(PageLayout);

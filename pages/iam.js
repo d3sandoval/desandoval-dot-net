@@ -52,7 +52,7 @@ Iam.propTypes = {
   classes: PropTypes.object.isRequired,
   pathName: PropTypes.string.isRequired,
   recentTracks: PropTypes.object.isRequired,
-  wallabagData: PropTypes.object.isRequired,
+  wallabagData: PropTypes.array.isRequired,
 };
 
 /* eslint-disable-next-line func-names */

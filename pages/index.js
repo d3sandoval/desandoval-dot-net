@@ -31,8 +31,8 @@ class Index extends Component {
 
 Index.propTypes = {
   pathName: PropTypes.string.isRequired,
-  blogPosts: PropTypes.object.isRequired,
-  portfolioEntries: PropTypes.object.isRequired,
+  blogPosts: PropTypes.array.isRequired,
+  portfolioEntries: PropTypes.array.isRequired,
 };
 
 /* eslint-disable-next-line func-names */

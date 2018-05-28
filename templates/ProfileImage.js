@@ -115,11 +115,12 @@ class ProfileImage extends React.Component {
 
 ProfileImage.defaultProps = {
   classes: {},
+  viewWidth: 0,
 };
 
 ProfileImage.propTypes = {
   classes: PropTypes.object,
-  viewWidth: PropTypes.number.isRequired,
+  viewWidth: PropTypes.number, // not required since it could be loaded on server
   positionTop: PropTypes.number.isRequired,
 };
 

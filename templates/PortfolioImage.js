@@ -86,11 +86,12 @@ class PortfolioImage extends React.Component {
 
 PortfolioImage.defaultProps = {
   classes: {},
+  viewWidth: 0,
 };
 
 PortfolioImage.propTypes = {
   classes: PropTypes.object,
-  viewWidth: PropTypes.number.isRequired,
+  viewWidth: PropTypes.number, // not required since it can be loaded on the server
   headerData: PropTypes.object.isRequired,
   positionTop: PropTypes.number.isRequired,
 };

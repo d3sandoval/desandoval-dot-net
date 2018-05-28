@@ -24,12 +24,13 @@ function SectionTitle(props) {
 }
 SectionTitle.defaultProps = {
   classes: {},
+  divider: false,
 };
 
 SectionTitle.propTypes = {
   classes: PropTypes.object,
   title: PropTypes.string.isRequired, // title of section
-  divider: PropTypes.bool.isRequired, // true/false
+  divider: PropTypes.bool, // true/false
 };
 
 export default withStyles(styles)(SectionTitle);

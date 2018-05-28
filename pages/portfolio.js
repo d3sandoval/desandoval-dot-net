@@ -22,7 +22,7 @@ class Portfolio extends Component {
 
 Portfolio.propTypes = {
   pathName: PropTypes.string.isRequired,
-  portfolioEntries: PropTypes.object.isRequired,
+  portfolioEntries: PropTypes.array.isRequired,
 };
 
 /* eslint-disable-next-line func-names */
