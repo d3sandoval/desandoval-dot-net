@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
 
 /* material-ui */
-import withStyles from 'material-ui/styles/withStyles';
+import withStyles from '@material-ui/core/styles/withStyles';
 
 /* my components */
 import PageLayout from '../templates/PageLayout';

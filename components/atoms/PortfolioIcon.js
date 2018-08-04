@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import InfoIcon from 'material-ui-icons/Info';
-import ResearchIcon from 'material-ui-icons/FindInPage';
-import PrototypingIcon from 'material-ui-icons/Compare';
-import ProgrammingIcon from 'material-ui-icons/Computer';
-import HackathonIcon from 'material-ui-icons/FreeBreakfast';
-import DesignIcon from 'material-ui-icons/Palette';
+import { withStyles } from '@material-ui/core/styles';
+import InfoIcon from '@material-ui/icons/Info';
+import ResearchIcon from '@material-ui/icons/FindInPage';
+import PrototypingIcon from '@material-ui/icons/Compare';
+import ProgrammingIcon from '@material-ui/icons/Computer';
+import HackathonIcon from '@material-ui/icons/FreeBreakfast';
+import DesignIcon from '@material-ui/icons/Palette';
 
 const styles = theme => ({
   root: {},

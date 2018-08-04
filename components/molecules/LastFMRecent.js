@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Paper from 'material-ui/Paper';
-import Grid from 'material-ui/Grid';
-import Typography from 'material-ui/Typography';
-import Audiotrack from 'material-ui-icons/Audiotrack';
-import { grey } from 'material-ui/colors';
+import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Audiotrack from '@material-ui/icons/Audiotrack';
+import { grey } from '@material-ui/core/colors';
 
 const styles = theme => ({
   root: {

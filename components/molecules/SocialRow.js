@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import ButtonBase from 'material-ui/ButtonBase';
+import { withStyles } from '@material-ui/core/styles';
+import ButtonBase from '@material-ui/core/ButtonBase';
 import GithubIcon from 'mdi-react/GithubCircleIcon';
 import TwitterIcon from 'mdi-react/TwitterIcon';
 import FacebookIcon from 'mdi-react/FacebookIcon';

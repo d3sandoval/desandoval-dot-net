@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Tooltip from 'material-ui/Tooltip';
-import Button from 'material-ui/Button';
-import EmailIcon from 'material-ui-icons/Email';
-import PhoneIcon from 'material-ui-icons/Phone';
-import CalendarIcon from 'material-ui-icons/Event';
+import { withStyles } from '@material-ui/core/styles';
+import Tooltip from '@material-ui/core/Tooltip';
+import Button from '@material-ui/core/Button';
+import EmailIcon from '@material-ui/icons/Email';
+import PhoneIcon from '@material-ui/icons/Phone';
+import CalendarIcon from '@material-ui/icons/Event';
 import { Animated } from 'react-web-animation';
 
 const styles = theme => ({

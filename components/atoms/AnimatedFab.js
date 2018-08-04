@@ -1,11 +1,11 @@
 /* eslint-disable */ // disabling until we get animation back in here
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import EventListener, { withOptions } from 'react-event-listener';
 import { Animated } from 'react-web-animation';
-import Button from 'material-ui/Button';
-import QuestionAnswerIcon from 'material-ui-icons/QuestionAnswer';
-import CloseIcon from 'material-ui-icons/Close';
+import Button from '@material-ui/core/Button';
+import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
+import CloseIcon from '@material-ui/icons/Close';
 import { ButtonContext } from '../StateContainers/ContactButtonState';
 
 const styles = theme => ({

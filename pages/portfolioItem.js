@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
 /* material-ui */
-import withStyles from 'material-ui/styles/withStyles';
-import Grid from 'material-ui/Grid';
+import withStyles from '@material-ui/core/styles/withStyles';
+import Grid from '@material-ui/core/Grid';
 
 import {
   handleImageSource,

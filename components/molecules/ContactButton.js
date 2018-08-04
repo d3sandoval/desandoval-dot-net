@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 
-import Tooltip from 'material-ui/Tooltip';
+import Tooltip from '@material-ui/core/Tooltip';
 import ContactRow from './ContactRow';
 import AnimatedFab from '../atoms/AnimatedFab';
 import { ButtonContext } from '../StateContainers/ContactButtonState';

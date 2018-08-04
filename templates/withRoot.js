@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles, MuiThemeProvider } from 'material-ui/styles';
+import { withStyles, MuiThemeProvider } from '@material-ui/core/styles';
 import getContext from '../styles/getContext';
 import { initAnalytics, logPageView } from '../lib/analytics';
 

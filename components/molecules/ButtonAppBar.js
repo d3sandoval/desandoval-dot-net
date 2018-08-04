@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Headroom from 'react-headroom';
 
-import { withStyles } from 'material-ui/styles';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Button from 'material-ui/Button';
-import ButtonBase from 'material-ui/ButtonBase';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
+import ButtonBase from '@material-ui/core/ButtonBase';
 
 const styles = theme => ({
   root: {
