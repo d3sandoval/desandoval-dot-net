@@ -17,7 +17,7 @@
   "license": "CC-BY-ND-4.0",
   "dependencies": {
     "babel-plugin-inline-import": "^3.0.0",
-    "css-loader": "^0.28.11",
+    "css-loader": "^1.0.0",
     "dotenv": "^5.0.0",
     "express": "^4.16.3",
     "helmet": "^3.12.0",
