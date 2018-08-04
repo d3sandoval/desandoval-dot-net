@@ -60,7 +60,10 @@ function withRoot(BaseComponent) {
 
     render() {
       // get the path name while we still have a router
-      this.props.pageProps.pathName = this.props.router.asPath;
+      console.log(this.props.router);
+      if (this.props.router.asPath) {
+        this.props.pageProps.pathName = this.props.router.asPath;
+      }
 
       return (
         <MuiThemeProvider
