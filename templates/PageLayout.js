@@ -19,6 +19,14 @@ const styles = {
     position: 'relative',
     paddingBottom: '120px',
   },
+  main: {
+    maxWidth: 1800,
+    margin: '0 auto',
+  },
+  mainPost: {
+    maxWidth: 1240,
+    margin: '80px auto 0',
+  }
 };
 
 class PageLayout extends Component {
@@ -56,8 +64,7 @@ class PageLayout extends Component {
   });
 
   /* eslint-disable-next-line consistent-return */
-  topImage = () => {
-    const path = this.props.currentPage.split('/');
+  topImage = (path) => {
     switch (path[1]) {
       case '':
         return (<ProfileImage
@@ -78,6 +85,7 @@ class PageLayout extends Component {
   };
 
   render() {
+    const path = this.props.currentPage.split('/');
     return (
       <div className={this.props.classes.root} style={this.state.bodyWidth}>
         <EventListener
@@ -89,8 +97,8 @@ class PageLayout extends Component {
         <ButtonProvider>
           <ContactButton />
         </ButtonProvider>
-        { this.topImage() }
-        <main>
+        { this.topImage(path) }
+        <main className={(path[1] == 'portfolio' && path[2]) ? this.props.classes.mainPost : this.props.classes.main}>
           {this.props.children}
         </main>
         <Footer />

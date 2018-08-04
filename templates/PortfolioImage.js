@@ -33,7 +33,12 @@ const styles = theme => ({
   },
   subName: {
     display: 'block',
-    marginBottom: 32,
+    marginBottom: 24,
+    marginTop: 24,
+    paddingRight: 40,
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: 40,
+    }
   },
 });
 
@@ -49,7 +54,7 @@ class PortfolioImage extends React.Component {
     const { classes, headerData } = this.props;
     return (
       <div className={classes.root}>
-        <Grid container justify="space-around" >
+        <Grid container justify="center" >
           <div style={{
             background: `url(${headerData.topImage})`,
             backgroundSize: 'cover',
@@ -66,14 +71,14 @@ class PortfolioImage extends React.Component {
               </div>
             </Grid>
           </div>
-          <Grid item sm={8} md={2}>
-            <Typography variant="subheading" className={classes.subName}>
+          <Grid item sm={8} md={5} lg={3} xl={2}>
+            <Typography variant="headline" className={classes.subName}>
               <strong>{headerData.date}</strong> | {headerData.description}
               <br /><br />
               <PortfolioIcon category={headerData.category} /> {headerData.category}
             </Typography>
           </Grid>
-          <Grid item sm={8} md={2}>
+          <Grid item sm={8} md={3} lg={3} xl={2}>
             <Typography variant="subheading" className={classes.subName}>
               <PortfolioTags tags={headerData.tags} />
             </Typography>

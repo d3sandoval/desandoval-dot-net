@@ -4,6 +4,7 @@ import { create, SheetsRegistry } from 'jss';
 import preset from 'jss-preset-default';
 import { createMuiTheme } from '@material-ui/core/styles';
 import createGenerateClassName from '@material-ui/core/styles/createGenerateClassName';
+import grey from '@material-ui/core/colors/grey';
 
 export const daniGreen = {
   50: '#eff7ea',
@@ -46,9 +47,38 @@ const theme = createMuiTheme({
     type: 'dark',
     primary: daniGreen,
     secondary: daniPurple,
+    chip: grey[900],
+    background: {
+      paper: grey[900],
+    }
   },
   typography: {
-    fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
+    fontFamily: '"Merriweather", "serif"',
+    display4: {
+      fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
+    },
+    display3: {
+      fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
+    },
+    display2: {
+      fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
+    },
+    display1: {
+      fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
+    },
+    headline: {
+      fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
+    },
+    body1: {
+      fontSize: "0.95rem"
+    },
+    body2: {
+      fontSize: "0.95rem",
+      lineHeight: "1.9em"
+    },
+    subheading: {
+      fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
+    },
   },
 });
 

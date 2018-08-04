@@ -21,6 +21,7 @@ const styles = theme => ({
   footerLeft: {
     paddingTop: 12,
     marginBottom: 8,
+    fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
     '& a': {
       textDecoration: 'none',
       color: theme.palette.primary[500],
