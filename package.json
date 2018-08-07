@@ -45,7 +45,7 @@
     "react-web-animation": "^0.7.0",
     "redis": "^2.8.0",
     "rss-parser": "^3.0.0",
-    "style-loader": "^0.21.0"
+    "style-loader": "^0.22.0"
   },
   "devDependencies": {
     "babel-eslint": "8.2.6",
