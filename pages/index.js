@@ -8,6 +8,7 @@ import fetch from 'isomorphic-unfetch';
 import withStyles from '@material-ui/core/styles/withStyles';
 
 /* my components */
+import HomeHero from '../components/organisms/HomeHero';
 import PageLayout from '../templates/PageLayout';
 import BlogSummary from '../components/molecules/BlogSummary';
 import EmploymentSummary from '../components/organisms/EmploymentSummary';
@@ -19,12 +20,7 @@ const styles = {};
 class Index extends Component {
   render() {
     return (
-      <PageLayout currentPage={this.props.pathName}>
-        <BlogSummary entries={this.props.blogPosts} />
-        <EmploymentSummary />
-        <PortfolioSummary entries={this.props.portfolioEntries} />
-        <HonorsSummary />
-      </PageLayout>
+      <HomeHero /> // todo pass current location (hash?)
     );
   }
 }
