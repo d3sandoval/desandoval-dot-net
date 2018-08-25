@@ -33,17 +33,17 @@ class PortfolioItem extends Component {
     const markdownHelper = new MarkdownHelper(this.props.currentPage);
 
     return (
-      <PageLayout headerData={this.props.headerData} currentPage={this.props.currentPage}>
+      <PageLayout headerData={this.props.headerData} currentPage={this.props.currentPage} featured={this.props.featured}>
         <Grid container className="portfolio" spacing={24} justify="center">
           <Grid item xs={10} sm={8}>
             <ReactMarkdown
               renderers={{
-                             Paragraph: markdownHelper.paragraphRenderer,
-                             Heading: markdownHelper.headingRenderer,
-                             List: markdownHelper.listRenderer,
-                             Link: markdownHelper.linkRenderer,
-                             CodeBlock: markdownHelper.codeBlockRenderer,
-                           }}
+                Paragraph: markdownHelper.paragraphRenderer,
+                Heading: markdownHelper.headingRenderer,
+                List: markdownHelper.listRenderer,
+                Link: markdownHelper.linkRenderer,
+                CodeBlock: markdownHelper.codeBlockRenderer,
+              }}
               source={this.props.source}
             />
           </Grid>
@@ -61,11 +61,14 @@ PortfolioItem.propTypes = {
 
 /* eslint-disable-next-line func-names */
 PortfolioItem.getInitialProps = async function (context) {
+  const getQuery = context.asPath.split('?');
+  const path = getQuery[0];
+  const featured = !!(getQuery[1]);
   const topImage = await handleImageSource(context.query.topImage.toString());
 
   return {
     headerData: {
-      topImage: `${context.asPath}/${topImage.src}`,
+      topImage: `${path}/${topImage.src}`,
       title: context.query.title.toString(),
       description: context.query.description.toString(),
       category: context.query.category.toString(),
@@ -73,7 +76,8 @@ PortfolioItem.getInitialProps = async function (context) {
       tags: context.query.tags.toString().split(','),
     },
     source: context.query.content.toString(),
-    currentPage: context.asPath,
+    currentPage: path,
+    featured,
   };
 };
 

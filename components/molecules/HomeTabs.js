@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import Router from 'next/router';
 
 import HonorsSummary from '../organisms/HonorsSummary';
+import HomePortfolio from './HomePortfolio';
 
 function TabContainer({ children, dir }) {
   return (
@@ -107,8 +108,13 @@ class HomeTabs extends React.Component {
     Router.push(href, as, { shallow: true });
   }
 
+  scrollToTop = () => {
+    const myDiv = document.getElementById('tabContainer');
+    myDiv.scrollTop = 0;
+  }
+
   render() {
-    const { classes, theme } = this.props;
+    const { classes, theme, portfolioEntries } = this.props;
     const { value } = this.state;
 
     return (
@@ -127,10 +133,14 @@ class HomeTabs extends React.Component {
           </Tabs>
         </AppBar>
         <SwipeableViews
+          id="tabContainer"
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={value}
           onChangeIndex={this.handleChangeIndex}
           className={classes.swipeable}
+          ignoreNativeScroll
+          animateHeight
+          onTransitionEnd={this.scrollToTop}
         >
           <TabContainer dir={theme.direction}>
             <Typography variant="body2" gutterBottom paragraph><strong>People use digital tools everyday</strong>. Those that are significant provide
@@ -154,7 +164,7 @@ class HomeTabs extends React.Component {
             I am now a Product Designer and &quot;UX Team of One&quot; at <a title="Market Research Software Company" href="http://discuss.io/" target="_blank" rel="noopener noreferrer"> Discuss.io</a>. Living in Cambridge, MA.
             </Typography>
           </TabContainer>
-          <TabContainer dir={theme.direction}>Portfolio</TabContainer>
+          <TabContainer dir={theme.direction}><HomePortfolio tileData={portfolioEntries} /></TabContainer>
           <TabContainer dir={theme.direction}><HonorsSummary /></TabContainer>
         </SwipeableViews>
       </div>

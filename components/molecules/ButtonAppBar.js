@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Headroom from 'react-headroom';
+import ChevronLeft from '@material-ui/icons/ChevronLeft';
 
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -35,16 +36,39 @@ const styles = theme => ({
 class ButtonAppBar extends React.Component {
   /* eslint-disable-next-line consistent-return */
   getHomeButton = () => {
-    if (this.props.currentPage !== '/') {
+    if (this.props.featured) {
       return (
-        <Link prefetch href="/?bio">
-          <ButtonBase>
-            <img alt="home page" src="/img/logo.png" height="40px" />
-          </ButtonBase>
+        <Link prefetch href="/?portfolio">
+          <Button>
+            <ChevronLeft />
+              BACK
+          </Button>
         </Link>
       );
+    } if (this.props.currentPage.startsWith('/portfolio/')) {
+      return (
+        <React.Fragment>
+          <Link prefetch href="/?bio">
+            <ButtonBase tabIndex={0} role="navigation">
+              <img alt="home page" src="/img/logo.png" height="40px" />
+            </ButtonBase>
+          </Link>
+          <Link prefetch href="/portfolio">
+            <Button style={{ marginLeft: 24 }}>
+            All Projects
+            </Button>
+          </Link>
+        </React.Fragment>
+      );
     }
-  };
+    return (
+      <Link prefetch href="/?bio">
+        <ButtonBase tabIndex={0} role="navigation">
+          <img alt="home page" src="/img/logo.png" height="40px" />
+        </ButtonBase>
+      </Link>
+    );
+  }
 
   render() {
     const { classes } = this.props;

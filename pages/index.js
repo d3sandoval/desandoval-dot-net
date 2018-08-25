@@ -38,7 +38,7 @@ Index.getInitialProps = async function (context) {
     homeRoute = Object.keys(context.query)[0];
   }
 
-  const portfolio = await fetch(`${baseUrl}/portfolio/list?limit=3`);
+  const portfolio = await fetch(`${baseUrl}/portfolio/list?limit=3`); // todo make this "featured"
   const portfolioData = await portfolio.json();
 
   return {

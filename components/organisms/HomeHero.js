@@ -105,7 +105,7 @@ class HomeHero extends React.Component {
     }
 
     render() {
-      const { classes } = this.props;
+      const { classes, portfolioEntries } = this.props;
       const { homeRoute, logoSize } = this.state;
       return (
         <div
@@ -126,7 +126,7 @@ class HomeHero extends React.Component {
               timing={getTiming(3000)}
               className={classes.layout}
             >
-              <HomeLayout homeRoute={homeRoute} />
+              <HomeLayout homeRoute={homeRoute} portfolioEntries={portfolioEntries} />
             </Animated.div>
           )}
           <Logo size={logoSize} homeRoute={homeRoute} />

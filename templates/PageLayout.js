@@ -26,7 +26,7 @@ const styles = {
   mainPost: {
     maxWidth: 1240,
     margin: '80px auto 0',
-  }
+  },
 };
 
 class PageLayout extends Component {
@@ -34,6 +34,17 @@ class PageLayout extends Component {
     bodyWidth: { overflowX: 'hidden' },
     positionTop: 0,
   };
+
+  handleResize = debounce(() => {
+    const width = document.documentElement.clientWidth;
+    this.setState({ bodyWidth: { overflowX: 'hidden' } });
+    this.setState({ viewWidth: width });
+  }, 166);
+
+  handleScroll = debounce(() => {
+    const top = window.pageYOffset || document.documentElement.scrollTop;
+    this.setState({ positionTop: top });
+  });
 
   componentDidMount() {
     if (!this.state.viewWidth) {
@@ -52,32 +63,25 @@ class PageLayout extends Component {
     }
   }
 
-  handleResize = debounce(() => {
-    const width = document.documentElement.clientWidth;
-    this.setState({ bodyWidth: { overflowX: 'hidden' } });
-    this.setState({ viewWidth: width });
-  }, 166);
-
-  handleScroll = debounce(() => {
-    const top = window.pageYOffset || document.documentElement.scrollTop;
-    this.setState({ positionTop: top });
-  });
-
   /* eslint-disable-next-line consistent-return */
   topImage = (path) => {
     switch (path[1]) {
       case '':
-        return (<ProfileImage
-          positionTop={this.state.positionTop}
-          viewWidth={this.state.viewWidth}
-        />);
-      case 'portfolio':
-        if (path[2]) {
-          return (<PortfolioImage
-            headerData={this.props.headerData}
+        return (
+          <ProfileImage
             positionTop={this.state.positionTop}
             viewWidth={this.state.viewWidth}
-          />);
+          />
+        );
+      case 'portfolio':
+        if (path[2]) {
+          return (
+            <PortfolioImage
+              headerData={this.props.headerData}
+              positionTop={this.state.positionTop}
+              viewWidth={this.state.viewWidth}
+            />
+          );
         }
         break;
       default:
@@ -93,7 +97,7 @@ class PageLayout extends Component {
           onResize={withOptions(this.handleResize, { passive: true, capture: false })}
           onScroll={withOptions(this.handleScroll, { passive: true, capture: true })}
         />
-        <ButtonAppBar currentPage={this.props.currentPage} />
+        <ButtonAppBar currentPage={this.props.currentPage} featured={this.props.featured} />
         <ButtonProvider>
           <ContactButton />
         </ButtonProvider>

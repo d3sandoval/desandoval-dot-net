@@ -37,7 +37,7 @@ class HomeLayout extends React.Component {
     }
 
     render() {
-      const { classes, homeRoute } = this.props;
+      const { classes, homeRoute, portfolioEntries } = this.props;
       return (
         <div className={classes.root}>
           <Grid
@@ -61,7 +61,7 @@ class HomeLayout extends React.Component {
             style={{ maxWidth: 1800, margin: 'auto' }}
           >
             <Grid item xs={12} sm={6}>
-              <HomeTabs homeRoute={homeRoute} />
+              <HomeTabs homeRoute={homeRoute} portfolioEntries={portfolioEntries} />
             </Grid>
           </Grid>
         </div>
