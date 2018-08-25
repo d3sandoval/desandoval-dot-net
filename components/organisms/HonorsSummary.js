@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 import Grid from '@material-ui/core/Grid';
-import SectionTitle from '../atoms/SectionTitle';
 import HonorsBox from '../atoms/HonorsBox';
 
 const styles = theme => ({

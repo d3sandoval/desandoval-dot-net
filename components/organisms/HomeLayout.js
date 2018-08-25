@@ -4,8 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Link from 'next/link';
-import SocialRow from './SocialRow';
-import HomeTabs from './HomeTabs';
+import SocialRow from '../molecules/SocialRow';
+import HomeTabs from '../molecules/HomeTabs';
 
 const styles = theme => ({
   root: {

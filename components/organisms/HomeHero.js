@@ -8,7 +8,7 @@ import Router from 'next/router';
 import Logo from '../atoms/Logo';
 import ContactButton from '../molecules/ContactButton';
 import { ButtonProvider } from '../StateContainers/ContactButtonState';
-import HomeLayout from '../molecules/HomeLayout';
+import HomeLayout from './HomeLayout';
 
 const styles = theme => ({
   root: {
