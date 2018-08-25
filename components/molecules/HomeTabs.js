@@ -38,7 +38,7 @@ const styles = theme => ({
   },
   swipeable: {
     [theme.breakpoints.up('md')]: {
-      height: 1000,
+      height: 1200,
     },
     [theme.breakpoints.up('sm')]: {
       height: 800,
@@ -142,7 +142,7 @@ class HomeTabs extends React.Component {
           animateHeight
           onTransitionEnd={this.scrollToTop}
         >
-          <TabContainer dir={theme.direction}>
+          <TabContainer dir={theme.direction} style={{ marginBottom: 40 }}>
             <Typography variant="body2" gutterBottom paragraph><strong>People use digital tools everyday</strong>. Those that are significant provide
                 practical and navigable solutions to their users&#39; problems. In order for user research and design to have any impact on software development,
                 it must become directly involved with the tools and processes that developers use to build software.

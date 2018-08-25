@@ -3,6 +3,7 @@ description: HCDE Capstone research project exploring academic access to informa
 date: July 2015
 tags: Agile, Data Analysis, Design, Formatting, Research, Prescriptive, Technical Communication, User Research, Video, Poster, Audio/Video Production
 category: Research
+featured: true
 topImage: ![IMAGE](resources/6759C6EE13095E635FE5AF425A9FAFD2.jpg =1280x720)
 content:
 

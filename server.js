@@ -14,7 +14,7 @@ require('dotenv').config();
 
 // cache content (async)
 const helper = new ServerHelper(__dirname);
-helper.getPortfolioList(null, (err, entries) => {
+helper.getPortfolioList(null, null, (err, entries) => {
   if (err) {
     console.log(err);
   } else {
@@ -72,7 +72,7 @@ app.prepare()
 
     server.get('/portfolio/list', (req, res) => {
       res.setHeader('Content-Type', 'application/json');
-      helper.getPortfolioList(req.query.limit, (err, entries) => {
+      helper.getPortfolioList(req.query.limit, req.query.featured, (err, entries) => {
         if (err) {
           res.status = 400;
           handle(req, res);

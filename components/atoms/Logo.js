@@ -86,10 +86,15 @@ class Logo extends React.Component {
     }
 }
 
+Logo.defaultProps = {
+  homeRoute: null,
+  size: 500,
+};
+
 Logo.propTypes = {
   classes: PropTypes.object.isRequired,
-  homeRoute: PropTypes.string.isRequired,
-  size: PropTypes.number.isRequired,
+  homeRoute: PropTypes.string,
+  size: PropTypes.number,
 };
 
 export default withStyles(styles)(Logo);

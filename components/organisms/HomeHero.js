@@ -138,9 +138,13 @@ class HomeHero extends React.Component {
     }
 }
 
+HomeHero.defaultProps = {
+  homeRoute: null,
+};
+
 HomeHero.propTypes = {
   classes: PropTypes.object.isRequired,
-  homeRoute: PropTypes.string.isRequired,
+  homeRoute: PropTypes.string,
 };
 
 export default withStyles(styles)(HomeHero);

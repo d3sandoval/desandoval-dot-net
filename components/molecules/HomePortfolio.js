@@ -46,8 +46,6 @@ function getTopImage(id, topImage) {
 class HomePortfolio extends React.Component {
   render() {
     const { classes, tileData, large } = this.props;
-    const cellHeight = (large) ? 400 : 200;
-    const listHeight = (large) ? '100%' : 402;
 
     return (
       <div className={classes.root}>
@@ -79,6 +77,7 @@ class HomePortfolio extends React.Component {
                 />
               </Grid>
               <Grid
+                container
                 item
                 xs={12}
                 md={9}

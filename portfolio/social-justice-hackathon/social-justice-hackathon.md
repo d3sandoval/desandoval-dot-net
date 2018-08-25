@@ -3,6 +3,7 @@ description: Co-organized and sole designer for a 2-day legal technology event
 date: November 2015
 tags: Graphic Design, Event Organization, Event Design, Presentation, Mentorship
 category: Design
+featured: true
 topImage: ![IMAGE](resources/65FD89CB2345CD29C0CE42E8163E7E41.jpg =1500x500)
 content:
 

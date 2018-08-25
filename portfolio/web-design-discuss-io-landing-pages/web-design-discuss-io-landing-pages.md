@@ -3,6 +3,7 @@ description: A revamp of the marketing website to promote new support and login 
 date: March 2015
 tags: Design, Wordpress, Information Architecture, Marketing, Mobile, Technical Communication, Web
 category: Design
+featured: true
 topImage: ![IMAGE](resources/CFA9F6840037FF37C0870DD2F1F8FF33.jpg =1366x652)
 content:
 
