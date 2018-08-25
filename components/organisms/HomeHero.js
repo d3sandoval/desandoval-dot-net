@@ -81,8 +81,8 @@ class HomeHero extends React.Component {
         <div
           onClick={(homeRoute) ? undefined : this.handleClick}
           onKeyPress={(homeRoute) ? undefined : this.handleClick}
-          role="button"
-          tabIndex="0"
+          role={(homeRoute) ? undefined : 'button'}
+          tabIndex={(homeRoute) ? undefined : '0'}
           className={classes.root}
         >
           {(homeRoute === null) ? (

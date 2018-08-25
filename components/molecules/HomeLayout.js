@@ -44,6 +44,7 @@ class HomeLayout extends React.Component {
             direction="row"
             justify="flex-end"
             alignItems="flex-start"
+            style={{ maxWidth: 1800, margin: 'auto' }}
           >
             <Grid item xs={12} sm={6}>
               <HomeTabs homeRoute={homeRoute} />

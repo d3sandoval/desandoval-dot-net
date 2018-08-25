@@ -31,6 +31,10 @@ const styles = theme => ({
   tabs: {
     backgroundColor: '#303030',
   },
+  swipeable: {
+    height: 500,
+    WebkitOverflowScrolling: 'touch', // iOS momentum scrolling
+  },
 });
 
 class HomeTabs extends React.Component {
@@ -69,16 +73,18 @@ class HomeTabs extends React.Component {
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={value}
           onChangeIndex={this.handleChangeIndex}
+          className={classes.swipeable}
         >
           <TabContainer dir={theme.direction}>
-            <Typography variant="body2" gutterBottom paragraph>During my undergraduate education, I became enveloped in the study
-                of <strong>human-computer interaction</strong>. Through my studies in mathematics, software development,
-                and user-centered design, I have found that ubiquitous computing will lead to success in art, science,
-                and education. <strong>People use digital artifacts every day</strong>. Those that are significant provide
-                practical and navigable solutions to their users&#39; problems.
+            <Typography variant="body2" gutterBottom paragraph><strong>People use digital tools everyday</strong>. Those that are significant provide
+                practical and navigable solutions to their users&#39; problems. In order for user research and design to have any impact on software development,
+                it must become directly involved with the tools and processes that developers use to build software.
+            </Typography>
+            <Typography variant="body2" gutterBottom paragraph>When designers work closely with developers and remain open to feedback,
+                we can work together to make building a usable, consistent, and accessible interface the easiest way to develop new software.
             </Typography>
             <Typography variant="title" gutterBottom paragraph>As a Human Experience Designer,
-              <Link prefetch href="/portfolio"><a title="Portfolio"> I generate such solutions</a></Link>.
+              <Link href="#portfolio"><a title="Portfolio"> I connect user needs with the developer experience</a></Link>.
             </Typography>
             <Typography variant="body2" gutterBottom paragraph> In the fall of 2014, I studied computer science, software development, and design
                 at <a title="Computer Science Institute" href="http://www.ait-budapest.com/" target="_blank" rel="noopener noreferrer"> AIT-Budapest.</a> I
@@ -87,8 +93,8 @@ class HomeTabs extends React.Component {
                 and Gábor Bojár (<a href="http://www.graphisoft.com/" target="_blank" rel="noopener noreferrer">Graphisoft</a>, founder)
                 to expand my international view of the user experience.
             </Typography>
-            <Typography variant="body2" gutterBottom paragraph>Since returning from Hungary and graduating from the University of Washington,
-                I have become deeply involved in the Seattle startup community as a designer, developer and small-business consultant.
+            <Typography variant="body2" gutterBottom paragraph>I graduated from University of Washington with a degree in Human Centered Design and Engineering in 2015.
+            I am now a Product Designer and &quot;UX Team of One&quot; at <a title="Market Research Software Company" href="http://discuss.io/" target="_blank" rel="noopener noreferrer"> Discuss.io</a>. Living in Cambridge, MA.
             </Typography>
           </TabContainer>
           <TabContainer dir={theme.direction}>Item Two</TabContainer>
