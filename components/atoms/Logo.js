@@ -55,6 +55,10 @@ class Logo extends React.Component {
       }
     }
 
+    handleFinish = () => {
+      this.setState({ playState: 'finished' });
+    }
+
     render() {
       const { classes, size } = this.props;
       const { playState, hasAnimated } = this.state;
@@ -64,6 +68,7 @@ class Logo extends React.Component {
             keyframes={getKeyFrames(size)}
             timing={getTiming(2000)}
             playState={playState}
+            onFinish={this.handleFinish}
           >
             <img
               alt="logo for DESandoval.net"

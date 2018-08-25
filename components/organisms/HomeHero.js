@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { Animated } from 'react-web-animation';
+import Router from 'next/router';
 import Logo from '../atoms/Logo';
 import HomeLayout from '../molecules/HomeLayout';
 
@@ -65,13 +66,19 @@ class HomeHero extends React.Component {
       logoSize: 500,
     }
 
-    handleClick = () => {
-      window.location.hash = 'bio';
-      this.setState({ homeRoute: 'bio' });
+    componentDidMount = () => {
+      const { homeRoute } = this.props;
+      if (homeRoute) {
+        this.setState({ homeRoute });
+      }
+      this.setState({ logoSize: getHeight() });
     }
 
-    componentDidMount = () => {
-      this.setState({ logoSize: getHeight() });
+    handleClick = () => {
+      const href = '/?bio';
+      const as = href;
+      Router.push(href, as, { shallow: true });
+      this.setState({ homeRoute: 'bio' });
     }
 
     render() {

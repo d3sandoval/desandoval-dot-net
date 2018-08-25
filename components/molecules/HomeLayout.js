@@ -15,6 +15,11 @@ const styles = theme => ({
 });
 
 class HomeLayout extends React.Component {
+  state = {
+    hasAnimated: false,
+    playState: 'paused',
+  }
+
     componentDidUpdate = () => {
       const { homeRoute } = this.props;
       const { hasAnimated } = this.state;

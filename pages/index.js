@@ -20,29 +20,30 @@ const styles = {};
 class Index extends Component {
   render() {
     return (
-      <HomeHero /> // todo pass current location (hash?)
+      <HomeHero {...this.props} /> // todo pass current location (hash?)
     );
   }
 }
 
 Index.propTypes = {
   pathName: PropTypes.string.isRequired,
-  blogPosts: PropTypes.array.isRequired,
   portfolioEntries: PropTypes.array.isRequired,
 };
 
 /* eslint-disable-next-line func-names */
 Index.getInitialProps = async function (context) {
   const baseUrl = context.res ? `http://localhost:${process.env.PORT}` : '';
-
-  const blog = await fetch(`${baseUrl}/blog/posts?limit=4`);
-  const blogData = await blog.json();
+  let homeRoute;
+  if (context.query) {
+    // eslint-disable-next-line prefer-destructuring
+    homeRoute = Object.keys(context.query)[0];
+  }
 
   const portfolio = await fetch(`${baseUrl}/portfolio/list?limit=3`);
   const portfolioData = await portfolio.json();
 
   return {
-    blogPosts: blogData,
+    homeRoute,
     portfolioEntries: portfolioData,
     viewWidth: (context.res)
       ? undefined

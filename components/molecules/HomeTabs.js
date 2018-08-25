@@ -9,7 +9,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-import Link from 'next/link';
+import Router from 'next/router';
 
 function TabContainer({ children, dir }) {
   return (
@@ -50,6 +50,26 @@ class HomeTabs extends React.Component {
     this.setState({ value: index });
   };
 
+  internalLink = (path) => {
+    const href = `/?${path}`;
+    const as = href;
+    Router.push(href, as, { shallow: true });
+    switch (path) {
+      case 'bio':
+        this.handleChangeIndex(0);
+        break;
+      case 'portfolio':
+        this.handleChangeIndex(1);
+        break;
+      case 'awards':
+        this.handleChangeIndex(2);
+        break;
+      default:
+        this.handleChangeIndex(0);
+        break;
+    }
+  }
+
   render() {
     const { classes, theme } = this.props;
     const { value } = this.state;
@@ -84,7 +104,7 @@ class HomeTabs extends React.Component {
                 we can work together to make building a usable, consistent, and accessible interface the easiest way to develop new software.
             </Typography>
             <Typography variant="title" gutterBottom paragraph>As a Human Experience Designer,
-              <Link href="#portfolio"><a title="Portfolio"> I connect user needs with the developer experience</a></Link>.
+              <a onClick={() => this.internalLink('portfolio')} onKeyPress={() => this.internalLink('portfolio')} title="Portfolio" role="link" tabIndex={0} style={{ cursor: 'pointer' }}> I connect user needs with the developer experience</a>.
             </Typography>
             <Typography variant="body2" gutterBottom paragraph> In the fall of 2014, I studied computer science, software development, and design
                 at <a title="Computer Science Institute" href="http://www.ait-budapest.com/" target="_blank" rel="noopener noreferrer"> AIT-Budapest.</a> I
