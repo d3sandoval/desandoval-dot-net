@@ -37,7 +37,7 @@ class ButtonAppBar extends React.Component {
   getHomeButton = () => {
     if (this.props.currentPage !== '/') {
       return (
-        <Link prefetch href="/">
+        <Link prefetch href="/?bio">
           <ButtonBase>
             <img alt="home page" src="/img/logo.png" height="40px" />
           </ButtonBase>
@@ -56,9 +56,8 @@ class ButtonAppBar extends React.Component {
             <Toolbar>
               {this.getHomeButton()}
               <div className={classes.menu}>
-                <Button style={{fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif'}} href="https://medium.com/@d3sandoval/latest" target="_blank" rel="noopener noreferrer" color="primary">Blog</Button>
-                <Link prefetch href="/portfolio"><Button style={{fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif'}} color="primary">Portfolio</Button></Link>
-                <Link prefetch href="/iam"><Button style={{fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif'}} color="primary">I am...</Button></Link>
+                <Button style={{ fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif' }} href="https://medium.com/@d3sandoval/latest" target="_blank" rel="noopener noreferrer" color="primary">Blog</Button>
+                <Link prefetch href="/iam"><Button style={{ fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif' }} color="primary">I am...</Button></Link>
               </div>
             </Toolbar>
           </AppBar>

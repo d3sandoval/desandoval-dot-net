@@ -30,29 +30,6 @@
     transform: rotate(3deg) translate(0px, -4px);
 }
 
-/* Remove these to get rid of the spinner */
-#nprogress .spinner {
-    display: block;
-    position: fixed;
-    z-index: 1031;
-    top: 12px;
-    left: 24px;
-}
-
-#nprogress .spinner-icon {
-    width: 40px;
-    height: 40px;
-    box-sizing: border-box;
-
-    border: solid 2px transparent;
-    border-top-color: #64b140;
-    border-left-color: #64b140;
-    border-radius: 50%;
-
-    -webkit-animation: nprogress-spinner 800ms linear infinite;
-    animation: nprogress-spinner 800ms linear infinite;
-}
-
 .nprogress-custom-parent {
     overflow: hidden;
     position: relative;

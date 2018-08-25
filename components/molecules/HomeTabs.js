@@ -37,37 +37,59 @@ const styles = theme => ({
   },
 });
 
+function convertPathToTabIndex(path) {
+  switch (path) {
+    case 'bio':
+      return 0;
+    case 'portfolio':
+      return 1;
+    case 'awards':
+      return 2;
+    default:
+      return 'bio';
+  }
+}
+
 class HomeTabs extends React.Component {
   state = {
     value: 0,
   };
 
+  constructor(props) {
+    super(props);
+    const index = convertPathToTabIndex(props.homeRoute);
+    this.state = { value: index };
+  }
+
   handleChange = (event, value) => {
+    this.handleInternalLink(value);
     this.setState({ value });
   };
 
   handleChangeIndex = (index) => {
+    this.handleInternalLink(index);
     this.setState({ value: index });
   };
 
-  internalLink = (path) => {
+  handleInternalLink = (index) => {
+    let path;
+    switch (index) {
+      case 0:
+        path = 'bio';
+        break;
+      case 1:
+        path = 'portfolio';
+        break;
+      case 2:
+        path = 'awards';
+        break;
+      default:
+        path = 'bio';
+        break;
+    }
     const href = `/?${path}`;
     const as = href;
     Router.push(href, as, { shallow: true });
-    switch (path) {
-      case 'bio':
-        this.handleChangeIndex(0);
-        break;
-      case 'portfolio':
-        this.handleChangeIndex(1);
-        break;
-      case 'awards':
-        this.handleChangeIndex(2);
-        break;
-      default:
-        this.handleChangeIndex(0);
-        break;
-    }
   }
 
   render() {
@@ -104,7 +126,7 @@ class HomeTabs extends React.Component {
                 we can work together to make building a usable, consistent, and accessible interface the easiest way to develop new software.
             </Typography>
             <Typography variant="title" gutterBottom paragraph>As a Human Experience Designer,
-              <a onClick={() => this.internalLink('portfolio')} onKeyPress={() => this.internalLink('portfolio')} title="Portfolio" role="link" tabIndex={0} style={{ cursor: 'pointer' }}> I connect user needs with the developer experience</a>.
+              <a onClick={() => this.handleChangeIndex(1)} onKeyPress={() => this.handleChangeIndex(1)} title="Portfolio" role="link" tabIndex={0} style={{ cursor: 'pointer' }}> I connect user needs with the developer experience</a>.
             </Typography>
             <Typography variant="body2" gutterBottom paragraph> In the fall of 2014, I studied computer science, software development, and design
                 at <a title="Computer Science Institute" href="http://www.ait-budapest.com/" target="_blank" rel="noopener noreferrer"> AIT-Budapest.</a> I

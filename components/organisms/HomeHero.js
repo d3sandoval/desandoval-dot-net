@@ -66,6 +66,13 @@ class HomeHero extends React.Component {
       logoSize: 500,
     }
 
+    constructor(props) {
+      super(props);
+      if (props.homeRoute) {
+        this.state = { homeRoute: props.homeRoute };
+      }
+    }
+
     componentDidMount = () => {
       const { homeRoute } = this.props;
       if (homeRoute) {
