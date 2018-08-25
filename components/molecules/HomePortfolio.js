@@ -45,7 +45,7 @@ function getTopImage(id, topImage) {
 
 class HomePortfolio extends React.Component {
   render() {
-    const { classes, tileData, large } = this.props;
+    const { classes, tileData } = this.props;
 
     return (
       <div className={classes.root}>
