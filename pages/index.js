@@ -9,10 +9,6 @@ import withStyles from '@material-ui/core/styles/withStyles';
 
 /* my components */
 import HomeHero from '../components/organisms/HomeHero';
-import PageLayout from '../templates/PageLayout';
-import BlogSummary from '../components/molecules/BlogSummary';
-import EmploymentSummary from '../components/organisms/EmploymentSummary';
-import PortfolioSummary from '../components/organisms/PortfolioSummary';
 
 const styles = {};
 

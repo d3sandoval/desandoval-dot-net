@@ -13,6 +13,7 @@ import fetch from 'isomorphic-unfetch';
 import PageLayout from '../templates/PageLayout';
 import LastFMRecent from '../components/molecules/LastFMRecent';
 import BlogBox from '../components/atoms/BlogBox';
+import BlogSummary from '../components/molecules/BlogSummary';
 
 const styles = {
   root: {
@@ -29,18 +30,23 @@ class Iam extends Component {
 
     return (
       <PageLayout currentPage={this.props.pathName}>
+
         <Grid container spacing={24} className={classes.root}>
+          <Grid item xs={12}>
+            <Typography variant="display1" gutterBottom>Writing</Typography>
+            <BlogSummary entries={this.props.blogPosts} />
+          </Grid>
           <Grid item md={6} xs={12}>
-            <Typography variant="display2" gutterBottom>Listening To</Typography>
+            <Typography variant="display1" gutterBottom>Listening To</Typography>
             <LastFMRecent tracks={this.props.recentTracks} />
           </Grid>
           <Grid item md={6} xs={12}>
-            <Typography variant="display2" gutterBottom>Reading</Typography>
+            <Typography variant="display1" gutterBottom>Reading</Typography>
             {this.props.wallabagData.map(post => (
               <a key={post.link} href={post.link} target="_blank" rel="noopener noreferrer">
                 <BlogBox post={post} />
               </a>
-                ))}
+            ))}
           </Grid>
         </Grid>
       </PageLayout>
@@ -59,6 +65,9 @@ Iam.propTypes = {
 Iam.getInitialProps = async function (context) {
   const baseUrl = context.res ? `http://localhost:${process.env.PORT}` : '';
 
+  const blog = await fetch(`${baseUrl}/blog/posts?limit=4`);
+  const blogData = await blog.json();
+
   const getRecentTracks = await fetch(`${baseUrl}/lastfm/recent?limit=5`);
   const recentTracks = await getRecentTracks.json();
 
@@ -66,6 +75,7 @@ Iam.getInitialProps = async function (context) {
   const wallabagData = await wallabag.json();
 
   return {
+    blogPosts: blogData,
     recentTracks: JSON.parse(recentTracks).recenttracks,
     wallabagData,
     viewWidth: (context.res)
