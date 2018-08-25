@@ -1,7 +1,9 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import { Animated } from 'react-web-animation';
 import Logo from '../atoms/Logo';
+import HomeLayout from '../molecules/HomeLayout';
 
 const styles = theme => ({
   root: {
@@ -22,6 +24,10 @@ const styles = theme => ({
     width: '100%',
     textAlign: 'center',
   },
+  layout: {
+    position: 'relative',
+    zIndex: 10,
+  },
 });
 
 function getHeight() {
@@ -35,11 +41,31 @@ function getHeight() {
 class HomeHero extends React.Component {
     state = {
       homeRoute: null,
+      hasAnimated: false,
+      playState: 'paused',
+    }
+
+    getKeyFrames() {
+      return [
+        { transform: 'scale(1)', opacity: 0, offset: 0 },
+        { transform: 'scale(1)', opacity: 1, offset: 1 },
+      ];
+    }
+
+    getTiming(duration) {
+      return {
+        duration,
+        easing: 'ease-in-out',
+        delay: 0,
+        iterations: 1,
+        direction: 'alternate',
+        fill: 'forwards',
+      };
     }
 
     handleClick = () => {
-      window.location.hash = 'something';
-      this.setState({ homeRoute: 'something' });
+      window.location.hash = 'bio';
+      this.setState({ homeRoute: 'bio' });
     }
 
     render() {
@@ -57,7 +83,15 @@ class HomeHero extends React.Component {
               <Typography className={classes.title} variant="display4" gutterBottom>Daniel E. Sandoval</Typography>
               <Typography className={classes.bottom} variant="headline">Putting the human experience first. Developing solutions to make it better.</Typography>
             </span>
-          ) : (<p>test</p>)}
+          ) : (
+            <Animated.div
+              keyframes={this.getKeyFrames()}
+              timing={this.getTiming(3000)}
+              className={classes.layout}
+            >
+              <HomeLayout homeRoute={this.state.homeRoute} />
+            </Animated.div>
+          )}
           <Logo size={getHeight()} homeRoute={this.state.homeRoute} />
         </div>
       );
