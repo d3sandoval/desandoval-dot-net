@@ -31,6 +31,10 @@ const styles = theme => ({
     [theme.breakpoints.up('xs')]: {
       bottom: 132,
     },
+    [theme.breakpoints.up('xl')]: {
+      bottom: 240,
+      fontSize: '2.25em',
+    },
     [theme.breakpoints.down('xs')]: {
       bottom: 40,
       fontSize: '1em',

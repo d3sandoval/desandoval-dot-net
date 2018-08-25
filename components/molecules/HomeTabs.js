@@ -58,7 +58,7 @@ function convertPathToTabIndex(path) {
       return 0;
     case 'portfolio':
       return 1;
-    case 'awards':
+    case 'honors':
       return 2;
     default:
       return 'bio';
@@ -96,7 +96,7 @@ class HomeTabs extends React.Component {
         path = 'portfolio';
         break;
       case 2:
-        path = 'awards';
+        path = 'honors';
         break;
       default:
         path = 'bio';
@@ -123,7 +123,7 @@ class HomeTabs extends React.Component {
           >
             <Tab label="Bio" />
             <Tab label="Portfolio" />
-            <Tab label="Awards" />
+            <Tab label="Honors" />
           </Tabs>
         </AppBar>
         <SwipeableViews
