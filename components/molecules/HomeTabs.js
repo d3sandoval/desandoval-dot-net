@@ -11,6 +11,8 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Router from 'next/router';
 
+import HonorsSummary from '../organisms/HonorsSummary';
+
 function TabContainer({ children, dir }) {
   return (
     <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
@@ -26,13 +28,26 @@ TabContainer.propTypes = {
 
 const styles = theme => ({
   root: {
-    marginTop: 40,
+    [theme.breakpoints.up('sm')]: {
+      marginTop: 40,
+    },
   },
   tabs: {
     backgroundColor: '#303030',
   },
   swipeable: {
-    height: 500,
+    [theme.breakpoints.up('md')]: {
+      height: 1000,
+    },
+    [theme.breakpoints.up('sm')]: {
+      height: 800,
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: 600,
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: '80vh',
+    },
     WebkitOverflowScrolling: 'touch', // iOS momentum scrolling
   },
 });
@@ -139,8 +154,8 @@ class HomeTabs extends React.Component {
             I am now a Product Designer and &quot;UX Team of One&quot; at <a title="Market Research Software Company" href="http://discuss.io/" target="_blank" rel="noopener noreferrer"> Discuss.io</a>. Living in Cambridge, MA.
             </Typography>
           </TabContainer>
-          <TabContainer dir={theme.direction}>Item Two</TabContainer>
-          <TabContainer dir={theme.direction}>Item Three</TabContainer>
+          <TabContainer dir={theme.direction}>Portfolio</TabContainer>
+          <TabContainer dir={theme.direction}><HonorsSummary /></TabContainer>
         </SwipeableViews>
       </div>
     );

@@ -13,14 +13,13 @@ import PageLayout from '../templates/PageLayout';
 import BlogSummary from '../components/molecules/BlogSummary';
 import EmploymentSummary from '../components/organisms/EmploymentSummary';
 import PortfolioSummary from '../components/organisms/PortfolioSummary';
-import HonorsSummary from '../components/organisms/HonorsSummary';
 
 const styles = {};
 
 class Index extends Component {
   render() {
     return (
-      <HomeHero {...this.props} /> // todo pass current location (hash?)
+      <HomeHero {...this.props} />
     );
   }
 }

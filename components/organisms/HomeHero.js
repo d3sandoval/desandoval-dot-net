@@ -4,7 +4,10 @@ import { Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { Animated } from 'react-web-animation';
 import Router from 'next/router';
+
 import Logo from '../atoms/Logo';
+import ContactButton from '../molecules/ContactButton';
+import { ButtonProvider } from '../StateContainers/ContactButtonState';
 import HomeLayout from '../molecules/HomeLayout';
 
 const styles = theme => ({
@@ -19,10 +22,19 @@ const styles = theme => ({
     marginTop: 32,
     marginLeft: 'auto',
     marginRight: 'auto',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '3em',
+    },
   },
   bottom: {
     position: 'absolute',
-    bottom: 132,
+    [theme.breakpoints.up('xs')]: {
+      bottom: 132,
+    },
+    [theme.breakpoints.down('xs')]: {
+      bottom: 40,
+      fontSize: '1em',
+    },
     width: '100%',
     textAlign: 'center',
   },
@@ -114,6 +126,9 @@ class HomeHero extends React.Component {
             </Animated.div>
           )}
           <Logo size={logoSize} homeRoute={homeRoute} />
+          <ButtonProvider>
+            <ContactButton hidden={homeRoute === null} />
+          </ButtonProvider>
         </div>
       );
     }

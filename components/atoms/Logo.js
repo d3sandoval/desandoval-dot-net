@@ -17,7 +17,10 @@ const styles = theme => ({
   after: {
     position: 'fixed',
     left: '50%',
-    transform: 'translate(-50%, -89%)',
+    transform: 'translate(-50%, -80vh)',
+    [theme.breakpoints.up('xl')]: {
+      transform: 'translate(-50%, -50vh)',
+    },
     zIndex: 1,
   },
 });

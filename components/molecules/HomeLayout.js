@@ -10,7 +10,15 @@ import HomeTabs from './HomeTabs';
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    padding: 16,
+    [theme.breakpoints.up('sm')]: {
+      padding: 16,
+    },
+  },
+  topNav: {
+    padding: 8,
+    [theme.breakpoints.down('sm')]: {
+      backgroundColor: theme.palette.grey[900],
+    },
   },
 });
 
@@ -33,12 +41,13 @@ class HomeLayout extends React.Component {
       return (
         <div className={classes.root}>
           <Grid
+            className={classes.topNav}
             container
             direction="row"
             justify="space-between"
             alignItems="flex-start"
           >
-            <div className={classes.menu}>
+            <div>
               <Button style={{ fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif' }} href="https://medium.com/@d3sandoval/latest" target="_blank" rel="noopener noreferrer" color="primary">Blog</Button>
               <Link prefetch href="/iam"><Button style={{ fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif' }} color="primary">I am...</Button></Link>
             </div>

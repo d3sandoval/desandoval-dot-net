@@ -23,12 +23,12 @@ const styles = theme => ({
 
 class ContactButton extends React.Component {
   render() {
-    const { classes } = this.props;
+    const { classes, hidden } = this.props;
 
     return (
       <ButtonContext>
         {buttonState => (
-          <div className={classes.button}>
+          <div className={classes.button} style={{ display: hidden ? 'none' : 'block' }}>
             <Tooltip classes={{ popper: classes.tooltipText }} title={buttonState.state.rootTooltipText} placement="left" open={buttonState.state.rootTooltip}>
               <AnimatedFab
                 onMouseOver={buttonState.mouseOver}
