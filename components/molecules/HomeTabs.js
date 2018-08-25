@@ -48,12 +48,13 @@ class HomeTabs extends React.Component {
 
   render() {
     const { classes, theme } = this.props;
+    const { value } = this.state;
 
     return (
       <div className={classes.root}>
         <AppBar position="static" color="default" classes={{ colorDefault: classes.tabs }}>
           <Tabs
-            value={this.state.value}
+            value={value}
             onChange={this.handleChange}
             indicatorColor="primary"
             textColor="primary"
@@ -66,7 +67,7 @@ class HomeTabs extends React.Component {
         </AppBar>
         <SwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-          index={this.state.value}
+          index={value}
           onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer dir={theme.direction}>

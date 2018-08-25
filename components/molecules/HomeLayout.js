@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
@@ -15,7 +16,9 @@ const styles = theme => ({
 
 class HomeLayout extends React.Component {
     componentDidUpdate = () => {
-      if (this.props.homeRoute && !this.state.hasAnimated) {
+      const { homeRoute } = this.props;
+      const { hasAnimated } = this.state;
+      if (homeRoute && !hasAnimated) {
         this.setState({ playState: 'running', hasAnimated: true });
       }
     }
@@ -43,12 +46,18 @@ class HomeLayout extends React.Component {
             alignItems="flex-start"
           >
             <Grid item xs={12} sm={6}>
-              <HomeTabs homeRoute={this.props.homeRoute} />
+              <HomeTabs homeRoute={homeRoute} />
             </Grid>
           </Grid>
         </div>
       );
     }
 }
+
+HomeLayout.propTypes = {
+  classes: PropTypes.object.isRequired,
+  homeRoute: PropTypes.string.isRequired,
+};
+
 
 export default withStyles(styles)(HomeLayout);

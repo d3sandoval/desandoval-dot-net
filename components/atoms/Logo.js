@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Animated } from 'react-web-animation';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -21,45 +22,48 @@ const styles = theme => ({
   },
 });
 
+function getKeyFrames(size) {
+  return [
+    { transform: 'scale(1)', opacity: 1, offset: 0 },
+    { transform: 'scale(1)', opacity: 0.75, offset: 0.25 },
+    { transform: 'scale(2) translate(-50%, 10%)', opacity: 0.45, offset: 1 },
+  ];
+}
+
+function getTiming(duration) {
+  return {
+    duration,
+    easing: 'ease-in-out',
+    delay: 0,
+    iterations: 1,
+    direction: 'alternate',
+    fill: 'forwards',
+  };
+}
+
 class Logo extends React.Component {
     state = {
       hasAnimated: false,
       playState: 'paused',
     }
 
-    getKeyFrames(size) {
-      return [
-        { transform: 'scale(1)', opacity: 1, offset: 0 },
-        { transform: 'scale(1)', opacity: 0.75, offset: 0.25 },
-        { transform: 'scale(2) translate(-50%, 10%)', opacity: 0.45, offset: 1 },
-      ];
-    }
-
-    getTiming(duration) {
-      return {
-        duration,
-        easing: 'ease-in-out',
-        delay: 0,
-        iterations: 1,
-        direction: 'alternate',
-        fill: 'forwards',
-      };
-    }
-
     componentDidUpdate = () => {
-      if (this.props.homeRoute && !this.state.hasAnimated) {
+      const { homeRoute } = this.props;
+      const { hasAnimated } = this.state;
+      if (homeRoute && !hasAnimated) {
         this.setState({ playState: 'running', hasAnimated: true });
       }
     }
 
     render() {
       const { classes, size } = this.props;
+      const { playState, hasAnimated } = this.state;
       return (
-        <div className={(this.state.hasAnimated) ? classes.after : classes.before}>
+        <div className={(hasAnimated) ? classes.after : classes.before}>
           <Animated.div
-            keyframes={this.getKeyFrames(size)}
-            timing={this.getTiming(2000)}
-            playState={this.state.playState}
+            keyframes={getKeyFrames(size)}
+            timing={getTiming(2000)}
+            playState={playState}
           >
             <img
               alt="logo for DESandoval.net"
@@ -73,5 +77,11 @@ class Logo extends React.Component {
       );
     }
 }
+
+Logo.propTypes = {
+  classes: PropTypes.object.isRequired,
+  homeRoute: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired,
+};
 
 export default withStyles(styles)(Logo);
