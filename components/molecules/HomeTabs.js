@@ -37,18 +37,6 @@ const styles = theme => ({
     backgroundColor: '#303030',
   },
   swipeable: {
-    [theme.breakpoints.up('md')]: {
-      height: 1200,
-    },
-    [theme.breakpoints.up('sm')]: {
-      height: 800,
-    },
-    [theme.breakpoints.down('sm')]: {
-      height: 600,
-    },
-    [theme.breakpoints.down('xs')]: {
-      height: '80vh',
-    },
     WebkitOverflowScrolling: 'touch', // iOS momentum scrolling
   },
 });
@@ -114,8 +102,15 @@ class HomeTabs extends React.Component {
   }
 
   render() {
-    const { classes, theme, portfolioEntries } = this.props;
+    const {
+      classes, theme, portfolioEntries, viewHeight,
+    } = this.props;
     const { value } = this.state;
+
+    if (typeof document !== 'undefined') {
+      console.log(document.getElementById('navContainer'));
+    }
+
 
     return (
       <div className={classes.root}>
@@ -141,8 +136,11 @@ class HomeTabs extends React.Component {
           ignoreNativeScroll
           animateHeight
           onTransitionEnd={this.scrollToTop}
+          style={{
+            height: viewHeight - 136,
+          }}
         >
-          <TabContainer dir={theme.direction} style={{ marginBottom: 40 }}>
+          <TabContainer dir={theme.direction} style={{ marginBottom: 124 }}>
             <Typography variant="body2" gutterBottom paragraph><strong>People use digital tools everyday</strong>. Those that are significant provide
                 practical and navigable solutions to their users&#39; problems. In order for user research and design to have any impact on software development,
                 it must become directly involved with the tools and processes that developers use to build software.

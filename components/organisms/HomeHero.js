@@ -105,7 +105,7 @@ class HomeHero extends React.Component {
     }
 
     render() {
-      const { classes, portfolioEntries } = this.props;
+      const { classes, portfolioEntries, viewHeight } = this.props;
       const { homeRoute, logoSize } = this.state;
       return (
         <div
@@ -126,7 +126,7 @@ class HomeHero extends React.Component {
               timing={getTiming(3000)}
               className={classes.layout}
             >
-              <HomeLayout homeRoute={homeRoute} portfolioEntries={portfolioEntries} />
+              <HomeLayout homeRoute={homeRoute} portfolioEntries={portfolioEntries} viewHeight={viewHeight} />
             </Animated.div>
           )}
           <Logo size={logoSize} homeRoute={homeRoute} />
@@ -145,6 +145,7 @@ HomeHero.defaultProps = {
 HomeHero.propTypes = {
   classes: PropTypes.object.isRequired,
   homeRoute: PropTypes.string,
+  viewHeight: PropTypes.number.isRequired,
 };
 
 export default withStyles(styles)(HomeHero);

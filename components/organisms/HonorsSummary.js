@@ -7,7 +7,7 @@ import HonorsBox from '../atoms/HonorsBox';
 
 const styles = theme => ({
   root: {
-
+    marginBottom: 124,
   },
 });
 
