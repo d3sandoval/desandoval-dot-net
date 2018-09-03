@@ -107,11 +107,6 @@ class HomeTabs extends React.Component {
     } = this.props;
     const { value } = this.state;
 
-    if (typeof document !== 'undefined') {
-      console.log(document.getElementById('navContainer'));
-    }
-
-
     return (
       <div className={classes.root}>
         <AppBar position="static" color="default" classes={{ colorDefault: classes.tabs }}>
@@ -137,7 +132,7 @@ class HomeTabs extends React.Component {
           animateHeight
           onTransitionEnd={this.scrollToTop}
           style={{
-            height: viewHeight - 136,
+            height: viewHeight ? viewHeight - 136 : '50vh',
           }}
         >
           <TabContainer dir={theme.direction} style={{ marginBottom: 124 }}>
