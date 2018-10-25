@@ -44,7 +44,9 @@ function Footer(props) {
             href="https://github.com/d3sandoval/desandoval-dot-net"
             target="_blank"
             rel="noopener noreferrer"
-          > Source Code
+          >
+            {' '}
+Source Code
           </a>
           &nbsp;|&nbsp;
           <a
@@ -53,7 +55,9 @@ function Footer(props) {
             rel="noopener noreferrer"
           >
           CC-BY-ND-4.0
-          </a> )
+          </a>
+          {' '}
+)
         </Typography>
         <SocialRow xs={12} md={4} />
       </Grid>

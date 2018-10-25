@@ -25,8 +25,8 @@ const styles = theme => ({
   },
   titleBar: {
     background:
-    'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-    'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+    'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, '
+    + 'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
     fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
   },
   overlay: {
@@ -66,23 +66,23 @@ class PortfolioGridList extends React.Component {
               <Link href={`/portfolio/${tile.id}`}>
                 <div
                   style={{
-                  background: `url(${getTopImage(tile.id, tile.topImage)})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  height: '100%',
-                  width: '100%',
-                }}
+                    background: `url(${getTopImage(tile.id, tile.topImage)})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    height: '100%',
+                    width: '100%',
+                  }}
                   alt={tile.title}
                 >
                   <div className={classes.overlay} />
                   <GridListTileBar
                     title={tile.title}
                     titlePosition="top"
-                    actionIcon={
+                    actionIcon={(
                       <IconButton>
                         <PortfolioIcon category={tile.category} />
                       </IconButton>
-                    }
+)}
                     actionPosition="left"
                     className={classes.titleBar}
                   />

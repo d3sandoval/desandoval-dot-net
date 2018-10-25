@@ -50,7 +50,7 @@ const theme = createMuiTheme({
     chip: grey[900],
     background: {
       paper: grey[900],
-    }
+    },
   },
   typography: {
     fontFamily: '"Merriweather", "serif"',
@@ -70,11 +70,11 @@ const theme = createMuiTheme({
       fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
     },
     body1: {
-      fontSize: "0.95rem"
+      fontSize: '0.95rem',
     },
     body2: {
-      fontSize: "0.95rem",
-      lineHeight: "1.9em"
+      fontSize: '0.95rem',
+      lineHeight: '1.9em',
     },
     subheading: {
       fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',

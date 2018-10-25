@@ -87,7 +87,7 @@ class ContactRow extends React.Component {
     if (!this.props.open && this.state.hasOpened) {
       this.setState({ hasOpened: false });
       return { display: 'block' };
-    } else if (this.props.open) {
+    } if (this.props.open) {
       return { display: 'block' };
     }
     return { display: 'none' };

@@ -94,6 +94,7 @@ class ProfileImage extends React.Component {
       : 1 - ((600 - this.props.positionTop) / 600),
     height: '100%',
   })
+
   render() {
     const { classes } = this.props;
     return (

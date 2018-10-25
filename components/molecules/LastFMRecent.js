@@ -57,7 +57,7 @@ class LastFMRecent extends React.Component {
               </Grid>
             </Paper>
           </a>
-          ))}
+        ))}
       </div>
     );
   }

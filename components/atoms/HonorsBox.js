@@ -36,7 +36,7 @@ function HonorsBox(props) {
           {details.organization}
         </Typography>
       </a>
-      <Typography variant="body1" style={{fontSize: '0.8rem'}}>
+      <Typography variant="body1" style={{ fontSize: '0.8rem' }}>
         {details.description}
       </Typography>
     </div>

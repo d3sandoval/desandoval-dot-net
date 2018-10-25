@@ -10,7 +10,7 @@ const styles = theme => ({
     display: 'inline-block',
     margin: theme.spacing.unit,
     padding: 4,
-    backgroundColor: grey[900]
+    backgroundColor: grey[900],
   },
 });
 
@@ -21,7 +21,7 @@ function PortfolioTags(props) {
     <div className={classes.root}>
       {tags.map(tag => (
         <Chip key={tag} label={tag} className={classes.chip} />
-        ))}
+      ))}
     </div>
   );
 }

@@ -15,8 +15,8 @@ class MyDocument extends Document {
           <meta
             name="viewport"
             content={
-              'user-scalable=0, initial-scale=1, ' +
-              'minimum-scale=1, width=device-width, height=device-height'
+              'user-scalable=0, initial-scale=1, '
+              + 'minimum-scale=1, width=device-width, height=device-height'
             }
           />
           {/*
@@ -42,10 +42,11 @@ class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" /> 
+          <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" />
           {/* Import CSS for nprogress */}
           <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
-          <style type="text/css">{`
+          <style type="text/css">
+            {`
             * {
              box-sizing: border-box;
             }
@@ -84,7 +85,7 @@ class MyDocument extends Document {
             }
           `}
           </style>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.1/web-animations-next.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.1/web-animations-next.min.js" />
         </Head>
         <body>
           <Main />
