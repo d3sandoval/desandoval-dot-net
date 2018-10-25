@@ -39,7 +39,7 @@
     "react-ga": "^2.5.3",
     "react-headroom": "^2.2.4",
     "react-jss": "^8.6.1",
-    "react-markdown": "^2.5.1",
+    "react-markdown": "^4.0.0",
     "react-medium-image-zoom": "^3.0.15",
     "react-prism": "^4.3.2",
     "react-swipeable-views": "^0.13.0",
