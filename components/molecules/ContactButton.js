@@ -48,10 +48,12 @@ class ContactButton extends React.Component {
 
 ContactButton.defaultProps = {
   classes: {},
+  hidden: false,
 };
 
 ContactButton.propTypes = {
   classes: PropTypes.object,
+  hidden: PropTypes.bool,
 };
 
 export default withStyles(styles)(ContactButton);
