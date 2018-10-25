@@ -50,7 +50,7 @@ function BlogSummary(props) {
         }
       </Grid>
       <div className={classes.links}>
-        <Typography className={classes.externalBlogs} variant="subheading" align="left" gutterBottom>
+        <Typography className={classes.externalBlogs} variant="subtitle1" align="left" gutterBottom>
         Also found on:&nbsp;
           <a
             href="https://encrypted.google.com/search?hl=en&ei=XWosWrC_LcfOjwPs-pSIAg&q=%22DJ+Desman%22+site%3Ahttp%3A%2F%2Frainydawgradioblog.tumblr.com&oq=%22DJ+Desman%22+site%3Ahttp%3A%2F%2Frainydawgradioblog.tumblr.com&gs_l=psy-ab.3...100756.104016.0.104249.7.7.0.0.0.0.99.521.7.7.0....0...1c.1.64.psy-ab..0.0.0....0.WhaD743wny4"
@@ -68,7 +68,7 @@ Rainy Dawg Radio
 KEXP
           </a>
         </Typography>
-        <Typography className={classes.fullLink} variant="subheading" align="right" gutterBottom>
+        <Typography className={classes.fullLink} variant="subtitle1" align="right" gutterBottom>
           <a href="https://medium.com/@d3sandoval/latest" target="_blank" rel="noopener noreferrer">View all from my blog...</a>
         </Typography>
       </div>

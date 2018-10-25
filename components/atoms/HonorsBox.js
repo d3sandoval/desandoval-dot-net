@@ -29,10 +29,10 @@ function HonorsBox(props) {
     <div className={classes.root}>
       <a href={details.url} target="_blank" rel="noopener noreferrer">
         <img src={details.logo} alt={`${details.organization} logo`} />
-        <Typography variant="title" className={classes.linkText}>
+        <Typography variant="h6" className={classes.linkText}>
           {details.title}
         </Typography>
-        <Typography variant="subheading" className={classes.linkText} gutterBottom>
+        <Typography variant="subtitle1" className={classes.linkText} gutterBottom>
           {details.organization}
         </Typography>
       </a>

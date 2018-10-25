@@ -45,7 +45,7 @@ class LastFMRecent extends React.Component {
                     : <Audiotrack className={classes.albumPlaceholder} />}
                 </Grid>
                 <Grid item xs={8}>
-                  <Typography variant="headline" component="h3">
+                  <Typography variant="h5" component="h3">
                     {track.name}
                   </Typography>
                   <Typography variant="body1" component="p">

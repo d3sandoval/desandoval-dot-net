@@ -143,7 +143,7 @@ class HomeTabs extends React.Component {
             <Typography variant="body2" gutterBottom paragraph>When designers work closely with developers and remain open to feedback,
                 we can work together to make building a usable, consistent, and accessible interface the easiest way to develop new software.
             </Typography>
-            <Typography variant="title" gutterBottom paragraph>As a Human Experience Designer,
+            <Typography variant="h6" gutterBottom paragraph>As a Human Experience Designer,
               <a onClick={() => this.handleChangeIndex(1)} onKeyPress={() => this.handleChangeIndex(1)} title="Portfolio" role="link" tabIndex={0} style={{ cursor: 'pointer' }}> I connect user needs with the developer experience</a>.
             </Typography>
             <Typography variant="body2" gutterBottom paragraph> In the fall of 2014, I studied computer science, software development, and design

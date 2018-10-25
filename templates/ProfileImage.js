@@ -103,10 +103,10 @@ class ProfileImage extends React.Component {
           <div style={this.getOverlayStyle()} />
         </div>
         <img alt="Daniel E. Sandoval logo" src="img/logo.png" className={classes.logo} />
-        <Typography variant="display3" className={classes.name}>
+        <Typography variant="h2" className={classes.name}>
           Daniel E. Sandoval
         </Typography>
-        <Typography variant="subheading" className={classes.subName}>
+        <Typography variant="subtitle1" className={classes.subName}>
           Putting the human experience first. Developing solutions to make it better.
         </Typography>
       </div>

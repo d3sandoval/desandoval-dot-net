@@ -22,7 +22,7 @@ function PaperSheet(props) {
   return (
     <div>
       <Paper className={classes.root} elevation={4}>
-        <Typography variant="headline" component="h3" dangerouslySetInnerHTML={{ __html: post.title }} />
+        <Typography variant="h5" component="h3" dangerouslySetInnerHTML={{ __html: post.title }} />
         <Typography variant="body1" component="p">
           {post.date}
         </Typography>

@@ -83,7 +83,7 @@ class HomePortfolio extends React.Component {
                 md={9}
                 direction="column"
               >
-                <Typography variant="title" color="inherit">{tile.title}</Typography>
+                <Typography variant="h6" color="inherit">{tile.title}</Typography>
                 <div className={classes.subHeading}>
                   <PortfolioIcon category={tile.category} />
                   <Typography variant="body2" className={classes.subHeadingText}>{tile.description}</Typography>

@@ -33,15 +33,15 @@ class Iam extends Component {
 
         <Grid container spacing={24} className={classes.root}>
           <Grid item xs={12}>
-            <Typography variant="display1" gutterBottom>Writing</Typography>
+            <Typography variant="h4" gutterBottom>Writing</Typography>
             <BlogSummary entries={this.props.blogPosts} />
           </Grid>
           <Grid item md={6} xs={12}>
-            <Typography variant="display1" gutterBottom>Listening To</Typography>
+            <Typography variant="h4" gutterBottom>Listening To</Typography>
             <LastFMRecent tracks={this.props.recentTracks} />
           </Grid>
           <Grid item md={6} xs={12}>
-            <Typography variant="display1" gutterBottom>Reading</Typography>
+            <Typography variant="h4" gutterBottom>Reading</Typography>
             {this.props.wallabagData.map(post => (
               <a key={post.link} href={post.link} target="_blank" rel="noopener noreferrer">
                 <BlogBox post={post} />

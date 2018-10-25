@@ -53,30 +53,31 @@ const theme = createMuiTheme({
     },
   },
   typography: {
+    useNextVariants: true,
     fontFamily: '"Merriweather", "serif"',
-    display4: {
+    h1: {
       fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
     },
-    display3: {
+    h2: {
       fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
     },
-    display2: {
+    h3: {
       fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
     },
-    display1: {
+    h4: {
       fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
     },
-    headline: {
+    h5: {
       fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
     },
     body1: {
       fontSize: '0.95rem',
+      lineHeight: '1.9em',
     },
     body2: {
       fontSize: '0.95rem',
-      lineHeight: '1.9em',
     },
-    subheading: {
+    subtitle1: {
       fontFamily: '"Raleway","Helvetica Neue",Arial,sans-serif',
     },
   },

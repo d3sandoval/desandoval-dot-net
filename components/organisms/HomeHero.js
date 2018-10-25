@@ -117,8 +117,8 @@ class HomeHero extends React.Component {
         >
           {(homeRoute === null) ? (
             <span>
-              <Typography className={classes.title} variant="display4" gutterBottom>Daniel E. Sandoval</Typography>
-              <Typography className={classes.bottom} variant="headline">Putting the human experience first. Developing solutions to make it better.</Typography>
+              <Typography className={classes.title} variant="h1" gutterBottom>Daniel E. Sandoval</Typography>
+              <Typography className={classes.bottom} variant="h5">Putting the human experience first. Developing solutions to make it better.</Typography>
             </span>
           ) : (
             <Animated.div
