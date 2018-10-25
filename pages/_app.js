@@ -3,6 +3,7 @@ import React from 'react';
 import NProgress from 'nprogress';
 import Router from 'next/router';
 import withRoot from '../templates/withRoot';
+import '@babel/polyfill';
 
 // loading animation
 Router.onRouteChangeStart = (url) => {
