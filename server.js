@@ -49,8 +49,13 @@ const redirects = [
   { from: '/design-web', to: '/portfolio' },
   { from: '/art-music', to: '/portfolio' },
   { from: '/calendar', to: 'https://calendly.com/d3sandoval/30min' },
-
 ];
+
+const domainRedirects = {
+  www: 'https://desandoval.net',
+  music: 'https://open.spotify.com/artist/47mXmNmm2ekoxyCwowItaX',
+  alert: 'http://des-alertsystem.appspot.com/',
+};
 
 // start express
 app.prepare()
@@ -68,6 +73,22 @@ app.prepare()
       server[method](from, (req, res) => {
         res.redirect(type, to);
       });
+    });
+
+    // handle subdomain redirects
+    server.get('/', (req, res, next) => {
+      let redirect = false;
+      const subdomain = req.headers.host.split('.')[0];
+      if (subdomain !== 'desandoval.net') {
+        if (subdomain in domainRedirects) {
+          redirect = true;
+          res.redirect(301, domainRedirects[subdomain]);
+        }
+      }
+
+      if (!redirect) {
+        next();
+      }
     });
 
     server.get('/portfolio/list', (req, res) => {
