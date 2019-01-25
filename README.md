@@ -1,7 +1,5 @@
 # desandoval-dot-net
 
-![](https://travis-ci.org/d3sandoval/desandoval-dot-net.svg?branch=master)
-
 This repository contains all of the source code for [DESandoval.net](https://desandoval.net) - the personal website for Daniel E. Sandoval. This repository is meant to showcase the code used to create a dynamic portfolio website using static markdown files as the main source of content.
 
 All contributions are by [@d3sandoval](https://github.com/d3sandoval) unless otherwise specified in a commit message/author.
@@ -60,23 +58,6 @@ DONE  Compiled successfully in 2358ms
 > Ready on http://localhost:8080
 ```
 
-## Running the tests
-
-There are no tests... I'm working on that.
-
-### End to End Tests
-
-Right now, just click around to the various pages and make sure things are working
-
-### And coding style tests
-
-Coming Soon.
-
-
-## Deployment
-
-The app is currently deployed on [heroku](https://heroku.com).
-
 ## Built With
 
 * [Next.js](https://github.com/zeit/next.js) - The web framework used
@@ -89,10 +70,6 @@ The app is currently deployed on [heroku](https://heroku.com).
 ## Contributing
 
 Please open up an issue or PR if you see something you'd like to change.
-
-## Versioning
-
-I'm just making up the version numbers at this point. If somebody starts using some of my code as a dependency, I may think about versioning.
 
 ## Authors
 
