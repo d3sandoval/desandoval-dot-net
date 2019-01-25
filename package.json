@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "redis-server /usr/local/etc/redis.conf > ./redis.log | node server.js",
     "build": "next build",
+    "heroku-postbuild": "next build",
     "start": "NODE_ENV=production node server.js",
     "lint": "eslint",
     "lint-fix": "eslint --fix"
