@@ -1,6 +1,8 @@
 workflow "Build and Deploy" {
   on = "push"
-  resolves = ["heroku release"]
+  resolves = [
+    "heroku release"
+  ]
 }
 
 action "npm install" {
@@ -14,9 +16,15 @@ action "npm build" {
   args = "build"
 }
 
+action "deploy filter" {
+  uses = "actions/bin/filter@db72a46c8ce298e5d2c3a51861e20c455581524f"
+  needs = ["npm build"]
+  args = "branch master"
+}
+
 action "heroku login" {
   uses = "actions/heroku@6db8f1c22ddf6967566b26d07227c10e8e93844b"
-  needs = ["npm build"]
+  needs = ["deploy filter"]
   args = "container:login"
   secrets = ["HEROKU_API_KEY"]
 }
