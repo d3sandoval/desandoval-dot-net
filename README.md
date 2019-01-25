@@ -75,7 +75,7 @@ Coming Soon.
 
 ## Deployment
 
-The app is currently deployed on [heroku](https://heroku.com) with [Travis-CI](https://travis-ci.org/d3sandoval/desandoval-dot-net) as an intermediary build step. You can see the config in the [.travis.yml file](.travis.yml)
+The app is currently deployed on [heroku](https://heroku.com).
 
 ## Built With
 
