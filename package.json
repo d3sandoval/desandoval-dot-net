@@ -18,9 +18,9 @@
   "license": "CC-BY-ND-4.0",
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
-    "@material-ui/codemod": "^1.1.0",
-    "@material-ui/core": "^3.3.1",
-    "@material-ui/icons": "^3.0.1",
+    "@material-ui/codemod": "^4.0.0",
+    "@material-ui/core": "^4.0.0",
+    "@material-ui/icons": "^4.0.0",
     "babel-plugin-inline-import": "^3.0.0",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
